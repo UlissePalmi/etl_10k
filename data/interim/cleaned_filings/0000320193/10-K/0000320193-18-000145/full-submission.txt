@@ -1,6 +1,6 @@
 0000320193-18-000145.txt : 20181105
 0000320193-18-000145.hdr.sgml : 20181105
-20181105080140 ACCESSION NUMBER:		0000320193-18-000145 CONFORMED SUBMISSION TYPE:	10-K PUBLIC DOCUMENT COUNT:		88 CONFORMED PERIOD OF REPORT:	20180929 FILED AS OF DATE:		20181105 DATE AS OF CHANGE:		20181105  FILER:  COMPANY DATA: COMPANY CONFORMED NAME:			APPLE INC CENTRAL INDEX KEY:			0000320193 STANDARD INDUSTRIAL CLASSIFICATION:	ELECTRONIC COMPUTERS [3571] IRS NUMBER:				942404110 STATE OF INCORPORATION:			CA FISCAL YEAR END:			0930  FILING VALUES: FORM TYPE:		10-K SEC ACT:		1934 Act SEC FILE NUMBER:	001-36743 FILM NUMBER:		181158788  BUSINESS ADDRESS: STREET 1:		ONE APPLE PARK WAY CITY:			CUPERTINO STATE:			CA ZIP:			95014 BUSINESS PHONE:		(408) 996-1010  MAIL ADDRESS: STREET 1:		ONE APPLE PARK WAY CITY:			CUPERTINO STATE:			CA ZIP:			95014  FORMER COMPANY: FORMER CONFORMED NAME:	APPLE COMPUTER INC DATE OF NAME CHANGE:	19970808
+20181105080140 ACCESSION NUMBER:		0000320193-18-000145 CONFORMED SUBMISSION TYPE:	10-K PUBLIC DOCUMENT COUNT:		88 CONFORMED PERIOD OF REPORT:	20180929 FILED AS OF DATE:		20181105 DATE AS OF CHANGE:		20181105 FILER: COMPANY DATA: COMPANY CONFORMED NAME:			APPLE INC CENTRAL INDEX KEY:			0000320193 STANDARD INDUSTRIAL CLASSIFICATION:	ELECTRONIC COMPUTERS [3571] IRS NUMBER:				942404110 STATE OF INCORPORATION:			CA FISCAL YEAR END:			0930 FILING VALUES: FORM TYPE:		10-K SEC ACT:		1934 Act SEC FILE NUMBER:	001-36743 FILM NUMBER:		181158788 BUSINESS ADDRESS: STREET 1:		ONE APPLE PARK WAY CITY:			CUPERTINO STATE:			CA ZIP:			95014 BUSINESS PHONE:		(408) 996-1010 MAIL ADDRESS: STREET 1:		ONE APPLE PARK WAY CITY:			CUPERTINO STATE:			CA ZIP:			95014 FORMER COMPANY: FORMER CONFORMED NAME:	APPLE COMPUTER INC DATE OF NAME CHANGE:	19970808
 10-K
 1
 a10-k20189292018.htm
@@ -54,7 +54,7 @@ New York Stock Exchange LLC
 New York Stock Exchange LLC
 (Title of each class)
 (Name of each exchange on which registered)
-Securities registered pursuant to Section 12(g) of the Act:  None
+Securities registered pursuant to Section 12(g) of the Act: None
 Indicate by check mark if the Registrant is a well-known seasoned issuer, as defined in Rule 405 of the Securities Act.
 Yes
 No
@@ -168,7 +168,7 @@ Exhibits, Financial Statement Schedules
 Item 16.
 Form 10-K Summary
 71
-This Annual Report on Form 10-K ("Form 10-K") contains forward-looking statements, within the meaning of the Private Securities Litigation Reform Act of 1995, that involve risks and uncertainties. Many of the forward-looking statements are located in Part II, Item 7 of this Form 10-K under the heading "Management's Discussion and Analysis of Financial Condition and Results of Operations." Forward-looking statements provide current expectations of future events based on certain assumptions and include any statement that does not directly relate to any historical or current fact. Forward-looking statements can also be identified by words such as "future,"  "anticipates,"  "believes,"  "estimates,"  "expects,"  "intends,"  "plans,"  "predicts,"  "will,"  "would,"  "could,"  "can,"  "may,"  and similar terms. Forward-looking statements are not guarantees of future performance and the Company's actual results may differ significantly from the results discussed in the forward-looking statements. Factors that might cause such differences include, but are not limited to, those discussed in Part I, Item 1A of this Form 10-K under the heading "Risk Factors," which are incorporated herein by reference. All information presented herein is based on the Company's fiscal calendar. Unless otherwise stated, references to particular years, quarters, months or periods refer to the Company's fiscal years ended in September and the associated quarters, months and periods of those fiscal years. Each of the terms the "Company" and "Apple" as used herein refers collectively to Apple Inc. and its wholly-owned subsidiaries, unless otherwise stated. The Company assumes no obligation to revise or update any forward-looking statements for any reason, except as required by law.
+This Annual Report on Form 10-K ("Form 10-K") contains forward-looking statements, within the meaning of the Private Securities Litigation Reform Act of 1995, that involve risks and uncertainties. Many of the forward-looking statements are located in Part II, Item 7 of this Form 10-K under the heading "Management's Discussion and Analysis of Financial Condition and Results of Operations." Forward-looking statements provide current expectations of future events based on certain assumptions and include any statement that does not directly relate to any historical or current fact. Forward-looking statements can also be identified by words such as "future," "anticipates," "believes," "estimates," "expects," "intends," "plans," "predicts," "will," "would," "could," "can," "may," and similar terms. Forward-looking statements are not guarantees of future performance and the Company's actual results may differ significantly from the results discussed in the forward-looking statements. Factors that might cause such differences include, but are not limited to, those discussed in Part I, Item 1A of this Form 10-K under the heading "Risk Factors," which are incorporated herein by reference. All information presented herein is based on the Company's fiscal calendar. Unless otherwise stated, references to particular years, quarters, months or periods refer to the Company's fiscal years ended in September and the associated quarters, months and periods of those fiscal years. Each of the terms the "Company" and "Apple" as used herein refers collectively to Apple Inc. and its wholly-owned subsidiaries, unless otherwise stated. The Company assumes no obligation to revise or update any forward-looking statements for any reason, except as required by law.
 PART I
 Item 1.
 Business
@@ -755,7 +755,7 @@ Apple Inc. | 2018 Form 10-K |
 21
 Item 7.
 Management's Discussion and Analysis of Financial Condition and Results of Operations
-This section and other parts of this Annual Report on Form 10-K ("Form 10-K") contain forward-looking statements, within the meaning of the Private Securities Litigation Reform Act of 1995, that involve risks and uncertainties. Forward-looking statements provide current expectations of future events based on certain assumptions and include any statement that does not directly relate to any historical or current fact. Forward-looking statements can also be identified by words such as "future,"  "anticipates,"  "believes,"  "estimates,"  "expects,"  "intends,"  "plans,"  "predicts,"  "will,"  "would,"  "could,"  "can,"  "may,"  and similar terms. Forward-looking statements are not guarantees of future performance and the Company's actual results may differ significantly from the results discussed in the forward-looking statements. Factors that might cause such differences include, but are not limited to, those discussed in Part I, Item 1A of this Form 10-K under the heading "Risk Factors,"  which are incorporated herein by reference. The following discussion should be read in conjunction with the consolidated financial statements and notes thereto included in Part II, Item 8 of this Form 10-K. All information presented herein is based on the Company's fiscal calendar. Unless otherwise stated, references to particular years, quarters, months or periods refer to the Company's fiscal years ended in September and the associated quarters, months and periods of those fiscal years. Each of the terms the "Company" and "Apple" as used herein refers collectively to Apple Inc. and its wholly-owned subsidiaries, unless otherwise stated. The Company assumes no obligation to revise or update any forward-looking statements for any reason, except as required by law.
+This section and other parts of this Annual Report on Form 10-K ("Form 10-K") contain forward-looking statements, within the meaning of the Private Securities Litigation Reform Act of 1995, that involve risks and uncertainties. Forward-looking statements provide current expectations of future events based on certain assumptions and include any statement that does not directly relate to any historical or current fact. Forward-looking statements can also be identified by words such as "future," "anticipates," "believes," "estimates," "expects," "intends," "plans," "predicts," "will," "would," "could," "can," "may," and similar terms. Forward-looking statements are not guarantees of future performance and the Company's actual results may differ significantly from the results discussed in the forward-looking statements. Factors that might cause such differences include, but are not limited to, those discussed in Part I, Item 1A of this Form 10-K under the heading "Risk Factors," which are incorporated herein by reference. The following discussion should be read in conjunction with the consolidated financial statements and notes thereto included in Part II, Item 8 of this Form 10-K. All information presented herein is based on the Company's fiscal calendar. Unless otherwise stated, references to particular years, quarters, months or periods refer to the Company's fiscal years ended in September and the associated quarters, months and periods of those fiscal years. Each of the terms the "Company" and "Apple" as used herein refers collectively to Apple Inc. and its wholly-owned subsidiaries, unless otherwise stated. The Company assumes no obligation to revise or update any forward-looking statements for any reason, except as required by law.
 Overview and Highlights
 The Company designs, manufactures and markets mobile communication and media devices and personal computers, and sells a variety of related software, services, accessories and third-party digital content and applications. The Company's products and services include iPhone, iPad, Mac, Apple Watch, AirPods, Apple TV, HomePod, a portfolio of consumer and professional software applications, iOS, macOS, watchOS and tvOS operating systems, iCloud, Apple Pay and a variety of other accessory, service and support offerings. The Company sells and delivers digital content and applications through the iTunes Store, App Store, Mac App Store, TV App Store, Book Store and Apple Music (collectively "Digital Content and Services"). The Company sells its products worldwide through its retail stores, online stores and direct sales force, as well as through third-party cellular network carriers, wholesalers, retailers and resellers. In addition, the Company sells a variety of third-party Apple-compatible products, including application software and various accessories, through its retail and online stores. The Company sells to consumers, small and mid-sized businesses and education, enterprise and government customers.
 Fiscal Period
@@ -5482,7 +5482,7 @@ Date:
 November 5, 2018
 Apple Inc.
 By:
-/s/  Luca Maestri
+/s/ Luca Maestri
 Luca Maestri
 Senior Vice President,
 Chief Financial Officer
@@ -5492,46 +5492,46 @@ Pursuant to the requirements of the Securities Exchange Act of 1934, this report
 Name
 Title
 Date
-/s/    Timothy D. Cook
+/s/ Timothy D. Cook
 Chief Executive Officer and Director
 (Principal Executive Officer)
 November 5, 2018
 TIMOTHY D. COOK
-/s/    Luca Maestri
+/s/ Luca Maestri
 Senior Vice President, Chief Financial Officer
 (Principal Financial Officer)
 November 5, 2018
 LUCA MAESTRI
-/s/    Chris Kondo
+/s/ Chris Kondo
 Senior Director of Corporate Accounting
 (Principal Accounting Officer)
 November 5, 2018
 CHRIS KONDO
-/s/    James A. Bell
+/s/ James A. Bell
 Director
 November 5, 2018
 JAMES A. BELL
-/s/    Al Gore
+/s/ Al Gore
 Director
 November 5, 2018
 AL GORE
-/s/    Robert A. Iger
+/s/ Robert A. Iger
 Director
 November 5, 2018
 ROBERT A. IGER
-/s/    Andrea Jung
+/s/ Andrea Jung
 Director
 November 5, 2018
 ANDREA JUNG
-/s/    Arthur D. Levinson
+/s/ Arthur D. Levinson
 Director
 November 5, 2018
 ARTHUR D. LEVINSON
-/s/    Ronald D. Sugar
+/s/ Ronald D. Sugar
 Director
 November 5, 2018
 RONALD D. SUGAR
-/s/    Susan L. Wagner
+/s/ Susan L. Wagner
 Director
 November 5, 2018
 SUSAN L. WAGNER

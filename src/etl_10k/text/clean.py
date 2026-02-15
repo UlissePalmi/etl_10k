@@ -75,38 +75,43 @@ _ENSURE_SPACE_AFTER_ITEM_PATTERN = re.compile(r'\b(Items?)\b(?=\S)')
 _ITEM_NUMBER_ONLY_PATTERN = re.compile(r'Item\s+\d+')
 _ITEM_SUFFIX_PATTERN = re.compile(r'[A-Za-z]\.')
 
+# Whitespace cleanup patterns
+_MULTIPLE_SPACES_PATTERN = re.compile(r' {2,}')  # Match 2 or more consecutive spaces
+
 # Tag unwrapping replacements (consolidated for efficient sequential processing)
+# Opening tags → newline (preserve structure)
+# Closing tags → space (prevent text concatenation)
 _TAG_REPLACEMENTS = [
     # ix tags
     (_IX_OPENING_TAG_PATTERN, '\n'),
-    (_IX_CLOSING_TAG_PATTERN, ''),
+    (_IX_CLOSING_TAG_PATTERN, ' '),  # Space instead of empty string
     # html tags
     (_HTML_OPENING_TAG_PATTERN, '\n'),
-    (_HTML_CLOSING_TAG_PATTERN, ''),
+    (_HTML_CLOSING_TAG_PATTERN, ' '),  # Space instead of empty string
     # font tags
     (_FONT_OPENING_TAG_PATTERN, '\n'),
-    (_FONT_CLOSING_TAG_PATTERN, ''),
+    (_FONT_CLOSING_TAG_PATTERN, ' '),  # Space instead of empty string
     # line break and horizontal rule
-    (_BR_TAG_PATTERN, ''),
-    (_HR_TAG_PATTERN, ''),
+    (_BR_TAG_PATTERN, ' '),  # Space instead of empty string
+    (_HR_TAG_PATTERN, ' '),  # Space instead of empty string
     # bold tags
     (_B_OPENING_TAG_PATTERN, '\n'),
-    (_B_CLOSING_TAG_PATTERN, ''),
+    (_B_CLOSING_TAG_PATTERN, ' '),  # Space instead of empty string
     # center tags
     (_CENTER_OPENING_TAG_PATTERN, '\n'),
-    (_CENTER_CLOSING_TAG_PATTERN, ''),
+    (_CENTER_CLOSING_TAG_PATTERN, ' '),  # Space instead of empty string
     # anchor tags
     (_A_OPENING_TAG_PATTERN, '\n'),
-    (_A_CLOSING_TAG_PATTERN, ''),
+    (_A_CLOSING_TAG_PATTERN, ' '),  # Space instead of empty string
     # table tags
     (_TABLE_OPENING_TAG_PATTERN, '\n'),
-    (_TABLE_CLOSING_TAG_PATTERN, ''),
+    (_TABLE_CLOSING_TAG_PATTERN, ' '),  # Space instead of empty string
     # table row tags
     (_TR_OPENING_TAG_PATTERN, '\n'),
-    (_TR_CLOSING_TAG_PATTERN, ''),
+    (_TR_CLOSING_TAG_PATTERN, ' '),  # Space instead of empty string
     # table cell tags
     (_TD_OPENING_TAG_PATTERN, '\n'),
-    (_TD_CLOSING_TAG_PATTERN, ''),
+    (_TD_CLOSING_TAG_PATTERN, ' '),  # Space instead of empty string
 ]
 
 # --------------------------------------------------------------------------------------------------------------------
@@ -273,6 +278,13 @@ def clean_lines(text_content):
     cleaned_lines = [line.lstrip() for line in text_content.splitlines() if line.strip()]
     return '\n'.join(cleaned_lines)
 
+def collapse_spaces(text_content):
+    """
+    Collapse multiple consecutive spaces into a single space.
+    This cleans up extra spaces created when HTML tags are replaced with spaces.
+    """
+    return _MULTIPLE_SPACES_PATTERN.sub(' ', text_content)
+
 def prepend_newline_to_p(html_content):
     """
     Insert a newline before every <p ...> tag to improve downstream line-based parsing.
@@ -281,9 +293,10 @@ def prepend_newline_to_p(html_content):
 
 def strip_all_html_tags(html_content):
     """
-    Remove all HTML tags by deleting substrings matching '<...>'.
+    Remove all HTML tags by replacing them with spaces to prevent text concatenation.
+    Multiple consecutive spaces are collapsed later in the cleaning pipeline.
     """
-    return _ALL_HTML_TAGS_PATTERN.sub('', html_content)
+    return _ALL_HTML_TAGS_PATTERN.sub(' ', html_content)
 
 def remove_xbrli_measure(html_content):
     """
@@ -355,6 +368,7 @@ def clean_html(file_content):
     cleaned = prepend_newline_to_p(cleaned)
 
     cleaned = strip_all_html_tags(cleaned)
+    cleaned = collapse_spaces(cleaned)  # Collapse multiple spaces created by tag removal
     cleaned = remove_numeric_entities(cleaned)
     cleaned = break_on_item_heads(cleaned)
     cleaned = clean_lines(cleaned)

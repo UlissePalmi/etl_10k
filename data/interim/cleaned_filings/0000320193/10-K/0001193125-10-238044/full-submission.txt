@@ -1,6 +1,6 @@
 0001193125-10-238044.txt : 20101027
 0001193125-10-238044.hdr.sgml : 20101027
-20101027163621 ACCESSION NUMBER:		0001193125-10-238044 CONFORMED SUBMISSION TYPE:	10-K PUBLIC DOCUMENT COUNT:		16 CONFORMED PERIOD OF REPORT:	20100925 FILED AS OF DATE:		20101027 DATE AS OF CHANGE:		20101027  FILER:  COMPANY DATA: COMPANY CONFORMED NAME:			APPLE INC CENTRAL INDEX KEY:			0000320193 STANDARD INDUSTRIAL CLASSIFICATION:	ELECTRONIC COMPUTERS [3571] IRS NUMBER:				942404110 STATE OF INCORPORATION:			CA FISCAL YEAR END:			0925  FILING VALUES: FORM TYPE:		10-K SEC ACT:		1934 Act SEC FILE NUMBER:	000-10030 FILM NUMBER:		101145250  BUSINESS ADDRESS: STREET 1:		ONE INFINITE LOOP CITY:			CUPERTINO STATE:			CA ZIP:			95014 BUSINESS PHONE:		(408) 996-1010  MAIL ADDRESS: STREET 1:		ONE INFINITE LOOP CITY:			CUPERTINO STATE:			CA ZIP:			95014  FORMER COMPANY: FORMER CONFORMED NAME:	APPLE COMPUTER INC DATE OF NAME CHANGE:	19970808
+20101027163621 ACCESSION NUMBER:		0001193125-10-238044 CONFORMED SUBMISSION TYPE:	10-K PUBLIC DOCUMENT COUNT:		16 CONFORMED PERIOD OF REPORT:	20100925 FILED AS OF DATE:		20101027 DATE AS OF CHANGE:		20101027 FILER: COMPANY DATA: COMPANY CONFORMED NAME:			APPLE INC CENTRAL INDEX KEY:			0000320193 STANDARD INDUSTRIAL CLASSIFICATION:	ELECTRONIC COMPUTERS [3571] IRS NUMBER:				942404110 STATE OF INCORPORATION:			CA FISCAL YEAR END:			0925 FILING VALUES: FORM TYPE:		10-K SEC ACT:		1934 Act SEC FILE NUMBER:	000-10030 FILM NUMBER:		101145250 BUSINESS ADDRESS: STREET 1:		ONE INFINITE LOOP CITY:			CUPERTINO STATE:			CA ZIP:			95014 BUSINESS PHONE:		(408) 996-1010 MAIL ADDRESS: STREET 1:		ONE INFINITE LOOP CITY:			CUPERTINO STATE:			CA ZIP:			95014 FORMER COMPANY: FORMER CONFORMED NAME:	APPLE COMPUTER INC DATE OF NAME CHANGE:	19970808
 10-K
 1
 d10k.htm
@@ -15,7 +15,7 @@ ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 
 For the fiscal year ended September 25, 2010
 or
 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934
-For the transition period from                         to
+For the transition period from to
 Commission file number: 000-10030
 APPLE INC.
 (Exact name of registrant as specified in its charter)
@@ -48,7 +48,7 @@ Indicate by check mark whether the registrant has submitted electronically and p
 Yes
 No
 Indicate by check mark if disclosure of delinquent filers pursuant to Item 405 of Regulation S-K (section 229.405 of this chapter) is not contained herein, and will not be contained, to the best of the registrant's knowledge, in definitive proxy or information statements incorporated by reference in Part III of this Form 10-K or any amendment to this Form 10-K.
-Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, or a smaller reporting company. See the definitions of  large accelerated filer,   accelerated filer  and  smaller reporting company  in Rule 12b-2 of the Exchange Act.
+Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, or a smaller reporting company. See the definitions of large accelerated filer, accelerated filer and smaller reporting company in Rule 12b-2 of the Exchange Act.
 Large accelerated filer
 Accelerated filer
 Non-accelerated filer
@@ -62,12 +62,12 @@ The aggregate market value of the voting and non-voting stock held by non-affili
 DOCUMENTS INCORPORATED BY REFERENCE
 (1) Portions of the registrant's definitive Proxy Statement relating to its 2011 Annual Meeting of Shareholders are incorporated by reference into Part III of this Annual Report on Form 10-K where indicated. Such Proxy Statement will be filed with the U.S. Securities and Exchange Commission within 120 days after the end of the fiscal year to which this report relates.
 Table of Contents
-The Business section and other parts of this Annual Report on Form 10-K ( Form 10-K ) contain forward-looking statements that involve risks and uncertainties. Many of the forward-looking statements are located in  Management's Discussion and Analysis of Financial Condition and Results of Operations.  Forward-looking statements provide current expectations of future events based on certain assumptions and include any statement that does not directly relate to any historical or current fact. Forward-looking statements can also be identified by words such as  anticipates,   believes,   estimates,   expects,   intends,   plans,   predicts,  and similar terms. Forward-looking statements are not guarantees of future performance and the Company's actual results may differ significantly from the results discussed in the forward-looking statements. Factors that might cause such differences include, but are not limited to, those discussed in the subsection entitled  Risk Factors  under Part I, Item 1A of this Form 10-K, which are incorporated herein by reference. The Company assumes no obligation to revise or update any forward-looking statements for any reason, except as required by law.
+The Business section and other parts of this Annual Report on Form 10-K ( Form 10-K ) contain forward-looking statements that involve risks and uncertainties. Many of the forward-looking statements are located in Management's Discussion and Analysis of Financial Condition and Results of Operations. Forward-looking statements provide current expectations of future events based on certain assumptions and include any statement that does not directly relate to any historical or current fact. Forward-looking statements can also be identified by words such as anticipates, believes, estimates, expects, intends, plans, predicts, and similar terms. Forward-looking statements are not guarantees of future performance and the Company's actual results may differ significantly from the results discussed in the forward-looking statements. Factors that might cause such differences include, but are not limited to, those discussed in the subsection entitled Risk Factors under Part I, Item 1A of this Form 10-K, which are incorporated herein by reference. The Company assumes no obligation to revise or update any forward-looking statements for any reason, except as required by law.
 PART I
 Item 1.
 Business
 Company Background
-Apple Inc. and its wholly-owned subsidiaries (collectively  Apple  or the  Company ) designs, manufactures and markets a range of personal computers, mobile communication and media devices, and portable digital music players, and sells a variety of related software, services, peripherals, networking solutions, and third-party digital content and applications. The Company's products and services include Macintosh ( Mac ) computers, iPhone, iPad, iPod, Apple TV, Xserve, a portfolio of consumer and professional software applications, the Mac OS X and iOS operating systems, third-party digital content and applications through the iTunes Store, and a variety of accessory, service and support offerings. The Company sells its products worldwide through its retail stores, online stores, and direct sales force and third-party cellular network carriers, wholesalers, retailers, and value-added resellers. In addition, the Company sells a variety of third-party Mac, iPhone, iPad and iPod compatible products, including application software, printers, storage devices, speakers, headphones, and various other accessories and peripherals, through its online and retail stores. The Company sells to consumer, small and mid-sized business ( SMB ), education, enterprise, government and creative markets. The Company's fiscal year is the 52 or 53-week period that ends on the last Saturday of September. Unless otherwise stated, all information presented in this Form 10-K is based on the Company's fiscal calendar. The Company is a California corporation founded in 1977.
+Apple Inc. and its wholly-owned subsidiaries (collectively Apple or the Company ) designs, manufactures and markets a range of personal computers, mobile communication and media devices, and portable digital music players, and sells a variety of related software, services, peripherals, networking solutions, and third-party digital content and applications. The Company's products and services include Macintosh ( Mac ) computers, iPhone, iPad, iPod, Apple TV, Xserve, a portfolio of consumer and professional software applications, the Mac OS X and iOS operating systems, third-party digital content and applications through the iTunes Store, and a variety of accessory, service and support offerings. The Company sells its products worldwide through its retail stores, online stores, and direct sales force and third-party cellular network carriers, wholesalers, retailers, and value-added resellers. In addition, the Company sells a variety of third-party Mac, iPhone, iPad and iPod compatible products, including application software, printers, storage devices, speakers, headphones, and various other accessories and peripherals, through its online and retail stores. The Company sells to consumer, small and mid-sized business ( SMB ), education, enterprise, government and creative markets. The Company's fiscal year is the 52 or 53-week period that ends on the last Saturday of September. Unless otherwise stated, all information presented in this Form 10-K is based on the Company's fiscal calendar. The Company is a California corporation founded in 1977.
 Business Strategy
 The Company is committed to bringing the best user experience to its customers through its innovative hardware, software, peripherals, services, and Internet offerings. The Company's business strategy leverages its unique ability to design and develop its own operating systems, hardware, application software, and services to provide its customers new products and solutions with superior ease-of-use, seamless integration, and innovative industrial design. The Company believes continual investment in research and development is critical to the development and enhancement of innovative products and technologies. In conjunction with its strategy, the Company continues to build and host a robust platform for the discovery and delivery of third-party digital content and applications through the iTunes Store. The iTunes Store includes the App Store and iBookstore, which allow customers to discover and download third-party applications and books through either a Mac or Windows-based computer or wirelessly through an iPhone, iPad or iPod touch. The Company also works to support a community for the development of third-party software and hardware products and digital content that complement the Company's offerings. Additionally, the Company's strategy includes expanding its distribution to effectively reach more customers and provide them with a high-quality sales and post-sales support experience. The Company is therefore uniquely positioned to offer superior and well-integrated digital lifestyle and productivity solutions.
 1
@@ -85,7 +85,7 @@ Business Organization
 The Company manages its business primarily on a geographic basis. The Company's reportable operating segments consist of the Americas, Europe, Japan, Asia-Pacific and Retail. The Americas, Europe, Japan and
 2
 Table of Contents
-Asia-Pacific reportable segments do not include activities related to the Retail segment. The Americas segment includes both North and South America. The Europe segment includes European countries, as well as the Middle East and Africa. The Asia-Pacific segment includes Australia and Asia, but does not include Japan. The Retail segment operates Apple-owned retail stores in the U.S. and in international markets. Each reportable operating segment provides similar hardware and software products and similar services. Further information regarding the Company's operating segments may be found in Part II, Item 7 of this Form 10-K under the subheading  Segment Operating Performance,  and in Part II, Item 8 of this Form 10-K in Notes to Consolidated Financial Statements at Note 9,  Segment Information and Geographic Data.
+Asia-Pacific reportable segments do not include activities related to the Retail segment. The Americas segment includes both North and South America. The Europe segment includes European countries, as well as the Middle East and Africa. The Asia-Pacific segment includes Australia and Asia, but does not include Japan. The Retail segment operates Apple-owned retail stores in the U.S. and in international markets. Each reportable operating segment provides similar hardware and software products and similar services. Further information regarding the Company's operating segments may be found in Part II, Item 7 of this Form 10-K under the subheading Segment Operating Performance, and in Part II, Item 8 of this Form 10-K in Notes to Consolidated Financial Statements at Note 9, Segment Information and Geographic Data.
 Products
 The Company offers a range of personal computing products, mobile communication and media devices, and portable digital music players, as well as a variety of related software, services, peripherals, networking solutions and various third-party hardware and software products. In addition, the Company offers its own software products, including Mac OS
 &reg; X, the Company's proprietary operating system software for the Macintosh
@@ -96,39 +96,39 @@ The Company offers a range of personal computing products including desktop and 
 &reg; ( Mac OS X Snow Leopard ) operating system and the iLife
 &reg; suite of software for creation and management of digital photography, music, movies, DVDs and websites.
 The Company's desktop computers include iMac
-&reg;, Mac
+&reg; , Mac
 &reg; Pro and Mac
 &reg; mini. The iMac desktop computer is an all-in-one design that incorporates a display, processor, graphics card, hard drive, optical drive, memory and other components inside a single enclosure. The Mac Pro desktop computer is targeted at business and professional customers and is designed to meet the performance, expansion, and networking needs of the most demanding Mac user. The Mac mini is a desktop computer in a compact enclosure.
 The Company's portable computers include MacBook
-&reg;, MacBook
+&reg; , MacBook
 &reg; Pro and MacBook Air
-&reg;. MacBook is a portable computer designed for consumer and education users. MacBook Pro is a portable computer designed for professionals and consumers. MacBook Air is a high performance, ultra-slim notebook computer designed for professionals and consumers.
+&reg; . MacBook is a portable computer designed for consumer and education users. MacBook Pro is a portable computer designed for professionals and consumers. MacBook Air is a high performance, ultra-slim notebook computer designed for professionals and consumers.
 iTunes
 &reg;
 iTunes digital music management software ( iTunes ) is an application for playing, downloading, and organizing digital audio and video files and is available for both Mac and Windows-based computers. iTunes 10 features Ping, a music-oriented social network, AirPlay
 &reg; wireless music playback, Genius Mixes, Home Sharing, and improved syncing functionality with the Company's mobile communication and media devices.
 iTunes is integrated with the iTunes Store
-&reg;, a service that allows customers to find, purchase, rent, and download third-party digital music, audio books, music videos, short films, television shows, movies, podcasts, games, and other applications. The iTunes Store currently serves customers in 23 countries. The iTunes Store includes the Company's App Store  and iBookstore . The App Store allows customers to discover and download third-party applications, and the iBookstore features electronic books from major and independent publishers and provides customers a place to preview and buy books for their mobile communication and media devices. Customers can access the App Store through either a Mac or Windows-based computer or wirelessly through an iPhone
-&reg;, iPad  or iPod touch
-&reg;. The iBookstore is accessed through the iBooks
+&reg; , a service that allows customers to find, purchase, rent, and download third-party digital music, audio books, music videos, short films, television shows, movies, podcasts, games, and other applications. The iTunes Store currently serves customers in 23 countries. The iTunes Store includes the Company's App Store and iBookstore . The App Store allows customers to discover and download third-party applications, and the iBookstore features electronic books from major and independent publishers and provides customers a place to preview and buy books for their mobile communication and media devices. Customers can access the App Store through either a Mac or Windows-based computer or wirelessly through an iPhone
+&reg; , iPad or iPod touch
+&reg; . The iBookstore is accessed through the iBooks
 &reg; application on an iPhone, iPad or iPod touch.
 3
 Table of Contents
 iPhone
 iPhone combines a mobile phone, a widescreen iPod
-&reg; with touch controls, and an Internet communications device in a single handheld product. Based on the Company's Multi-Touch  user interface, iPhone features desktop-class email, web browsing, searching, and maps and is compatible with both Macs and Windows-based computers. iPhone automatically syncs content from users' iTunes libraries, as well as contacts, bookmarks, and email accounts. iPhone allows customers to access the iTunes Store to download audio and video files, as well as a variety of other digital content and applications. In June 2010, the Company introduced the iPhone 4 featuring an all-new design, FaceTime
-&reg; video calling, a new high resolution Retina  display, a 5 megapixel camera with LED flash and front facing camera, high definition video recording, Apple's A4 processor and a 3-axis gyroscope. In addition to the Company's own iPhone accessories, third-party iPhone compatible products are available through the Company's online and retail stores and from third parties.
+&reg; with touch controls, and an Internet communications device in a single handheld product. Based on the Company's Multi-Touch user interface, iPhone features desktop-class email, web browsing, searching, and maps and is compatible with both Macs and Windows-based computers. iPhone automatically syncs content from users' iTunes libraries, as well as contacts, bookmarks, and email accounts. iPhone allows customers to access the iTunes Store to download audio and video files, as well as a variety of other digital content and applications. In June 2010, the Company introduced the iPhone 4 featuring an all-new design, FaceTime
+&reg; video calling, a new high resolution Retina display, a 5 megapixel camera with LED flash and front facing camera, high definition video recording, Apple's A4 processor and a 3-axis gyroscope. In addition to the Company's own iPhone accessories, third-party iPhone compatible products are available through the Company's online and retail stores and from third parties.
 The Company has signed multi-year agreements with various cellular network carriers authorizing them to distribute and provide cellular network services for iPhones. These agreements are generally not exclusive with a specific carrier, except in the U.S.
 iPad
 In January 2010, the Company introduced iPad, a multi-purpose mobile device for browsing the web, reading and sending email, viewing photos, watching videos, listening to music, playing games, reading e-books and more. iPad is based on the Company's Multi-Touch technology and allows customers to connect with their applications and content in a more interactive way. iPad allows customers to access the iTunes Store to download audio and video files, as well as a variety of other digital content and applications. In addition to the Company's own iPad accessories, third-party iPad compatible products are available through the Company's online and retail stores and from third parties.
 iPod
 The Company's iPod line of portable digital music and media players is comprised of iPod touch, iPod nano
-&reg;, iPod shuffle
+&reg; , iPod shuffle
 &reg; and iPod classic
-&reg;. All iPods work with iTunes. In addition to the Company's own iPod accessories, third-party iPod compatible products are available, either through the Company's online and retail stores or from third parties.
+&reg; . All iPods work with iTunes. In addition to the Company's own iPod accessories, third-party iPod compatible products are available, either through the Company's online and retail stores or from third parties.
 The iPod touch is a flash-memory-based iPod with a widescreen display and a Multi-Touch user interface. The Company's latest iPod touch, introduced in September 2010, includes features such as a Retina display, FaceTime video calling, high definition video recording and Game Center. iPod touch allows customers to access the iTunes Store to download audio and video files, as well as a variety of other digital content and applications. The Company's latest iPod nano, introduced in September 2010, is a flash-memory-based iPod that has been redesigned to feature the Company's Multi-Touch interface allowing customers to navigate their music collection by tapping or swiping the display. The new iPod nano features a polished aluminum and glass enclosure with a built-in clip. iPod shuffle, which was updated in September 2010, is a flash-memory-based iPod that features a clickable control pad to control music playback and VoiceOver technology enabling customers to hear song titles, artists and playlist names. The iPod classic is a hard-drive based portable digital music and video player.
 Displays &amp; Peripheral Products
-The Company manufactures the Apple Cinema High Definition Display  and sells a variety of Apple-branded and third-party Mac-compatible peripheral products, including printers, storage devices, computer memory, digital video and still cameras, and various other computing products and supplies.
+The Company manufactures the Apple Cinema High Definition Display and sells a variety of Apple-branded and third-party Mac-compatible peripheral products, including printers, storage devices, computer memory, digital video and still cameras, and various other computing products and supplies.
 4
 Table of Contents
 Apple TV
@@ -141,17 +141,17 @@ Mac OS X
 Mac OS X is built on an open-source UNIX-based foundation. Mac OS X Snow Leopard is the seventh major release of Mac OS X and became available in August 2009. Mac OS X Snow Leopard features upgraded speed and performance and includes a new version of QuickTime
 &reg; X, support for Microsoft Exchange Server 2007 and VoiceOver integration with the Multi-Touch trackpad. Mac OS X offers Stacks, a means of easily accessing files from the Dock; Finder
 &reg; that lets users quickly browse and share files between multiple Macs; Quick Look, a way to instantly see files without opening an application; Spaces
-&reg;, a feature used to create groups of applications and instantly switch between them; and Time Machine
-&reg;, a way to automatically back up all of the contents of a Mac.
+&reg; , a feature used to create groups of applications and instantly switch between them; and Time Machine
+&reg; , a way to automatically back up all of the contents of a Mac.
 iOS
-iOS is the Company's mobile operating system that serves as the foundation for iPhone, iPad and iPod touch. In June 2010, the Company launched iOS 4, the latest version of the Company's mobile operating system. iOS 4 features Multitasking that allows customers to move between applications, Folders to organize and easily access applications, a unified Mail inbox, support for the iAd  mobile advertising platform, and the iBooks reader and iBookstore. The iAd mobile advertising platform provides media rich advertisements which allows mobile device customers to engage with an ad without being removed from the applications they are currently using. iOS 4 became available for iPhone 3G, iPhone 3GS, iPhone 4, and second and third generation iPod touch in June 2010, and is expected to be available for iPad in November 2010. Certain features of the iOS 4 software will not function on certain earlier iPhone and iPod touch models.
+iOS is the Company's mobile operating system that serves as the foundation for iPhone, iPad and iPod touch. In June 2010, the Company launched iOS 4, the latest version of the Company's mobile operating system. iOS 4 features Multitasking that allows customers to move between applications, Folders to organize and easily access applications, a unified Mail inbox, support for the iAd mobile advertising platform, and the iBooks reader and iBookstore. The iAd mobile advertising platform provides media rich advertisements which allows mobile device customers to engage with an ad without being removed from the applications they are currently using. iOS 4 became available for iPhone 3G, iPhone 3GS, iPhone 4, and second and third generation iPod touch in June 2010, and is expected to be available for iPad in November 2010. Certain features of the iOS 4 software will not function on certain earlier iPhone and iPod touch models.
 Application Software
 iLife
 iLife '11 is the latest version of the Company's consumer-oriented digital lifestyle application suite included with all Mac computers. iLife features iPhoto
-&reg;, iMovie
-&reg;, iDVD
-&reg;, GarageBand
-&reg;, and iWeb . iPhoto is the Company's consumer-oriented digital photo software application and iMovie is the Company's consumer-oriented digital video editing software application. iDVD is the Company's consumer-oriented software application that enables customers to turn iMovie files, QuickTime files, and digital pictures into interactive DVDs. GarageBand is the Company's consumer-oriented music creation software application that allows customers to play, record and create music. iWeb allows customers to create online photo albums, blogs and podcasts, and to customize websites using editing tools.
+&reg; , iMovie
+&reg; , iDVD
+&reg; , GarageBand
+&reg; , and iWeb . iPhoto is the Company's consumer-oriented digital photo software application and iMovie is the Company's consumer-oriented digital video editing software application. iDVD is the Company's consumer-oriented software application that enables customers to turn iMovie files, QuickTime files, and digital pictures into interactive DVDs. GarageBand is the Company's consumer-oriented music creation software application that allows customers to play, record and create music. iWeb allows customers to create online photo albums, blogs and podcasts, and to customize websites using editing tools.
 iWork
 &reg;
 iWork '09 is the latest version of the Company's integrated productivity suite designed to help users create, present, and publish documents, presentations, and spreadsheets. iWork '09 includes updates to Pages
@@ -163,10 +163,10 @@ word processing and page layout, Keynote
 &reg; '09 for spreadsheets. In January 2010, the Company also introduced a new version of iWork for iPad, a productivity suite including versions of Pages, Keynote and Numbers designed specifically for Multi-Touch.
 Other Application Software
 The Company also sells various other application software, including Final Cut Studio
-&reg;, Final Cut
+&reg; , Final Cut
 &reg; Express, Final Cut
 &reg; Server, Logic Studio
-&reg;, Logic
+&reg; , Logic
 &reg; Express 9, Logic Studio
 &reg; Pro, and its FileMaker
 &reg; Pro database software.
@@ -196,7 +196,7 @@ The Company sources components from a number of suppliers and manufacturing vend
 Research and Development
 Because the industries in which the Company competes are characterized by rapid technological advances, the Company's ability to compete successfully is heavily dependent upon its ability to ensure a continual and timely flow of competitive products, services and technologies to the marketplace. The Company continues to develop new products and technologies and to enhance existing products that expand the range of its product offerings and intellectual property through licensing and acquisition of third-party business and technology. Total research and development expense was $1.8 billion, $1.3 billion and $1.1 billion in 2010, 2009 and 2008, respectively.
 Patents, Trademarks, Copyrights and Licenses
-The Company currently holds rights to patents and copyrights relating to certain aspects of its Macs, iPhone, iPad and iPod devices, peripherals, software and services. In addition, the Company has registered and/or has applied to register, trademarks and service marks in the U.S. and a number of foreign countries for  Apple,  the Apple logo,  Macintosh,   Mac,   iPhone,   iPad,   iPod,   iTunes,   iTunes Store,   Apple TV,   MobileMe  and numerous other trademarks and service marks. Although the Company believes the ownership of such patents, copyrights, trademarks and service marks is an important factor in its business and that its success does depend in part on the ownership thereof, the Company relies primarily on the innovative skills, technical competence and marketing abilities of its personnel.
+The Company currently holds rights to patents and copyrights relating to certain aspects of its Macs, iPhone, iPad and iPod devices, peripherals, software and services. In addition, the Company has registered and/or has applied to register, trademarks and service marks in the U.S. and a number of foreign countries for Apple, the Apple logo, Macintosh, Mac, iPhone, iPad, iPod, iTunes, iTunes Store, Apple TV, MobileMe and numerous other trademarks and service marks. Although the Company believes the ownership of such patents, copyrights, trademarks and service marks is an important factor in its business and that its success does depend in part on the ownership thereof, the Company relies primarily on the innovative skills, technical competence and marketing abilities of its personnel.
 The Company regularly files patent applications to protect inventions arising from its research and development, and is currently pursuing thousands of patent applications around the world. Over time, the Company has accumulated a portfolio of several thousand issued patents in the U.S. and worldwide. In addition, the Company currently holds copyrights relating to certain aspects of its products and services. No single patent or copyright is
 8
 Table of Contents
@@ -204,7 +204,7 @@ solely responsible for protecting the Company's products. The Company believes t
 Many of the Company's products are designed to include intellectual property obtained from third parties. While it may be necessary in the future to seek or renew licenses relating to various aspects of its products and business methods, the Company believes, based upon past experience and industry practice, such licenses generally could be obtained on commercially reasonable terms; however, there is no guarantee such licenses could be obtained at all. Because of technological changes in the industries in which the Company competes, current extensive patent coverage, and the rapid rate of issuance of new patents, it is possible certain components of the Company's products and business methods may unknowingly infringe existing patents or intellectual property rights of others. From time to time, the Company has been notified that it may be infringing certain patents or other intellectual property rights of third parties.
 Foreign and Domestic Operations and Geographic Data
 The U.S. represents the Company's largest geographic marketplace. Approximately 44% of the Company's net sales in 2010 came from sales to customers inside the U.S. Final assembly of the Company's products is currently performed in the Company's manufacturing facility in Ireland, and by external vendors in California, Texas, the People's Republic of China ( China ), the Czech Republic and the Republic of Korea ( Korea ). Currently, the supply and manufacture of many critical components is performed by sole-sourced third-party vendors in the U.S., China, Germany, Ireland, Israel, Japan, Korea, Malaysia, the Netherlands, the Philippines, Taiwan, Thailand and Singapore. Sole-sourced third-party vendors in China perform final assembly of substantially all of the Company's Macs, iPhones, iPads and iPods. Margins on sales of the Company's products in foreign countries, and on sales of products that include components obtained from foreign suppliers, can be adversely affected by foreign currency exchange rate fluctuations and by international trade regulations, including tariffs and antidumping penalties.
-Information regarding financial data by geographic segment is set forth in Part II, Item 7 and Item 8 of this Form 10-K and in Notes to Consolidated Financial Statements at Note 9,  Segment Information and Geographic Data.
+Information regarding financial data by geographic segment is set forth in Part II, Item 7 and Item 8 of this Form 10-K and in Notes to Consolidated Financial Statements at Note 9, Segment Information and Geographic Data.
 Seasonal Business
 The Company has historically experienced increased net sales in its first and fourth fiscal quarters compared to other quarters in its fiscal year due to seasonal demand of consumer markets related to the holiday season and the beginning of the school year; however, this pattern has been less pronounced following the introductions of iPhone and iPad. This historical pattern should not be considered a reliable indicator of the Company's future net sales or financial performance.
 Warranty
@@ -219,7 +219,7 @@ Production and marketing of products in certain states and countries may subject
 Employees
 As of September 25, 2010, the Company had approximately 46,600 full-time equivalent employees and an additional 2,800 full-time equivalent temporary employees and contractors.
 Available Information
-The Company's Annual Report on Form 10-K, Quarterly Reports on Form 10-Q, Current Reports on Form 8-K, and amendments to reports filed pursuant to Sections 13(a) and 15(d) of the Securities Exchange Act of 1934, as amended ( Exchange Act ), are filed with the U.S. Securities and Exchange Commission (the  SEC ). Such reports and other information filed by the Company with the SEC are available free of charge on the Company's website at www.apple.com/investor when such reports are available on the SEC website. The public may read and copy any materials filed by the Company with the SEC at the SEC's Public Reference Room at 100 F Street, NE, Room 1580, Washington, DC 20549. The public may obtain information on the operation of the Public Reference Room by calling the SEC at 1-800-SEC-0330. The SEC maintains an Internet site that contains reports, proxy and information statements and other information regarding issuers that file electronically with the SEC at www.sec.gov. The contents of these websites are not incorporated into this filing. Further, the Company's references to the URLs for these websites are intended to be inactive textual references only.
+The Company's Annual Report on Form 10-K, Quarterly Reports on Form 10-Q, Current Reports on Form 8-K, and amendments to reports filed pursuant to Sections 13(a) and 15(d) of the Securities Exchange Act of 1934, as amended ( Exchange Act ), are filed with the U.S. Securities and Exchange Commission (the SEC ). Such reports and other information filed by the Company with the SEC are available free of charge on the Company's website at www.apple.com/investor when such reports are available on the SEC website. The public may read and copy any materials filed by the Company with the SEC at the SEC's Public Reference Room at 100 F Street, NE, Room 1580, Washington, DC 20549. The public may obtain information on the operation of the Public Reference Room by calling the SEC at 1-800-SEC-0330. The SEC maintains an Internet site that contains reports, proxy and information statements and other information regarding issuers that file electronically with the SEC at www.sec.gov . The contents of these websites are not incorporated into this filing. Further, the Company's references to the URLs for these websites are intended to be inactive textual references only.
 Item 1A.
 Risk Factors
 Because of the following factors, as well as other factors affecting the Company's financial condition and operating results, past financial performance should not be considered to be a reliable indicator of future performance, and investors should not use historical trends to anticipate results or trends in future periods.
@@ -248,7 +248,7 @@ The Company records a write-down for product and component inventories that have
 Table of Contents
 The Company must order components for its products and build inventory in advance of product announcements and shipments. Consistent with industry practice, components are normally acquired through a combination of purchase orders, supplier contracts, open orders and, where appropriate, prepayments, in each case based on projected demand. Such purchase commitments typically cover forecasted component and manufacturing requirements for 30 to 150 days. Because the Company's markets are volatile, competitive and subject to rapid technology and price changes, there is a risk the Company will forecast incorrectly and order or produce excess or insufficient inventories of components or products. The Company's financial condition and operating results have been in the past and could be in the future materially adversely affected by the Company's ability to manage its inventory levels and respond to short-term shifts in customer demand patterns.
 Future operating results depend upon the Company's ability to obtain key components including but not limited to microprocessors, NAND flash memory, DRAM and LCDs at favorable prices and in sufficient quantities.
-Because the Company currently obtains certain key components including but not limited to microprocessors, enclosures, certain LCDs, certain optical drives, and ASICs, from single or limited sources, the Company is subject to significant supply and pricing risks. Many of these and other key components that are available from multiple sources including but not limited to NAND flash memory, DRAM and certain LCDs, are subject at times to industry-wide shortages and significant commodity pricing fluctuations. The Company has entered into certain agreements for the supply of key components including but not limited to microprocessors, NAND flash memory, DRAM and LCDs at favorable pricing, but there is no guarantee that the Company will be able to extend or renew these agreements on similar favorable terms, or at all, upon expiration or otherwise obtain favorable pricing in the future. The follow-on effects from the credit crisis on the Company's key suppliers, referred to in  Economic conditions could materially adversely affect the Company  above, which is incorporated herein by reference, also could affect the Company's ability to obtain key components. Therefore, the Company remains subject to significant risks of supply shortages and/or price increases that could materially adversely affect the Company's financial condition and operating results. The Company expects to experience decreases in its gross margin percentage in future periods, as compared to levels achieved during 2010, largely due to a higher mix of new and innovative products that have higher cost structures and deliver greater value to customers, and expected and potential future component cost and other cost increases. For additional information refer to Part II, Item 7,  Management's Discussion and Analysis of Financial Condition and Results of Operations,  under the subheading  Gross Margin,  which is incorporated herein by reference.
+Because the Company currently obtains certain key components including but not limited to microprocessors, enclosures, certain LCDs, certain optical drives, and ASICs, from single or limited sources, the Company is subject to significant supply and pricing risks. Many of these and other key components that are available from multiple sources including but not limited to NAND flash memory, DRAM and certain LCDs, are subject at times to industry-wide shortages and significant commodity pricing fluctuations. The Company has entered into certain agreements for the supply of key components including but not limited to microprocessors, NAND flash memory, DRAM and LCDs at favorable pricing, but there is no guarantee that the Company will be able to extend or renew these agreements on similar favorable terms, or at all, upon expiration or otherwise obtain favorable pricing in the future. The follow-on effects from the credit crisis on the Company's key suppliers, referred to in Economic conditions could materially adversely affect the Company above, which is incorporated herein by reference, also could affect the Company's ability to obtain key components . Therefore, the Company remains subject to significant risks of supply shortages and/or price increases that could materially adversely affect the Company's financial condition and operating results. The Company expects to experience decreases in its gross margin percentage in future periods, as compared to levels achieved during 2010, largely due to a higher mix of new and innovative products that have higher cost structures and deliver greater value to customers, and expected and potential future component cost and other cost increases. For additional information refer to Part II, Item 7, Management's Discussion and Analysis of Financial Condition and Results of Operations, under the subheading Gross Margin, which is incorporated herein by reference.
 The Company and other participants in the personal computer, and mobile communication and media device industries compete for various components with other industries that have experienced increased demand for their products. The Company uses some custom components that are not common to the rest of these industries. The Company's new products often utilize custom components available from only one source. When a component or product uses new technologies, initial capacity constraints may exist until the suppliers' yields have matured or manufacturing capacity has increased. Continued availability of these components at acceptable prices, or at all, may be affected if those suppliers decided to concentrate on the production of common components instead of components customized to meet the Company's requirements. If the supply of a key single-sourced component for a new or existing product were delayed or constrained, if such components were available only at significantly higher prices, or if a key manufacturing vendor delayed shipments of completed products to the Company, the Company's financial condition and operating results could be materially adversely affected.
 The Company depends on component and product manufacturing and logistical services provided by third parties, many of whom are located outside of the U.S.
 Substantially all of the Company's components and products are manufactured in whole or in part by a few third-party manufacturers. Many of these manufacturers are located outside of the U.S., and are concentrated in several general locations. The Company has also outsourced much of its transportation and logistics management. While these arrangements may lower operating costs, they also reduce the Company's direct control over production and distribution. It is uncertain what effect such diminished control will have on the quality or quantity of
@@ -284,7 +284,7 @@ Table of Contents
 Investment in new business strategies and initiatives could disrupt the Company's ongoing business and present risks not originally contemplated.
 The Company has invested, and in the future may invest, in new business strategies or acquisitions. Such endeavors may involve significant risks and uncertainties, including distraction of management from current operations, insufficient revenue to offset liabilities assumed and expenses associated with the strategy, inadequate return of capital, and unidentified issues not discovered in the Company's due diligence. Because these new ventures are inherently risky, no assurance can be given that such strategies and initiatives will be successful and will not materially adversely affect the Company's financial condition and operating results.
 The Company's products and services experience quality problems from time to time that can result in decreased sales and operating margin.
-The Company sells highly complex hardware and software products and services that can contain defects in design and manufacture. Sophisticated operating system software and applications, such as those sold by the Company, often contain  bugs  that can unexpectedly interfere with the software's intended operation. Defects may also occur in components and products the Company purchases from third parties. There can be no assurance the Company will be able to detect and fix all defects in the hardware, software and services it sells. Failure to do so could result in lost revenue, harm to reputation, and significant warranty and other expenses, and could have a material adverse impact on the Company's financial condition and operating results.
+The Company sells highly complex hardware and software products and services that can contain defects in design and manufacture. Sophisticated operating system software and applications, such as those sold by the Company, often contain bugs that can unexpectedly interfere with the software's intended operation. Defects may also occur in components and products the Company purchases from third parties. There can be no assurance the Company will be able to detect and fix all defects in the hardware, software and services it sells. Failure to do so could result in lost revenue, harm to reputation, and significant warranty and other expenses, and could have a material adverse impact on the Company's financial condition and operating results.
 In the U.S. the Company relies on a single cellular network carrier to provide service for iPhone.
 In the U.S. the Company has contracted with a single carrier to provide cellular network services for iPhone on an exclusive basis. If this exclusive carrier cannot successfully compete with other carriers in the U.S. market on any basis, including but not limited to the quality and coverage of wireless voice and data services, performance and timely build-out of advanced wireless networks, and pricing and other terms or conditions of customer contracts, or if this exclusive carrier fails to promote iPhone aggressively or favor other handsets in their promotion and sales activities or service plans, sales may be materially adversely affected.
 The Company is subject to risks associated with laws, regulations and industry-imposed standards related to mobile communications and media devices.
@@ -316,7 +316,7 @@ Although the Company has not recognized any significant losses to date on its ca
 The Company is exposed to credit risk on its trade accounts receivable, vendor non-trade receivables and prepayments related to long-term supply agreements. This risk is heightened during periods when economic conditions worsen.
 The Company distributes its products through third-party cellular network carriers, wholesalers, retailers and value-added resellers. A substantial majority of the Company's outstanding trade receivables are not covered by collateral or credit insurance. The Company's exposure to credit and collectability risk on its trade receivables are increased in certain international markets and its ability to mitigate such risks may be limited. Cellular network carriers accounted for a significant potion of the Company's trade receivables as of September 25, 2010. The Company also has unsecured vendor non-trade receivables resulting from purchases of components by contract manufacturers and other vendors that manufacture sub-assemblies or assemble final products for the Company. Two vendors accounted for a significant portion of the Company's non-trade receivables as of September 25, 2010. In addition, the Company has made prepayments associated with long-term supply agreements to secure supply of certain inventory components. While the Company has procedures to monitor and limit exposure to credit risk on its trade and vendor non-trade receivables as well as long-term prepayments, there can be no assurance such procedures will effectively limit its credit risk and avoid losses, which could materially adversely affect the Company's financial condition and operating results.
 The matters relating to the Company's past stock option practices and its restatement of consolidated financial statements may result in additional litigation.
-The Company's investigation into its past stock option practices and its restatement of prior financial statements in the Annual Report on Form 10-K for the year ended September 30, 2006 gave rise to litigation and government investigations. As described in Part I, Item 3,  Legal Proceedings,  several derivative and class action complaints regarding stock options were filed against the Company and current and former officers and directors. These actions have been dismissed following a comprehensive settlement. Two former officers of the Company were also named as defendants in an SEC enforcement action, which has been settled.
+The Company's investigation into its past stock option practices and its restatement of prior financial statements in the Annual Report on Form 10-K for the year ended September 30, 2006 gave rise to litigation and government investigations. As described in Part I, Item 3, Legal Proceedings, several derivative and class action complaints regarding stock options were filed against the Company and current and former officers and directors. These actions have been dismissed following a comprehensive settlement. Two former officers of the Company were also named as defendants in an SEC enforcement action, which has been settled.
 No assurance can be given that additional actions will not be filed against the Company and current and former officers and directors as a result of past stock option practices. If such actions are filed and result in adverse findings, the remedies could materially adversely affect the Company's financial condition and operating results.
 Unfavorable results of legal proceedings could materially adversely affect the Company.
 The Company is subject to various legal proceedings and claims that have arisen out of the ordinary conduct of its business and are not yet resolved and additional claims may arise in the future. Results of legal proceedings cannot be predicted with certainty. Regardless of merit, litigation may be both time-consuming and disruptive to the Company's operations and cause significant expense and diversion of management attention. In recognition of these considerations, the Company may enter into material settlements. Should the Company fail to prevail in certain matters, or should several of these matters be resolved against the Company in the same reporting period, the Company may be faced with significant monetary damages or injunctive relief against it that would materially adversely affect a portion of its business and might materially affect the Company's financial condition and operating results.
@@ -342,9 +342,9 @@ Item 3.
 Legal Proceedings
 As of September 25, 2010, the end of the annual period covered by this report, the Company was subject to the various legal proceedings and claims discussed below, as well as certain other legal proceedings and claims that have not been fully resolved and that have arisen in the ordinary course of business. In the opinion of management, the Company does not have a potential liability related to any current legal proceeding or claim that would individually or in the aggregate materially adversely affect its financial condition or operating results. However, the results of legal proceedings cannot be predicted with certainty. Should the Company fail to prevail in any of these legal matters or should several of these legal matters be resolved against the Company in the same reporting period, the operating results of a particular reporting period could be materially adversely affected. The Company settled certain matters during the fourth quarter of 2010 that did not individually or in the aggregate have a material impact on the Company's financial condition and results of operations.
 Branning et al. v. Apple Computer, Inc.
-Plaintiffs originally filed this purported class action against the Company on February 17, 2005 on behalf of putative classes of consumers and resellers and is currently pending in the Santa Clara Superior Court. In general, the consumer plaintiffs allege that the Company  shorted  the coverage provided under its warranties and AppleCare Protection Plan extended service contracts and sold plaintiffs used products that were represented to be new. In general, the reseller plaintiffs allege that the Company damaged their businesses by opening the Apple retail stores and making misrepresentations in connection with doing so. The complaint seeks unspecified damages and other relief. Currently no plaintiff classes are certified, although reseller plaintiffs' motion to certify a class of Apple specialist resellers, is set for hearing on November 2, 2010.
+Plaintiffs originally filed this purported class action against the Company on February 17, 2005 on behalf of putative classes of consumers and resellers and is currently pending in the Santa Clara Superior Court. In general, the consumer plaintiffs allege that the Company shorted the coverage provided under its warranties and AppleCare Protection Plan extended service contracts and sold plaintiffs used products that were represented to be new. In general, the reseller plaintiffs allege that the Company damaged their businesses by opening the Apple retail stores and making misrepresentations in connection with doing so. The complaint seeks unspecified damages and other relief. Currently no plaintiff classes are certified, although reseller plaintiffs' motion to certify a class of Apple specialist resellers, is set for hearing on November 2, 2010.
 In re Apple &amp; ATTM Antitrust Litigation
-This is a purported class action filed against the Company and AT&amp;T Mobility in the United States District Court for the Northern District of California. The Consolidated Complaint alleges that the Company and AT&amp;T Mobility violated the federal antitrust laws by monopolizing and/or attempting to monopolize the  aftermarket for voice and data services  for the iPhone and that the Company monopolized and/or attempted to monopolize the  aftermarket for software applications for iPhones.  The Consolidated Complaint also alleges that Apple violated numerous laws by intentionally  bricking  (rendering inoperable) iPhones through the release of iPhone software update 1.1.1. On July 8, 2010, the Court granted Apple's motion for summary judgment on all of plaintiffs' claims related to the alleged bricking of iPhones. In the same July 8, 2010 order the Court granted in part plaintiffs' motion for class certification, certifying a class related to plaintiffs' antitrust claims. The case is currently stayed until a status conference with the Judge is held on November 15, 2010.
+This is a purported class action filed against the Company and AT&amp;T Mobility in the United States District Court for the Northern District of California. The Consolidated Complaint alleges that the Company and AT&amp;T Mobility violated the federal antitrust laws by monopolizing and/or attempting to monopolize the aftermarket for voice and data services for the iPhone and that the Company monopolized and/or attempted to monopolize the aftermarket for software applications for iPhones. The Consolidated Complaint also alleges that Apple violated numerous laws by intentionally bricking (rendering inoperable) iPhones through the release of iPhone software update 1.1.1. On July 8, 2010, the Court granted Apple's motion for summary judgment on all of plaintiffs' claims related to the alleged bricking of iPhones. In the same July 8, 2010 order the Court granted in part plaintiffs' motion for class certification, certifying a class related to plaintiffs' antitrust claims. The case is currently stayed until a status conference with the Judge is held on November 15, 2010.
 Mediostream, Inc. v. Acer America Corp. et al.
 Plaintiff filed this action against the Company, Acer America Corp., Dell, Inc. and Gateway, Inc. on August 28, 2007, in the United States District Court for the Eastern District of Texas alleging infringement of U.S. Patent No. 7,009,655. Plaintiff seeks unspecified damages and other relief. This case is currently pending.
 Mirror Worlds, LLC. v. Apple Inc.
@@ -357,7 +357,7 @@ Motorola Mobility Inc. ( Motorola ) filed complaints against the Company in the 
 Nokia Corporation v. Apple Inc.; Apple Inc. v. Nokia Corporation
 Nokia Corporation ( Nokia ) and the Company have asserted multiple claims against one another in lawsuits pending in the United States District Courts for the Districts of Delaware and Wisconsin, in the ITC, in the United Kingdom High Court of Justice and the German Patent Court in Dusseldorf. These cases include claims and counterclaims by Nokia and the Company of patent infringement related to iPhones, iPods, iPads and Apple computers, and Nokia's mobile computing devices. Nokia alleges that certain of its asserted patents are essential to one or more of the GSM, UMTS and 802.11 wireless communications standards, and acknowledges its commitment to license them on FRAND terms and conditions. Nokia seeks unspecified FRAND compensation, damages and other declaratory and injunctive relief in these pending District Court actions as well as an exclusion order from the ITC. The Company also has asserted claims and counterclaims for declaratory judgments of non-infringement and invalidity of Nokia's asserted patents as well as for breach of contract, promissory estoppel and antitrust violations.
 The Apple iPod iTunes Antitrust Litigation (formerly Charoensak v. Apple Computer, Inc. and Tucker v. Apple Computer, Inc.); Somers v. Apple Inc.
-The first-listed action is a consolidated case filed in the United States District Court for the Northern District of California combining two cases previously pending under the names Charoensak v. Apple Computer Inc. (formerly Slattery v. Apple Computer Inc., filed on January 3, 2005) and Tucker v. Apple Computer, Inc. (filed on July 21, 2006). The second listed action is a related complaint, Somers v. Apple, Inc., which was filed on December 31, 2007, also in the United States District Court for the Northern District of California. These cases have been filed on behalf of a purported class of direct and indirect purchasers of iPods and iTunes Store content, alleging various claims including alleged unlawful tying of music and video purchased on the iTunes Store with the purchase of iPods and unlawful acquisition or maintenance of monopoly market power and unlawful acquisition or maintenance of monopoly market power under   1 and 2 of the Sherman Act, the Cartwright Act, California Business &amp; Professions Code  17200 (unfair competition), the California Consumer Legal Remedies Act and California monopolization law. The cases are currently pending.
+The first-listed action is a consolidated case filed in the United States District Court for the Northern District of California combining two cases previously pending under the names Charoensak v. Apple Computer Inc. (formerly Slattery v. Apple Computer Inc ., filed on January 3, 2005 ) and Tucker v. Apple Computer, Inc . (filed on July 21, 2006). The second listed action is a related complaint, Somers v. Apple, Inc., which was filed on December 31, 2007, also in the United States District Court for the Northern District of California. These cases have been filed on behalf of a purported class of direct and indirect purchasers of iPods and iTunes Store content, alleging various claims including alleged unlawful tying of music and video purchased on the iTunes Store with the purchase of iPods and unlawful acquisition or maintenance of monopoly market power and unlawful acquisition or maintenance of monopoly market power under 1 and 2 of the Sherman Act, the Cartwright Act, California Business &amp; Professions Code 17200 (unfair competition), the California Consumer Legal Remedies Act and California monopolization law. The cases are currently pending.
 Vogel et al. v. Jobs et al.
 On August 24, 2006, plaintiffs filed a purported shareholder class action in the United States District Court for the Northern District of California against the Company and certain current and former officers and directors, alleging improper backdating of stock option grants to maximize certain defendants' profits, failing to properly account for those grants and issuing false financial statements. On June 27, 2008, plaintiffs filed another, similar purported shareholder class action in the United States District Court for the Northern District of California. The parties have reached a settlement and have obtained preliminary court approval.
 23
@@ -387,9 +387,9 @@ $
 $
 146.40 - $102.61
 $
-109.98 - $  78.20
+109.98 - $ 78.20
 $
-119.68 - $  79.14
+119.68 - $ 79.14
 Holders
 As of October 15, 2010, there were 29,405 shareholders of record.
 Dividends
@@ -401,16 +401,16 @@ Table of Contents
 Company Stock Performance
 The following graph shows a five-year comparison of cumulative total shareholder return, calculated on a dividend reinvested basis, for the Company, the S&amp;P 500 Composite Index, the S&amp;P Computer Hardware Index, and the Dow Jones U.S. Technology Index. The Company has added the Dow Jones U.S. Technology Index to the graph to capture the stock performance of companies whose products and services more closely relate to those of the Company. The Dow Jones U.S. Technology Index incorporates software and computer services companies, as well as technology hardware and equipment companies. The graph assumes $100 was invested in each of the Company's common stock, the S&amp;P 500 Composite Index, the S&amp;P Computer Hardware Index, and the Dow Jones U.S. Technology Index on September 30, 2005. Data points on the graph are annual. Note that historic stock price performance is not necessarily indicative of future stock price performance.
 *$100 invested on 9/30/05 in stock or index, including reinvestment of dividends.
-Copyright&copy;
+Copyright &copy;
 2010 S&amp;P, a division of The McGraw -Hill Companies Inc. All rights reserved.
-Copyright&copy;
+Copyright &copy;
 2010 Dow Jones &amp; Co. All rights reserved.
-September 30,2005
-September 30,2006
-September 30,2007
-September 30,2008
-September 30,2009
-September 30,2010
+September 30, 2005
+September 30, 2006
+September 30, 2007
+September 30, 2008
+September 30, 2009
+September 30, 2010
 Apple Inc.
 $
 100
@@ -467,7 +467,7 @@ $
 Table of Contents
 Item 6.
 Selected Financial Data
-The information set forth below for the five years ended September 25, 2010, is not necessarily indicative of results of future operations, and should be read in conjunction with Item 7,  Management's Discussion and Analysis of Financial Condition and Results of Operations  and the consolidated financial statements and related notes thereto included in Item 8 of this Form 10-K to fully understand factors that may affect the comparability of the information presented below (in millions, except share amounts which are reflected in thousands and per share amounts).
+The information set forth below for the five years ended September 25, 2010, is not necessarily indicative of results of future operations, and should be read in conjunction with Item 7, Management's Discussion and Analysis of Financial Condition and Results of Operations and the consolidated financial statements and related notes thereto included in Item 8 of this Form 10-K to fully understand factors that may affect the comparability of the information presented below (in millions, except share amounts which are reflected in thousands and per share amounts).
 2010
 2009
 2008
@@ -603,7 +603,7 @@ The Company did not have any long-term debt during the five years ended Septembe
 Table of Contents
 Item 7.
 Management's Discussion and Analysis of Financial Condition and Results of Operations
-This section and other parts of this Form 10-K contain forward-looking statements that involve risks and uncertainties. Forward-looking statements can also be identified by words such as  anticipates,   expects,   believes,   plans,   predicts,  and similar terms. Forward-looking statements are not guarantees of future performance and the Company's actual results may differ significantly from the results discussed in the forward-looking statements. Factors that might cause such differences include, but are not limited to, those discussed in the subsection entitled  Risk Factors  above, which are incorporated herein by reference. The following discussion should be read in conjunction with the consolidated financial statements and notes thereto included in Item 8 of this Form 10-K. All information presented herein is based on the Company's fiscal calendar. Unless otherwise stated, references in this report to particular years or quarters refer to the Company's fiscal years ended in September and the associated quarters of those fiscal years. The Company assumes no obligation to revise or update any forward-looking statements for any reason, except as required by law.
+This section and other parts of this Form 10-K contain forward-looking statements that involve risks and uncertainties. Forward-looking statements can also be identified by words such as anticipates, expects, believes, plans, predicts, and similar terms. Forward-looking statements are not guarantees of future performance and the Company's actual results may differ significantly from the results discussed in the forward-looking statements. Factors that might cause such differences include, but are not limited to, those discussed in the subsection entitled Risk Factors above, which are incorporated herein by reference. The following discussion should be read in conjunction with the consolidated financial statements and notes thereto included in Item 8 of this Form 10-K. All information presented herein is based on the Company's fiscal calendar. Unless otherwise stated, references in this report to particular years or quarters refer to the Company's fiscal years ended in September and the associated quarters of those fiscal years. The Company assumes no obligation to revise or update any forward-looking statements for any reason, except as required by law.
 Executive Overview
 The Company designs, manufactures, and markets a range of personal computers, mobile communication and media devices, and portable digital music players, and sells a variety of related software, services, peripherals, networking solutions, and third-party digital content and applications. The Company's products and services include Mac computers, iPhone, iPad, iPod, Apple TV, Xserve, a portfolio of consumer and professional software applications, the Mac OS X and iOS operating systems, third-party digital content and applications through the iTunes Store, and a variety of accessory, service and support offerings. The Company sells its products worldwide through its retail stores, online stores, and direct sales force, and third-party cellular network carriers, wholesalers, retailers, and value-added resellers. In addition, the Company sells a variety of third-party Mac, iPhone, iPad and iPod compatible products, including application software, printers, storage devices, speakers, headphones, and various other accessories and peripherals through its online and retail stores. The Company sells to SMB, education, enterprise, government, and creative markets.
 The Company is committed to bringing the best user experience to its customers through its innovative hardware, software, peripherals, services, and Internet offerings. The Company's business strategy leverages its unique ability to design and develop its own operating systems, hardware, application software, and services to provide its customers new products and solutions with superior ease-of-use, seamless integration, and innovative industrial design. The Company believes continual investment in research and development is critical to the development and enhancement of innovative products and technologies. In conjunction with its strategy, the Company continues to build and host a robust platform for the discovery and delivery of third-party digital content and applications through the iTunes Store. Within the iTunes Store, the Company has expanded its offerings through the App Store and iBookstore, which allow customers to browse, search for, and purchase third-party applications and books through either a Mac or Windows-based computer or by wirelessly downloading directly to an iPhone, iPad or iPod touch. The Company also works to support a community for the development of third-party software and hardware products and digital content that complement the Company's offerings. Additionally, the Company's strategy includes expanding its distribution network to effectively reach more customers and provide them with a high-quality sales and post-sales support experience. The Company is therefore uniquely positioned to offer superior and well-integrated digital lifestyle and productivity solutions.
@@ -613,7 +613,7 @@ Table of Contents
 the Mac; iPhone, iPad and iPod and related software; development of new digital lifestyle consumer and professional software applications; and investing in new product areas and technologies. The Company also believes increased investment in marketing and advertising programs is critical to increasing product and brand awareness.
 The Company utilizes a variety of direct and indirect distribution channels, including its retail stores, online stores, and direct sales force, and third-party cellular network carriers, wholesalers, retailers, and value-added resellers. The Company believes that sales of its innovative and differentiated products are enhanced by knowledgeable salespersons who can convey the value of the hardware, software, and peripheral integration, demonstrate the unique digital lifestyle solutions that are available on its products, and demonstrate the compatibility of the Mac with the Windows platform and networks. The Company further believes providing direct contact with its targeted customers is an effective way to demonstrate the advantages of its products over those of its competitors and providing a high-quality sales and after-sales support experience is critical to attracting new and retaining existing customers. To ensure a high-quality buying experience for its products in which service and education are emphasized, the Company continues to expand and improve its distribution capabilities by expanding the number of its own retail stores worldwide. Additionally, the Company has invested in programs to enhance reseller sales by placing high quality Apple fixtures, merchandising materials and other resources within selected third-party reseller locations. Through the Apple Premium Reseller Program, certain third-party resellers focus on the Apple platform by providing a high level of integration and support services, and product expertise.
 Critical Accounting Policies and Estimates
-The preparation of financial statements and related disclosures in conformity with U.S. generally accepted accounting principles ( GAAP ) and the Company's discussion and analysis of its financial condition and operating results require the Company's management to make judgments, assumptions and estimates that affect the amounts reported in its consolidated financial statements and accompanying notes. Note 1,  Summary of Significant Accounting Policies  of Notes to Consolidated Financial Statements in this Form 10-K describes the significant accounting policies and methods used in the preparation of the Company's consolidated financial statements. Management bases its estimates on historical experience and on various other assumptions it believes to be reasonable under the circumstances, the results of which form the basis for making judgments about the carrying values of assets and liabilities. Actual results may differ from these estimates and such differences may be material.
+The preparation of financial statements and related disclosures in conformity with U.S. generally accepted accounting principles ( GAAP ) and the Company's discussion and analysis of its financial condition and operating results require the Company's management to make judgments, assumptions and estimates that affect the amounts reported in its consolidated financial statements and accompanying notes. Note 1, Summary of Significant Accounting Policies of Notes to Consolidated Financial Statements in this Form 10-K describes the significant accounting policies and methods used in the preparation of the Company's consolidated financial statements. Management bases its estimates on historical experience and on various other assumptions it believes to be reasonable under the circumstances, the results of which form the basis for making judgments about the carrying values of assets and liabilities. Actual results may differ from these estimates and such differences may be material.
 Management believes the Company's critical accounting policies and estimates are those related to revenue recognition, valuation and impairment of marketable securities, inventory valuation and inventory purchase commitments, warranty costs, income taxes, and legal and other contingencies. Management considers these policies critical because they are both important to the portrayal of the Company's financial condition and operating results, and they require management to make judgments and estimates about inherently uncertain matters. The Company's senior management has reviewed these critical accounting policies and related disclosures with the Audit and Finance Committee of the Company's Board of Directors.
 Revenue Recognition
 Net sales consist primarily of revenue from the sale of hardware, software, digital content and applications, peripherals, and service and support contracts. The Company recognizes revenue when persuasive evidence of an arrangement exists, delivery has occurred, the sales price is fixed or determinable, and collection is probable. Product is considered delivered to the customer once it has been shipped and title and risk of loss have been transferred. For most of the Company's product sales, these criteria are met at the time the product is shipped. For online sales to individuals, for some sales to education customers in the U.S., and for certain other sales, the Company defers recognition of revenue until the customer receives the product because the Company retains a portion of the risk of loss on these sales during transit. The Company recognizes revenue from the sale of hardware products (e.g., Macs, iPhones, iPads, iPods and peripherals), software bundled with hardware that is
@@ -644,7 +644,7 @@ Management believes it is more likely than not that forecasted income, including
 31
 Table of Contents
 Legal and Other Contingencies
-As discussed in Part I, Item 3 of this Form 10-K under the heading  Legal Proceedings  and in Note 8  Commitments and Contingencies  in Notes to Consolidated Financial Statements, the Company is subject to various legal proceedings and claims that arise in the ordinary course of business. In accordance with GAAP, the Company records a liability when it is probable that a loss has been incurred and the amount is reasonably estimable. There is significant judgment required in both the probability determination and as to whether an exposure can be reasonably estimated. In management's opinion, the Company does not have a potential liability related to any current legal proceedings and claims that would individually or in the aggregate materially adversely affect its financial condition or operating results. However, the outcomes of legal proceedings and claims brought against the Company are subject to significant uncertainty. Should the Company fail to prevail in any of these legal matters or should several of these legal matters be resolved against the Company in the same reporting period, the operating results of a particular reporting period could be materially adversely affected.
+As discussed in Part I, Item 3 of this Form 10-K under the heading Legal Proceedings and in Note 8 Commitments and Contingencies in Notes to Consolidated Financial Statements, the Company is subject to various legal proceedings and claims that arise in the ordinary course of business. In accordance with GAAP, the Company records a liability when it is probable that a loss has been incurred and the amount is reasonably estimable. There is significant judgment required in both the probability determination and as to whether an exposure can be reasonably estimated. In management's opinion, the Company does not have a potential liability related to any current legal proceedings and claims that would individually or in the aggregate materially adversely affect its financial condition or operating results. However, the outcomes of legal proceedings and claims brought against the Company are subject to significant uncertainty. Should the Company fail to prevail in any of these legal matters or should several of these legal matters be resolved against the Company in the same reporting period, the operating results of a particular reporting period could be materially adversely affected.
 32
 Table of Contents
 Net Sales
@@ -894,7 +894,7 @@ Partially offsetting the favorable factors discussed above, net sales during 200
 Net sales of iPods decreased $1.1 billion or 12% during 2009 compared to 2008. iPod unit sales decreased by 1% during 2009 compared to 2008. Net sales per iPod unit sold decreased 11% to $149 in 2009 compared to 2008, resulting from lower average selling prices across all of the iPod product lines, due primarily to price reductions taken with the introduction of new iPods in September 2009 and September 2008 and a stronger U.S. dollar, offset partially by a higher mix of iPod touch sales.
 Mac net sales declined 3% during 2009 compared to 2008, while Mac unit sales increased by 7% over the same period. Net sales per Mac unit sold decreased by 10% during 2009 compared to 2008, due primarily to lower average selling prices across all Mac portable and desktop systems and a stronger U.S. dollar. Net sales of Macs accounted for 32% of the Company's total net sales for 2009. During 2009, Mac portable systems net sales and unit sales increased by 9% and 20%, respectively, compared to 2008. This growth was driven by strong demand for MacBook Pro, which was updated in June 2009 and October 2008, and which experienced double-digit net sales and unit growth in each of the Company's reportable operating segments compared to the same period in 2008. The Company also had a higher mix of Mac portable systems sales, which is consistent with overall personal computer market trends. Net sales and unit sales of the Company's Mac desktop systems decreased by 23% and 14%, respectively, during 2009 compared to 2008. The decrease in net sales of Mac desktop systems was due mainly to a shift in product mix towards lower-priced desktops, lower average selling prices across all Mac desktop systems and a stronger U.S. dollar.
 Segment Operating Performance
-The Company manages its business primarily on a geographic basis. The Company's reportable operating and reporting segments consist of the Americas, Europe, Japan, Asia-Pacific and Retail operations. The Americas, Europe, Japan and Asia-Pacific reportable segment results do not include the results of the Retail segment. The Americas segment includes both North and South America. The Europe segment includes European countries as well as the Middle East and Africa. The Asia-Pacific segment includes Australia and Asia, but does not include Japan. The Retail segment operates Apple retail stores in 11 countries, including the U.S. Each reportable operating segment provides similar hardware and software products and similar services. Further information regarding the Company's operating segments may be found in Note 9,  Segment Information and Geographic Data  in Notes to Consolidated Financial Statements of this Form 10-K.
+The Company manages its business primarily on a geographic basis. The Company's reportable operating and reporting segments consist of the Americas, Europe, Japan, Asia-Pacific and Retail operations. The Americas, Europe, Japan and Asia-Pacific reportable segment results do not include the results of the Retail segment. The Americas segment includes both North and South America. The Europe segment includes European countries as well as the Middle East and Africa. The Asia-Pacific segment includes Australia and Asia, but does not include Japan. The Retail segment operates Apple retail stores in 11 countries, including the U.S. Each reportable operating segment provides similar hardware and software products and similar services. Further information regarding the Company's operating segments may be found in Note 9, Segment Information and Geographic Data in Notes to Consolidated Financial Statements of this Form 10-K.
 35
 Table of Contents
 Americas
@@ -948,7 +948,7 @@ Gross margin percentage
 The gross margin percentage in 2010 was 39.4% compared to 40.1% in 2009. This decline in gross margin is primarily attributable to new products that have higher cost structures, including iPad, partially offset by a more favorable sales mix of iPhone, which has a higher gross margin than the Company average.
 The gross margin percentage in 2009 was 40.1% compared to 35.2% in 2008. The primary contributors to the increase in 2009 as compared to 2008 were a favorable sales mix toward products with higher gross margins and lower commodity and other product costs, which were partially offset by product price reductions.
 The Company expects its gross margin percentage to decrease in future periods compared to levels achieved during 2010 and anticipates gross margin levels of about 36% in the first quarter of 2011. This expected decline is largely due to a higher mix of new and innovative products that have higher cost structures and deliver greater value to customers, and expected and potential future component cost and other cost increases.
-The foregoing statements regarding the Company's expected gross margin percentage are forward-looking and could differ from anticipated levels because of several factors, including but not limited to certain of those set forth below in Part I, Item 1A,  Risk Factors  under the subheading  Future operating results depend upon the Company's ability to obtain key components including but not limited to microprocessors, NAND flash memory, DRAM and LCDs at favorable prices and in sufficient quantities,  which is incorporated herein by reference. There can be no assurance that targeted gross margin percentage levels will be achieved. In general, gross margins and margins on individual products will remain under downward pressure due to a variety of factors, including continued industry wide global product pricing pressures, increased competition, compressed product life cycles, product transitions and expected and potential increases in the cost of key components including but not limited to microprocessors, NAND flash memory, DRAM and LCDs, as well as potential increases in the costs of outside manufacturing services and a potential shift in the Company's sales mix towards products with lower gross margins. In response to these competitive pressures, the Company expects it will continue to take product pricing actions, which would adversely affect gross margins. Gross margins could also be affected by the Company's ability to manage product quality and warranty costs effectively and to stimulate demand for certain of its products. Due to the Company's significant international operations, financial results can be significantly affected in the short-term by fluctuations in exchange rates.
+The foregoing statements regarding the Company's expected gross margin percentage are forward-looking and could differ from anticipated levels because of several factors, including but not limited to certain of those set forth below in Part I, Item 1A, Risk Factors under the subheading Future operating results depend upon the Company's ability to obtain key components including but not limited to microprocessors, NAND flash memory, DRAM and LCDs at favorable prices and in sufficient quantities , which is incorporated herein by reference. There can be no assurance that targeted gross margin percentage levels will be achieved. In general, gross margins and margins on individual products will remain under downward pressure due to a variety of factors, including continued industry wide global product pricing pressures, increased competition, compressed product life cycles, product transitions and expected and potential increases in the cost of key components including but not limited to microprocessors, NAND flash memory, DRAM and LCDs, as well as potential increases in the costs of outside manufacturing services and a potential shift in the Company's sales mix towards products with lower gross margins. In response to these competitive pressures, the Company expects it will continue to take product pricing actions, which would adversely affect gross margins. Gross margins could also be affected by the Company's ability to manage product quality and warranty costs effectively and to stimulate demand for certain of its products. Due to the Company's significant international operations, financial results can be significantly affected in the short-term by fluctuations in exchange rates.
 Operating Expenses
 Operating expenses for the three years ended September 25, 2010, are as follows (in millions, except for percentages):
 2010
@@ -1017,7 +1017,7 @@ The Company's effective tax rates were 24%, 32% and 32% for 2010, 2009 and 2008,
 Table of Contents
 primarily to certain undistributed foreign earnings for which no U.S. taxes are provided because such earnings are intended to be indefinitely reinvested outside the U.S. The lower effective tax rate in 2010 as compared to 2009 is due primarily to an increase in foreign earnings on which U.S. income taxes have not been provided as such earnings are intended to be indefinitely reinvested outside the U.S.
 As of September 25, 2010, the Company had deferred tax assets arising from deductible temporary differences, tax losses, and tax credits of $2.4 billion, and deferred tax liabilities of $5.0 billion. Management believes it is more likely than not that forecasted income, including income that may be generated as a result of certain tax planning strategies, together with future reversals of existing taxable temporary differences, will be sufficient to fully recover the deferred tax assets. The Company will continue to evaluate the realizability of deferred tax assets quarterly by assessing the need for and amount of a valuation allowance.
-The Internal Revenue Service (the  IRS ) has completed its field audit of the Company's federal income tax returns for the years 2004 through 2006 and proposed certain adjustments. The Company has contested certain of these adjustments through the IRS Appeals Office. The IRS is currently examining the years 2007 through 2009. All IRS audit issues for years prior to 2004 have been resolved. During the third quarter of 2010, the Company reached a tax settlement with the IRS for the years 2002 through 2003. In addition, the Company is subject to audits by state, local, and foreign tax authorities. Management believes that adequate provision has been made for any adjustments that may result from tax examinations. However, the outcome of tax audits cannot be predicted with certainty. If any issues addressed in the Company's tax audits are resolved in a manner not consistent with management's expectations, the Company could be required to adjust its provision for income taxes in the period such resolution occurs.
+The Internal Revenue Service (the IRS ) has completed its field audit of the Company's federal income tax returns for the years 2004 through 2006 and proposed certain adjustments. The Company has contested certain of these adjustments through the IRS Appeals Office. The IRS is currently examining the years 2007 through 2009. All IRS audit issues for years prior to 2004 have been resolved. During the third quarter of 2010, the Company reached a tax settlement with the IRS for the years 2002 through 2003. In addition, the Company is subject to audits by state, local, and foreign tax authorities. Management believes that adequate provision has been made for any adjustments that may result from tax examinations. However, the outcome of tax audits cannot be predicted with certainty. If any issues addressed in the Company's tax audits are resolved in a manner not consistent with management's expectations, the Company could be required to adjust its provision for income taxes in the period such resolution occurs.
 Liquidity and Capital Resources
 The following table presents selected financial information and statistics as of and for the three years ended September 25, 2010 (in millions):
 2010
@@ -1070,11 +1070,11 @@ Off-Balance Sheet Arrangements and Contractual Obligations
 The Company has not entered into any transactions with unconsolidated entities whereby the Company has financial guarantees, subordinated retained interests, derivative instruments, or other contingent arrangements that expose the Company to material continuing risks, contingent liabilities, or any other obligation under a variable interest in an unconsolidated entity that provides financing, liquidity, market risk, or credit risk support to the Company.
 The following table presents certain payments due by the Company under contractual obligations with minimum firm commitments as of September 25, 2010 and excludes amounts already recorded on the Consolidated Balance Sheet (in millions):
 Total
-PaymentsDue inLessThan
+Payments Due in Less Than
 1 Year
-PaymentsDue in1-3 Years
-PaymentsDue in4-5 Years
-PaymentsDue inMoreThan
+Payments Due in 1-3 Years
+Payments Due in 4-5 Years
+Payments Due in More Than
 5 Years
 Operating leases
 $
@@ -1321,7 +1321,7 @@ Deferred revenue
 Total current liabilities
 20,722
 11,506
-Deferred revenue   non-current
+Deferred revenue non-current
 1,139
 853
 Other non-current liabilities
@@ -1356,11 +1356,11 @@ Table of Contents
 CONSOLIDATED STATEMENTS OF SHAREHOLDERS' EQUITY
 (In millions, except share amounts which are reflected in thousands)
 Common Stock
-RetainedEarnings
+Retained Earnings
 Accumulated
-OtherComprehensive
+Other Comprehensive
 Income/(Loss)
-TotalShareholders'Equity
+Total Shareholders' Equity
 Shares
 Amount
 Balances as of September 29, 2007
@@ -1748,7 +1748,7 @@ Table of Contents
 NOTES TO CONSOLIDATED FINANCIAL STATEMENTS
 Note 1
 Summary of Significant Accounting Policies
-Apple Inc. and its wholly-owned subsidiaries (collectively  Apple  or the  Company ) designs, manufactures, and markets personal computers, mobile communication and media devices, and portable digital music players, and sells a variety of related software, services, peripherals, networking solutions, and third-party digital content and applications. The Company sells its products worldwide through its retail stores, online stores, and direct sales force, and third-party cellular network carriers, wholesalers, resellers and value-added resellers. In addition, the Company sells a variety of third-party Macintosh ( Mac ), iPhone, iPad and iPod compatible products including application software, printers, storage devices, speakers, headphones, and various other accessories and supplies through its online and retail stores. The Company sells to consumer, small and mid-sized business, education, enterprise, government and creative customers.
+Apple Inc. and its wholly-owned subsidiaries (collectively Apple or the Company ) designs, manufactures, and markets personal computers, mobile communication and media devices, and portable digital music players, and sells a variety of related software, services, peripherals, networking solutions, and third-party digital content and applications. The Company sells its products worldwide through its retail stores, online stores, and direct sales force, and third-party cellular network carriers, wholesalers, resellers and value-added resellers. In addition, the Company sells a variety of third-party Macintosh ( Mac ), iPhone, iPad and iPod compatible products including application software, printers, storage devices, speakers, headphones, and various other accessories and supplies through its online and retail stores. The Company sells to consumer, small and mid-sized business, education, enterprise, government and creative customers.
 Basis of Presentation and Preparation
 The accompanying consolidated financial statements include the accounts of the Company. Intercompany accounts and transactions have been eliminated. The preparation of these consolidated financial statements in conformity with U.S. generally accepted accounting principles ( GAAP ) requires management to make estimates and assumptions that affect the amounts reported in these consolidated financial statements and accompanying notes. Actual results could differ materially from those estimates. Certain prior year amounts in the consolidated financial statements and notes thereto have been reclassified to conform to the current year's presentation.
 The Company's fiscal year is the 52 or 53-week period that ends on the last Saturday of September. The Company's fiscal years 2010, 2009 and 2008 ended on September 25, 2010, September 26, 2009 and September 27, 2008, respectively, and included 52 weeks each. An additional week is included in the first fiscal quarter approximately every six years to realign fiscal quarters with calendar quarters. Unless otherwise stated, references to particular years or quarters refer to the Company's fiscal years ended in September and the associated quarters of those fiscal years.
@@ -1759,7 +1759,7 @@ The new accounting principles affect the Company's accounting for all past and c
 50
 Table of Contents
 the sale of these devices at the time of their sale. Additionally, the Company is required to estimate a standalone selling price for the unspecified software upgrade rights included with the sale of these devices and recognizes that amount ratably over the 24-month estimated life of the related hardware device.
-Refer to the  Explanatory Note  and Note 2,  Retrospective Adoption of New Accounting Principles  in the 2009 Form 10-K for additional information on the impact of adoption of the new accounting principles, which sections are incorporated herein by reference.
+Refer to the Explanatory Note and Note 2, Retrospective Adoption of New Accounting Principles in the 2009 Form 10-K for additional information on the impact of adoption of the new accounting principles, which sections are incorporated herein by reference.
 Revenue Recognition
 Net sales consist primarily of revenue from the sale of hardware, software, digital content and applications, peripherals, and service and support contracts. The Company recognizes revenue when persuasive evidence of an arrangement exists, delivery has occurred, the sales price is fixed or determinable, and collection is probable. Product is considered delivered to the customer once it has been shipped and title and risk of loss have been transferred. For most of the Company's product sales, these criteria are met at the time the product is shipped. For online sales to individuals, for some sales to education customers in the U.S., and for certain other sales, the Company defers revenue until the customer receives the product because the Company legally retains a portion of the risk of loss on these sales during transit. The Company recognizes revenue from the sale of hardware products (e.g., Macs, iPhones, iPads, iPods and peripherals), software bundled with hardware that is essential to the functionality of the hardware, and third-party digital content sold on the iTunes Store in accordance with general revenue recognition accounting guidance. The Company recognizes revenue in accordance with industry specific software accounting guidance for the following types of sales transactions: (i) standalone sales of software products, (ii) sales of software upgrades and (iii) sales of software bundled with hardware not essential to the functionality of the hardware.
 The Company sells software and peripheral products obtained from other companies. The Company generally establishes its own pricing and retains related inventory risk, is the primary obligor in sales transactions with its customers, and assumes the credit risk for amounts billed to its customers. Accordingly, the Company generally recognizes revenue for the sale of products obtained from other companies based on the gross amount billed. For certain sales made through the iTunes Store, including sales of third-party software applications for the Company's iOS devices, the Company is not the primary obligor to users of the software, and third-party developers determine the selling price of their software. Therefore, the Company accounts for such sales on a net basis by recognizing only the commission it retains from each sale and including that commission in net sales in the Consolidated Statements of Operations. The portion of the sales price paid by users that is remitted by the Company to third-party developers is not reflected in the Company's Consolidated Statement of Operations.
@@ -1793,10 +1793,10 @@ Total amortization related to capitalized software development costs was $48 mil
 Advertising Costs
 Advertising costs are expensed as incurred. Advertising expense was $691 million, $501 million and $486 million for 2010, 2009 and 2008, respectively.
 Stock-Based Compensation
-The Company accounts for stock-based payment transactions in which the Company receives employee services in exchange for (a) equity instruments of the enterprise or (b) liabilities that are based on the fair value of the enterprise's equity instruments or that may be settled by the issuance of such equity instruments. Stock-based compensation cost for restricted stock units ( RSUs ) is measured based on the closing fair market value of the Company's common stock on the date of grant. Stock-based compensation cost for stock options is estimated at the grant date based on each option's fair-value as calculated by the Black-Scholes-Merton ( BSM ) option-pricing model. The Company recognizes stock-based compensation cost as expense ratably on a straight-line basis over the requisite service period. The Company will recognize a benefit from stock-based compensation in equity if an incremental tax benefit is realized by following the ordering provisions of the tax law. In addition, the Company accounts for the indirect effects of stock-based compensation on the research tax credit, the foreign tax credit and the domestic manufacturing deduction through the income statement. Further information regarding stock-based compensation can be found in Note 7,  Shareholders' Equity and Stock-Based Compensation  of this Form 10-K.
+The Company accounts for stock-based payment transactions in which the Company receives employee services in exchange for (a) equity instruments of the enterprise or (b) liabilities that are based on the fair value of the enterprise's equity instruments or that may be settled by the issuance of such equity instruments. Stock-based compensation cost for restricted stock units ( RSUs ) is measured based on the closing fair market value of the Company's common stock on the date of grant. Stock-based compensation cost for stock options is estimated at the grant date based on each option's fair-value as calculated by the Black-Scholes-Merton ( BSM ) option-pricing model. The Company recognizes stock-based compensation cost as expense ratably on a straight-line basis over the requisite service period. The Company will recognize a benefit from stock-based compensation in equity if an incremental tax benefit is realized by following the ordering provisions of the tax law. In addition, the Company accounts for the indirect effects of stock-based compensation on the research tax credit, the foreign tax credit and the domestic manufacturing deduction through the income statement. Further information regarding stock-based compensation can be found in Note 7, Shareholders' Equity and Stock-Based Compensation of this Form 10-K.
 Income Taxes
 The provision for income taxes is computed using the asset and liability method, under which deferred tax assets and liabilities are recognized for the expected future tax consequences of temporary differences between the financial reporting and tax bases of assets and liabilities, and for operating losses and tax credit carryforwards. Deferred tax assets and liabilities are measured using the currently enacted tax rates that apply to taxable income in effect for the years in which those tax assets are expected to be realized or settled. The Company records a valuation allowance to reduce deferred tax assets to the amount that is believed more likely than not to be realized.
-The Company recognizes the tax benefit from an uncertain tax position only if it is more likely than not the tax position will be sustained on examination by the taxing authorities, based on the technical merits of the position. The tax benefits recognized in the financial statements from such positions are then measured based on the largest benefit that has a greater than 50% likelihood of being realized upon settlement. See Note 6,  Income Taxes  of this Form 10-K for additional information.
+The Company recognizes the tax benefit from an uncertain tax position only if it is more likely than not the tax position will be sustained on examination by the taxing authorities, based on the technical merits of the position. The tax benefits recognized in the financial statements from such positions are then measured based on the largest benefit that has a greater than 50% likelihood of being realized upon settlement. See Note 6, Income Taxes of this Form 10-K for additional information.
 Earnings Per Common Share
 Basic earnings per common share is computed by dividing income available to common shareholders by the weighted-average number of shares of common stock outstanding during the period. Diluted earnings per common share is computed by dividing income available to common shareholders by the weighted-average number of shares of common stock outstanding during the period increased to include the number of additional shares of common stock that would have been outstanding if the potentially dilutive securities had been issued.
 54
@@ -1869,12 +1869,12 @@ The Company applies fair value accounting for all financial assets and liabiliti
 Foreign Currency Translation and Remeasurement
 The Company translates the assets and liabilities of its non-U.S. dollar functional currency subsidiaries into U.S. dollars using exchange rates in effect at the end of each period. Revenue and expenses for these subsidiaries are translated using rates that approximate those in effect during the period. Gains and losses from these translations are credited or charged to foreign currency translation included in accumulated other comprehensive income in shareholders' equity. The Company's subsidiaries that use the U.S. dollar as their functional currency remeasure monetary assets and liabilities at exchange rates in effect at the end of each period, and inventories, property, and nonmonetary assets and liabilities at historical rates. Gains and losses from these remeasurements were insignificant and have been included in the Company's results of operations.
 Segment Information
-The Company reports segment information based on the  management  approach. The management approach designates the internal reporting used by management for making decisions and assessing performance as the source of the Company's reportable segments. Information about the Company's products, major customers and geographic areas on a company-wide basis is also disclosed.
+The Company reports segment information based on the management approach. The management approach designates the internal reporting used by management for making decisions and assessing performance as the source of the Company's reportable segments. Information about the Company's products, major customers and geographic areas on a company-wide basis is also disclosed.
 Business Combinations
 In December 2007, the FASB issued a new accounting standard for business combinations, which established principles and requirements for how an acquirer is to recognize and measure in its financial statements the identifiable assets acquired, the liabilities assumed, and any noncontrolling interest in the acquiree in a business combination. This new accounting standard also established principles regarding how goodwill acquired in a business combination or a gain from a bargain purchase should be recognized and measured, requiring the capitalization of in-process research and development at fair value and the expensing of acquisition-related costs as incurred, as well as providing guidelines on the disclosure requirements. In April 2009, the FASB amended this new accounting standard to require that assets acquired and liabilities assumed in a business combination that arise from contingencies be recognized at fair value, if the fair value can be determined during the measurement period. The Company adopted the new business combination accounting standard in the first quarter of 2010 and applied these principles to any business combinations completed in or after the first quarter of 2010. The adoption of the new business combination accounting standard did not have a material effect on the Company's financial condition or operating results.
 57
 Table of Contents
-Note 2   Financial Instruments
+Note 2 Financial Instruments
 Cash, Cash Equivalents and Marketable Securities
 The following table summarizes the fair value of the Company's cash and available-for-sale securities held in its marketable securities investment portfolio, recorded as cash and cash equivalents or short-term or long-term marketable securities as of September 25, 2010 and September 26, 2009 (in millions):
 September 25, 2010
@@ -1965,10 +1965,10 @@ $
 Table of Contents
 The following tables summarize the Company's available-for-sale securities' adjusted cost, gross unrealized gains, gross unrealized losses and fair value by significant investment category as of September 25, 2010 and September 26, 2009 (in millions):
 September 25, 2010
-AdjustedCost
-UnrealizedGains
-UnrealizedLosses
-FairValue
+Adjusted Cost
+Unrealized Gains
+Unrealized Losses
+Fair Value
 Money market funds
 $
 2,753
@@ -2027,10 +2027,10 @@ $
 $
 49,321
 September 26, 2009
-AdjustedCost
-UnrealizedGains
-UnrealizedLosses
-FairValue
+Adjusted Cost
+Unrealized Gains
+Unrealized Losses
+Fair Value
 Money market funds
 $
 1,608
@@ -2095,12 +2095,12 @@ September 25, 2010
 Less than 12 Months
 12 Months or Greater
 Total
-FairValue
-UnrealizedLosses
-FairValue
-UnrealizedLosses
-FairValue
-UnrealizedLoss
+Fair Value
+Unrealized Losses
+Fair Value
+Unrealized Losses
+Fair Value
+Unrealized Loss
 Certificates of deposit and time deposits
 $
 802
@@ -2155,12 +2155,12 @@ September 26, 2009
 Less than 12 Months
 12 Months or Greater
 Total
-FairValue
-UnrealizedLosses
-FairValue
-UnrealizedLosses
-FairValue
-UnrealizedLoss
+Fair Value
+Unrealized Losses
+Fair Value
+Unrealized Losses
+Fair Value
+Unrealized Loss
 Corporate securities
 $
 1,667
@@ -2190,10 +2190,10 @@ The Company recognized in earnings a net loss of $123 million and $133 million o
 The following table shows the notional principal and credit risk amounts of the Company's derivative instruments outstanding as of September 25, 2010 and September 26, 2009 (in millions):
 2010
 2009
-NotionalPrincipal
-CreditRiskAmounts
-NotionalPrincipal
-CreditRiskAmounts
+Notional Principal
+Credit Risk Amounts
+Notional Principal
+Credit Risk Amounts
 Instruments qualifying as accounting hedges:
 Foreign exchange contracts
 $
@@ -2219,10 +2219,10 @@ The notional principal amounts for derivative instruments provide one measure of
 Table of Contents
 collateral received from certain counterparties. The Company's exposure to credit loss and market risk will vary over time as a function of currency exchange rates. Although the table above reflects the notional principal and credit risk amounts of the Company's foreign exchange instruments, it does not reflect the gains or losses associated with the exposures and transactions that the foreign exchange instruments are intended to hedge. The amounts ultimately realized upon settlement of these financial instruments, together with the gains and losses on the underlying exposures, will depend on actual market conditions during the remaining life of the instruments.
 The Company generally enters into master netting arrangements, which reduce credit risk by permitting net settlement of transactions with the same counterparty. To further limit credit risk, the Company generally enters into collateral security arrangements that provide for collateral to be received or posted when the net fair value of certain financial instruments fluctuate from contractually established thresholds. The Company presents its derivative assets and derivative liabilities at their gross fair values. As of September 25, 2010, the Company has posted cash collateral related to the derivative instruments under its collateral security arrangements of $445 million and recorded the offsetting balance as other current assets in the Consolidated Balance Sheet. The Company did not record any significant amounts of cash collateral related to the derivative instruments under its master netting arrangements as of September 26, 2009. The Company did not have any derivative instruments with credit risk-related contingent features that would require it to post additional collateral as of September 25, 2010 or September 26, 2009.
-The estimates of fair value are based on applicable and commonly used pricing models and prevailing financial market information as of September 25, 2010. Refer to Note 3,  Fair Value Measurements  of this Form 10-K, for additional information on the fair value measurements for all financial assets and liabilities, including derivative assets and derivative liabilities, that are measured at fair value in the consolidated financial statements on a recurring basis. The following tables show the Company's derivative instruments measured at gross fair value as reflected in the Consolidated Balance Sheets as of September 25, 2010 and September 26, 2009 (in millions):
+The estimates of fair value are based on applicable and commonly used pricing models and prevailing financial market information as of September 25, 2010. Refer to Note 3, Fair Value Measurements of this Form 10-K, for additional information on the fair value measurements for all financial assets and liabilities, including derivative assets and derivative liabilities, that are measured at fair value in the consolidated financial statements on a recurring basis. The following tables show the Company's derivative instruments measured at gross fair value as reflected in the Consolidated Balance Sheets as of September 25, 2010 and September 26, 2009 (in millions):
 September 25, 2010
-Fair Value ofDerivativesDesignated asHedge Instruments
-Fair Value ofDerivatives NotDesignated as  HedgeInstruments
+Fair Value of Derivatives Designated as Hedge Instruments
+Fair Value of Derivatives Not Designated as Hedge Instruments
 Total Fair Value
 Derivative assets (a):
 Foreign exchange contracts
@@ -2241,8 +2241,8 @@ $
 $
 606
 September 26, 2009
-Fair Value ofDerivativesDesignated asHedge Instruments
-Fair Value ofDerivatives NotDesignated as  HedgeInstruments
+Fair Value of Derivatives Designated as Hedge Instruments
+Fair Value of Derivatives Not Designated as Hedge Instruments
 Total Fair Value
 Derivative assets (a):
 Foreign exchange contracts
@@ -2271,17 +2271,17 @@ Gains/(Losses)
 Recognized
 in OCI - Effective Portion (c)
 Gains/(Losses)
-Reclassified  from AOCI intoIncome - Effective Portion (c)
-Gains/(Losses) Recognized   Ineffective
+Reclassified from AOCI into Income - Effective Portion (c)
+Gains/(Losses) Recognized Ineffective
 Portion and Amount Excluded from
 Effectiveness Testing
-September 25,2010
-September 26,2009
-September 25,2010 (a)
-September 26,2009 (b)
+September 25, 2010
+September 26, 2009
+September 25, 2010 (a)
+September 26, 2009 (b)
 Location
-September 25,2010
-September 26,2009
+September 25, 2010
+September 26, 2009
 Cash flow hedges:
 Foreign exchange contracts
 $
@@ -2332,7 +2332,7 @@ Includes gains/(losses) reclassified from AOCI into net income for the effective
 (b)
 Includes gains/(losses) reclassified from AOCI into net income for the effective portion of cash flow hedges, of which $302 million and $68 million were recognized within net sales and cost of sales, respectively, within the Statement of Operations for the year ended September 26, 2009. There were no amounts reclassified from AOCI into net income for the effective portion of net investment hedges for the year ended September 26, 2009.
 (c)
-Refer to Note 7,  Shareholders' Equity and Stock-Based Compensation  of this Form 10-K, which summarizes the activity in accumulated other comprehensive income related to derivatives.
+Refer to Note 7, Shareholders' Equity and Stock-Based Compensation of this Form 10-K, which summarizes the activity in accumulated other comprehensive income related to derivatives.
 Accounts Receivable
 Trade Receivables
 The Company distributes its products through third-party cellular network carriers, wholesalers, retailers and value-added resellers and directly to certain education, consumer and enterprise customers. The Company generally does not require collateral from its customers; however, the Company will require collateral in certain instances to limit credit risk. In addition, when possible, the Company attempts to limit credit risk on trade receivables with credit insurance for certain customers in Latin America, Europe, Asia, and Australia, or by requiring third-party financing, loans or leases to support credit exposure. These credit-financing arrangements are directly between the third-party financing company and the end customer. As such, the Company generally does not assume any recourse or credit risk sharing related to any of these arrangements. However, considerable trade receivables not covered by collateral, third-party financing arrangements, or credit insurance are outstanding with the Company's third-party cellular network carriers, wholesalers, retailers and value-added resellers. Trade receivables from two of the Company's customers accounted for 15% and 12% of trade receivables as of September 25, 2010 and one of the Company's customers accounted for 16% of trade receivables as of September 26, 2009. The Company's cellular network carriers accounted for 64% and 51% of trade receivables as of September 25, 2010 and as of September 26, 2009, respectively. The additions and write-offs to the Company's allowance for doubtful accounts during 2010, 2009 and 2008 were not significant.
@@ -2340,19 +2340,19 @@ Vendor Non-Trade Receivables
 The Company has non-trade receivables from certain of its manufacturing vendors resulting from the sale of components to these manufacturing vendors who manufacture sub-assemblies or assemble final products for the Company. The Company purchases these components directly from suppliers. Vendor non-trade receivables from two of the Company's vendors accounted for 57% and 24%, respectively, of non-trade receivables as of September 25, 2010 and two of the Company's vendors accounted for 40% and 36%, respectively, of non-trade receivables as of September 26, 2009. The Company does not reflect the sale of these components in net sales and does not recognize any profits on these sales until the related products are sold by the Company, at which time any profit is recognized as a reduction of cost of sales.
 63
 Table of Contents
-Note 3   Fair Value Measurements
+Note 3 Fair Value Measurements
 The Company defines fair value as the price that would be received from selling an asset or paid to transfer a liability in an orderly transaction between market participants at the measurement date. When determining the fair value measurements for assets and liabilities, which are required to be recorded at fair value, the Company considers the principal or most advantageous market in which the Company would transact and the market-based risk measurements or assumptions that market participants would use in pricing the asset or liability, such as inherent risk, transfer restrictions and credit risk.
 The Company applies the following fair value hierarchy, which prioritizes the inputs used to measure fair value into three levels and bases the categorization within the hierarchy upon the lowest level of input that is available and significant to the fair value measurement:
-Level 1   Quoted prices in active markets for identical assets or liabilities.
-Level 2   Observable inputs other than quoted prices in active markets for identical assets and liabilities, quoted prices for identical or similar assets or liabilities in inactive markets, or other inputs that are observable or can be corroborated by observable market data for substantially the full term of the assets or liabilities.
-Level 3   Inputs that are generally unobservable and typically reflect management's estimates of assumptions that market participants would use in pricing the asset or liability.
+Level 1 Quoted prices in active markets for identical assets or liabilities.
+Level 2 Observable inputs other than quoted prices in active markets for identical assets and liabilities, quoted prices for identical or similar assets or liabilities in inactive markets, or other inputs that are observable or can be corroborated by observable market data for substantially the full term of the assets or liabilities.
+Level 3 Inputs that are generally unobservable and typically reflect management's estimates of assumptions that market participants would use in pricing the asset or liability.
 The Company's valuation techniques used to measure the fair value of money market funds and certain marketable equity securities were derived from quoted prices in active markets for identical assets or liabilities. The valuation techniques used to measure the fair value of all other financial instruments, all of which have counterparties with high credit ratings, were valued based on quoted market prices or model driven valuations using significant inputs derived from or corroborated by observable market data.
 Assets/Liabilities Measured at Fair Value on a Recurring Basis
 The following table presents the Company's assets and liabilities measured at fair value on a recurring basis as of September 25, 2010 and September 26, 2009 (in millions):
 September 25, 2010
-Quoted Pricesin ActiveMarkets forIdenticalInstruments(Level 1)
-SignificantOtherObservableInputs(Level 2)
-SignificantUnobservableInputs(Level 3)
+Quoted Prices in Active Markets for Identical Instruments (Level 1)
+Significant Other Observable Inputs (Level 2)
+Significant Unobservable Inputs (Level 3)
 Total (a)
 Assets:
 Money market funds
@@ -2431,9 +2431,9 @@ $
 64
 Table of Contents
 September 26, 2009
-Quoted Pricesin ActiveMarkets forIdenticalInstruments(Level 1)
-SignificantOtherObservableInputs(Level 2)
-SignificantUnobservableInputs(Level 3)
+Quoted Prices in Active Markets for Identical Instruments (Level 1)
+Significant Other Observable Inputs (Level 2)
+Significant Unobservable Inputs (Level 3)
 Total (a)
 Assets:
 Money market funds
@@ -2513,9 +2513,9 @@ $
 The total fair value amounts for assets and liabilities also represent the related carrying amounts.
 The following table summarizes the Company's assets and liabilities measured at fair value on a recurring basis as presented in the Company's Consolidated Balance Sheet as of September 25, 2010 and September 26, 2009 (in millions):
 September 25, 2010
-Quoted Pricesin ActiveMarkets forIdenticalInstruments(Level 1)
-SignificantOtherObservableInputs(Level 2)
-SignificantUnobservableInputs
+Quoted Prices in Active Markets for Identical Instruments (Level 1)
+Significant Other Observable Inputs (Level 2)
+Significant Unobservable Inputs
 (Level 3)
 Total (a)
 Assets:
@@ -2570,9 +2570,9 @@ $
 65
 Table of Contents
 September 26, 2009
-Quoted Pricesin ActiveMarkets forIdenticalInstruments(Level 1)
-SignificantOtherObservableInputs(Level 2)
-SignificantUnobservableInputs
+Quoted Prices in Active Markets for Identical Instruments (Level 1)
+Significant Other Observable Inputs (Level 2)
+Significant Unobservable Inputs
 (Level 3)
 Total (a)
 Assets:
@@ -2705,16 +2705,16 @@ $
 3,502
 66
 Table of Contents
-Note 5   Goodwill and Other Intangible Assets
+Note 5 Goodwill and Other Intangible Assets
 The Company is currently amortizing its acquired intangible assets with definite lives over periods ranging from three to ten years. The following table summarizes the components of gross and net intangible asset balances as of September 25, 2010 and September 26, 2009 (in millions):
 2010
 2009
-GrossCarryingAmount
-AccumulatedAmortization
-NetCarryingAmount
-GrossCarryingAmount
-AccumulatedAmortization
-NetCarryingAmount
+Gross Carrying Amount
+Accumulated Amortization
+Net Carrying Amount
+Gross Carrying Amount
+Accumulated Amortization
+Net Carrying Amount
 Definite lived and amortizable acquired intangible assets
 $
 487
@@ -2774,7 +2774,7 @@ $
 242
 67
 Table of Contents
-Note 6   Income Taxes
+Note 6 Income Taxes
 The provision for income taxes for the three years ended September 25, 2010, consisted of the following (in millions):
 2010
 2009
@@ -2972,9 +2972,9 @@ $
 $
 506
 The Company includes interest and penalties related to unrecognized tax benefits within the provision for income taxes. As of September 25, 2010 and September 26, 2009, the total amount of gross interest and penalties accrued was $247 million and $291 million, respectively, which is classified as non-current liabilities in the Consolidated Balance Sheets. In 2010 and 2009, the Company recognized an interest benefit of $43 million and interest expense of $64 million, respectively, in connection with tax matters.
-The Company is subject to taxation and files income tax returns in the U.S. federal jurisdiction and in many state and foreign jurisdictions. For U.S. federal income tax purposes, all years prior to 2004 are closed. The Internal Revenue Service (the  IRS ) has completed its field audit of the Company's federal income tax returns for the years 2004 through 2006 and proposed certain adjustments. The Company has contested certain of these adjustments through the IRS Appeals Office. The IRS is currently examining the years 2007 through 2009. During the third quarter of 2010, the Company reached a tax settlement with the IRS for the years 2002 through 2003. In connection with the settlement, the Company reduced its gross unrecognized tax benefits by $100 million and recognized a $52 million tax benefit in the third quarter of 2010. In addition, the Company is also subject to audits by state, local and foreign tax authorities. In major states and major foreign jurisdictions, the years subsequent to 1988 and 2001, respectively, generally remain open and could be subject to examination by the taxing authorities.
+The Company is subject to taxation and files income tax returns in the U.S. federal jurisdiction and in many state and foreign jurisdictions. For U.S. federal income tax purposes, all years prior to 2004 are closed. The Internal Revenue Service (the IRS ) has completed its field audit of the Company's federal income tax returns for the years 2004 through 2006 and proposed certain adjustments. The Company has contested certain of these adjustments through the IRS Appeals Office. The IRS is currently examining the years 2007 through 2009. During the third quarter of 2010, the Company reached a tax settlement with the IRS for the years 2002 through 2003. In connection with the settlement, the Company reduced its gross unrecognized tax benefits by $100 million and recognized a $52 million tax benefit in the third quarter of 2010. In addition, the Company is also subject to audits by state, local and foreign tax authorities. In major states and major foreign jurisdictions, the years subsequent to 1988 and 2001, respectively, generally remain open and could be subject to examination by the taxing authorities.
 Management believes that an adequate provision has been made for any adjustments that may result from tax examinations. However, the outcome of tax audits cannot be predicted with certainty. If any issues addressed in the Company's tax audits are resolved in a manner not consistent with management's expectations, the Company could be required to adjust its provision for income tax in the period such resolution occurs. Although timing of the resolution and/or closure of audits is not certain, the Company does not believe it is reasonably possible that its unrecognized tax benefits would materially change in the next 12 months.
-Note 7   Shareholders' Equity and Stock-Based Compensation
+Note 7 Shareholders' Equity and Stock-Based Compensation
 Preferred Stock
 The Company has five million shares of authorized preferred stock, none of which is issued or outstanding. Under the terms of the Company's Restated Articles of Incorporation, the Board of Directors is authorized to determine or alter the rights, preferences, privileges and restrictions of the Company's authorized but unissued shares of preferred stock.
 Comprehensive Income
@@ -3043,27 +3043,27 @@ $
 The tax effect related to the changes in fair value of derivatives was $97 million, $(135) million and $(5) million for 2010, 2009 and 2008, respectively. The tax effect related to derivative gains/losses reclassified from other comprehensive income to net income was $43 million, $149 million and $(9) million for 2010, 2009 and 2008, respectively.
 Employee Benefit Plans
 2003 Employee Stock Plan
-The 2003 Employee Stock Plan (the  2003 Plan ) is a shareholder approved plan that provides for broad-based equity grants to employees, including executive officers. The 2003 Plan permits the granting of incentive stock options, nonstatutory stock options, RSUs, stock appreciation rights, stock purchase rights and performance-based awards. Options granted under the 2003 Plan generally expire seven to ten years after the grant date and generally become exercisable over a period of four years, based on continued employment, with either annual, semi-annual or quarterly vesting. In general, RSUs granted under the 2003 Plan vest over two to four years, are subject to the employees' continued employment and are paid upon vesting in shares of the Company's common stock on a one-for-one basis. At the Company's 2010 annual meeting of shareholders, the 2003 Plan was amended to (i) increase the number of shares of the Company's common stock that may be delivered pursuant to awards granted under the 2003 Plan by an additional 36,000,000 shares and (ii) extend the Company's authority to grant awards under the 2003 Plan intended to qualify as  performance-based awards  within the meaning of Section 162(m) of the U.S. Internal Revenue Code through the 2015 annual meeting of shareholders. As of September 25, 2010, approximately 62.5 million shares were reserved for future issuance under the 2003 Plan.
+The 2003 Employee Stock Plan (the 2003 Plan ) is a shareholder approved plan that provides for broad-based equity grants to employees, including executive officers. The 2003 Plan permits the granting of incentive stock options, nonstatutory stock options, RSUs, stock appreciation rights, stock purchase rights and performance-based awards. Options granted under the 2003 Plan generally expire seven to ten years after the grant date and generally become exercisable over a period of four years, based on continued employment, with either annual, semi-annual or quarterly vesting. In general, RSUs granted under the 2003 Plan vest over two to four years, are subject to the employees' continued employment and are paid upon vesting in shares of the Company's common stock on a one-for-one basis. At the Company's 2010 annual meeting of shareholders, the 2003 Plan was amended to (i) increase the number of shares of the Company's common stock that may be delivered pursuant to awards granted under the 2003 Plan by an additional 36,000,000 shares and (ii) extend the Company's authority to grant awards under the 2003 Plan intended to qualify as performance-based awards within the meaning of Section 162(m) of the U.S. Internal Revenue Code through the 2015 annual meeting of shareholders. As of September 25, 2010, approximately 62.5 million shares were reserved for future issuance under the 2003 Plan.
 71
 Table of Contents
 1997 Employee Stock Option Plan
-In August 1997, the Company's Board of Directors approved the 1997 Employee Stock Option Plan (the  1997 Plan ), a non-shareholder approved plan for grants of stock options to employees who are not officers of the Company. Options granted under the 1997 Plan generally expire seven to ten years after the grant date. All stock options granted under the 1997 Plan are fully vested. In October 2003, the Company terminated the 1997 Plan, and no new options can be granted from this plan.
+In August 1997, the Company's Board of Directors approved the 1997 Employee Stock Option Plan (the 1997 Plan ), a non-shareholder approved plan for grants of stock options to employees who are not officers of the Company. Options granted under the 1997 Plan generally expire seven to ten years after the grant date. All stock options granted under the 1997 Plan are fully vested. In October 2003, the Company terminated the 1997 Plan, and no new options can be granted from this plan.
 1997 Director Stock Plan
-In August 1997, the Company's Board of Directors (the  Board ) adopted a Director Stock Option Plan, which was subsequently renamed the 1997 Director Stock Plan (the  Director Plan ) and has been approved by shareholders. As amended, the Director Plan (i) permits the Company to grant awards of RSUs or stock options to the Company's non-employee directors, (ii) beginning February 25, 2010, provides for automatic initial grants of RSUs upon a non-employee director joining the Board and automatic annual grants of RSUs at each annual meeting of shareholders, and (iii) permits the Board to prospectively change the relative mixture of stock options and RSUs for the initial and annual award grants and the methodology for determining the number of shares of the Company's common stock subject to these grants without shareholder approval. Each share issued with respect to RSUs granted under the plan reduces the number of shares available for grant under the plan by two shares. The Director Plan expires November 9, 2019. As of September 25, 2010, approximately 199,000 shares were reserved for future issuance under the Director Plan.
+In August 1997, the Company's Board of Directors (the Board ) adopted a Director Stock Option Plan, which was subsequently renamed the 1997 Director Stock Plan (the Director Plan ) and has been approved by shareholders. As amended, the Director Plan (i) permits the Company to grant awards of RSUs or stock options to the Company's non-employee directors, (ii) beginning February 25, 2010, provides for automatic initial grants of RSUs upon a non-employee director joining the Board and automatic annual grants of RSUs at each annual meeting of shareholders, and (iii) permits the Board to prospectively change the relative mixture of stock options and RSUs for the initial and annual award grants and the methodology for determining the number of shares of the Company's common stock subject to these grants without shareholder approval. Each share issued with respect to RSUs granted under the plan reduces the number of shares available for grant under the plan by two shares. The Director Plan expires November 9, 2019. As of September 25, 2010, approximately 199,000 shares were reserved for future issuance under the Director Plan.
 Rule 10b5-1 Trading Plans
-During the fourth quarter of 2010, executive officers Timothy D. Cook, Peter Oppenheimer, D. Bruce Sewell, Philip W. Schiller and Bertrand Serlet had trading plans pursuant to Rule 10b5-1(c)(1) of the Securities Exchange Act of 1934, as amended (the  Exchange Act ). A trading plan is a written document that pre-establishes the amounts, prices and dates (or formula for determining the amounts, prices and dates) of future purchases or sales of the Company's stock including the exercise and sale of employee stock options and shares acquired pursuant to the Company's employee stock purchase plan and upon vesting of RSUs.
+During the fourth quarter of 2010, executive officers Timothy D. Cook, Peter Oppenheimer, D. Bruce Sewell, Philip W. Schiller and Bertrand Serlet had trading plans pursuant to Rule 10b5-1(c)(1) of the Securities Exchange Act of 1934, as amended (the Exchange Act ). A trading plan is a written document that pre-establishes the amounts, prices and dates (or formula for determining the amounts, prices and dates) of future purchases or sales of the Company's stock including the exercise and sale of employee stock options and shares acquired pursuant to the Company's employee stock purchase plan and upon vesting of RSUs.
 Employee Stock Purchase Plan
-The Company has a shareholder approved employee stock purchase plan (the  Purchase Plan ), under which substantially all employees may purchase the Company's common stock through payroll deductions at a price equal to 85% of the lower of the fair market values of the stock as of the beginning and end of six-month offering periods. An employee's payroll deductions under the Purchase Plan are limited to 10% of the employee's compensation and employee's may not purchase more than $25,000 of stock for any calendar year. Additionally, no more than 1,000,000 shares may be purchased in the aggregate in any one offering period. As of September 25, 2010, approximately 3.8 million shares were reserved for future issuance under the Purchase Plan.
+The Company has a shareholder approved employee stock purchase plan (the Purchase Plan ), under which substantially all employees may purchase the Company's common stock through payroll deductions at a price equal to 85% of the lower of the fair market values of the stock as of the beginning and end of six-month offering periods. An employee's payroll deductions under the Purchase Plan are limited to 10% of the employee's compensation and employee's may not purchase more than $25,000 of stock for any calendar year. Additionally, no more than 1,000,000 shares may be purchased in the aggregate in any one offering period. As of September 25, 2010, approximately 3.8 million shares were reserved for future issuance under the Purchase Plan.
 Employee Savings Plan
-The Company has an employee savings plan (the  Savings Plan ) qualifying as a deferred salary arrangement under Section 401(k) of the Internal Revenue Code. Under the Savings Plan, participating U.S. employees may defer a portion of their pre-tax earnings, up to the IRS annual contribution limit ($16,500 for calendar year 2010). The Company matches 50% to 100% of each employee's contributions, depending on length of service, up to a maximum 6% of the employee's eligible earnings. The Company's matching contributions to the Savings Plan were $72 million, $59 million and $50 million in 2010, 2009 and 2008, respectively.
+The Company has an employee savings plan (the Savings Plan ) qualifying as a deferred salary arrangement under Section 401(k) of the Internal Revenue Code. Under the Savings Plan, participating U.S. employees may defer a portion of their pre-tax earnings, up to the IRS annual contribution limit ($16,500 for calendar year 2010). The Company matches 50% to 100% of each employee's contributions, depending on length of service, up to a maximum 6% of the employee's eligible earnings. The Company's matching contributions to the Savings Plan were $72 million, $59 million and $50 million in 2010, 2009 and 2008, respectively.
 72
 Table of Contents
 Restricted Stock Units
 A summary of the Company's RSU activity and related information for the three years ended September 25, 2010, is as follows (in thousands, except per share amounts):
-Number ofShares
-Weighted-AverageGrant
-Date  FairValue
-AggregateIntrinsic Value
+Number of Shares
+Weighted- Average Grant
+Date Fair Value
+Aggregate Intrinsic Value
 Balance at September 29, 2007
 4,675
 $
@@ -3130,10 +3130,10 @@ Table of Contents
 Stock Option Activity
 A summary of the Company's stock option and RSU activity and related information for the three years ended September 25, 2010, is as follows (in thousands, except per share amounts and contractual term in years):
 Outstanding Options
-SharesAvailablefor Grant
-Numberof Shares
-Weighted-AverageExercisePrice
-Weighted-AverageRemainingContractual
+Shares Available for Grant
+Number of Shares
+Weighted- Average Exercise Price
+Weighted- Average Remaining Contractual
 Term
 Aggregate
 Intrinsic
@@ -3369,7 +3369,7 @@ $
 $
 516
 Stock-based compensation expense capitalized as software development costs was not significant as of September 25, 2010 or September 26, 2009. The income tax benefit related to stock-based compensation expense was $314 million, $266 million and $169 million for 2010, 2009 and 2008, respectively. The total unrecognized compensation cost related to stock options and RSUs expected to vest was $1.9 billion as of September 25, 2010, which is expected to be recognized over a weighted-average period of 2.73 years.
-Note 8   Commitments and Contingencies
+Note 8 Commitments and Contingencies
 Lease Commitments
 The Company leases various equipment and facilities, including retail space, under noncancelable operating lease arrangements. The Company does not currently utilize any other off-balance sheet financing arrangements. The
 75
@@ -3440,16 +3440,16 @@ of substantially all of the Company's Macs, iPhones, iPads and iPods. Although t
 Long-Term Supply Agreements
 The Company has entered into prepaid long-term supply agreements to secure the supply of certain inventory components, which generally expire between 2011 and 2015. As of September 25, 2010, the Company had a total of $956 million of inventory component prepayments outstanding, of which $157 million is classified as other current assets and $799 million is classified as other assets in the Consolidated Balance Sheets. In August 2010, the Company entered into a long-term supply agreement under which it has committed to prepay $500 million in 2011. The Company had a total of $1.2 billion of inventory component prepayments outstanding as of September 26, 2009. These prepayments will be applied to certain inventory component purchases made over the life of each respective agreement.
 Contingencies
-The Company is subject to various legal proceedings and claims that have arisen in the ordinary course of business and have not been fully adjudicated, which are discussed in Part I, Item 3 of this Form 10-K under the heading  Legal Proceedings.  In the opinion of management, the Company does not have a potential liability related to any current legal proceedings and claims that would individually or in the aggregate materially adversely affect its financial condition or operating results. However, the results of legal proceedings cannot be predicted with certainty. If the Company failed to prevail in any of these legal matters or if several of these legal matters were resolved against the Company in the same reporting period, the operating results of a particular reporting period could be materially adversely affected.
+The Company is subject to various legal proceedings and claims that have arisen in the ordinary course of business and have not been fully adjudicated, which are discussed in Part I, Item 3 of this Form 10-K under the heading Legal Proceedings. In the opinion of management, the Company does not have a potential liability related to any current legal proceedings and claims that would individually or in the aggregate materially adversely affect its financial condition or operating results. However, the results of legal proceedings cannot be predicted with certainty. If the Company failed to prevail in any of these legal matters or if several of these legal matters were resolved against the Company in the same reporting period, the operating results of a particular reporting period could be materially adversely affected.
 On March 14, 2008, Mirror Worlds, LLC filed an action against the Company alleging that certain of its products infringed on three patents covering technology used to display files. On October 1, 2010, a jury returned a verdict against the Company, and awarded damages of $208 million per patent for each of the three patents asserted. The Company is challenging the verdict, believes it has valid defenses and has not recorded a loss contingency at this time.
 Production and marketing of products in certain states and countries may subject the Company to environmental, product safety and other regulations including, in some instances, the requirement to provide customers the ability to return product at the end of its useful life, and place responsibility for environmentally safe disposal or recycling with the Company. Such laws and regulations have been passed in several jurisdictions in which the Company operates, including various countries within Europe and Asia and certain states and provinces within North America. Although the Company does not anticipate any material adverse effects in the future based on the nature of its operations and the thrust of such laws, there is no assurance that such existing laws or future laws will not materially adversely affect the Company's financial condition or operating results.
 Note 9
 Segment Information and Geographic Data
-The Company reports segment information based on the  management  approach. The management approach designates the internal reporting used by management for making decisions and assessing performance as the source of the Company's reportable segments.
+The Company reports segment information based on the management approach. The management approach designates the internal reporting used by management for making decisions and assessing performance as the source of the Company's reportable segments.
 The Company manages its business primarily on a geographic basis. Accordingly, the Company determined its operating and reporting segments, which are generally based on the nature and location of its customers, to be the Americas, Europe, Japan, Asia-Pacific and Retail operations. The Americas, Europe, Japan and Asia-Pacific reportable segment results do not include results of the Retail segment. The Americas segment includes both North and South America. The Europe segment includes European countries, as well as the Middle East and
 78
 Table of Contents
-Africa. The Asia-Pacific segment includes Australia and Asia, but does not include Japan. The Retail segment operates Apple retail stores in 11 countries, including the U.S. Each reportable operating segment provides similar hardware and software products and similar services. The accounting policies of the various segments are the same as those described in Note 1,  Summary of Significant Accounting Policies.
+Africa. The Asia-Pacific segment includes Australia and Asia, but does not include Japan. The Retail segment operates Apple retail stores in 11 countries, including the U.S. Each reportable operating segment provides similar hardware and software products and similar services. The accounting policies of the various segments are the same as those described in Note 1, Summary of Significant Accounting Policies.
 The Company evaluates the performance of its operating segments based on net sales and operating income. Net sales for geographic segments are generally based on the location of customers, while Retail segment net sales are based on sales from the Company's retail stores. Operating income for each segment includes net sales to third parties, related cost of sales and operating expenses directly attributable to the segment. Advertising expenses are generally included in the geographic segment in which the expenditures are incurred. Operating income for each segment excludes other income and expense and certain expenses managed outside the operating segments. Costs excluded from segment operating income include various corporate expenses, such as manufacturing costs and variances not included in standard costs, research and development, corporate marketing expenses, stock-based compensation expense, income taxes, various nonrecurring charges, and other separately managed general and administrative costs. The Company does not include intercompany transfers between segments for management reporting purposes. Segment assets exclude corporate assets, such as cash, short-term and long-term investments, manufacturing and corporate facilities, miscellaneous corporate infrastructure, goodwill and other acquired intangible assets. Except for the Retail segment, capital asset purchases for long-lived assets are not reported to management by segment. Cash payments for capital asset purchases by the Retail segment were $392 million, $369 million and $389 million for 2010, 2009 and 2008, respectively.
 The Company has certain retail stores that have been designed and built to serve as high-profile venues to promote brand awareness and serve as vehicles for corporate sales and marketing activities. Because of their unique design elements, locations and size, these stores require substantially more investment than the Company's more typical retail stores. The Company allocates certain operating expenses associated with its high-profile stores to corporate marketing expense to reflect the estimated Company-wide benefit. The allocation of these operating costs to corporate expense is based on the amount incurred for a high-profile store in excess of that incurred by a more typical Company retail location. The Company had opened a total of 15 high-profile stores as of September 25, 2010. Amounts allocated to corporate expense resulting from the operations of high-profile stores were $75 million, $65 million and $53 million for 2010, 2009 and 2008, respectively.
 79
@@ -3785,12 +3785,12 @@ Includes revenue recognized from iPad sales, services and Apple-branded and thir
 Includes sales of displays, wireless connectivity and networking solutions, and other hardware accessories.
 (g)
 Includes sales of Apple-branded operating system and application software, third-party software, Mac and Internet services.
-Note 10   Related Party Transactions and Certain Other Transactions
+Note 10 Related Party Transactions and Certain Other Transactions
 The Company entered into a Reimbursement Agreement with its CEO, Steve Jobs, for the reimbursement of expenses incurred by Mr. Jobs in the operation of his private plane when used for Apple business. The Company recognized a total of approximately $248,000, $4,000 and $871,000 in expenses pursuant to the Reimbursement
 81
 Table of Contents
 Agreement during 2010, 2009 and 2008, respectively. All expenses recognized pursuant to the Reimbursement Agreement have been included in selling, general and administrative expenses in the Consolidated Statements of Operations.
-Note 11   Selected Quarterly Financial Information (Unaudited)
+Note 11 Selected Quarterly Financial Information (Unaudited)
 The following tables set forth a summary of the Company's quarterly financial information for each of the four quarters ended September 25, 2010 and September 26, 2009 (in millions, except per share amounts):
 Fourth Quarter
 Third Quarter
@@ -3898,7 +3898,7 @@ The Board of Directors and Shareholders of Apple Inc.
 We have audited the accompanying consolidated balance sheets of Apple Inc. as of September 25, 2010 and September 26, 2009, and the related consolidated statements of operations, shareholders' equity and cash flows for the years then ended. These financial statements are the responsibility of the Company's management. Our responsibility is to express an opinion on these financial statements based on our audits.
 We conducted our audits in accordance with the standards of the Public Company Accounting Oversight Board (United States). Those standards require that we plan and perform the audit to obtain reasonable assurance about whether the financial statements are free of material misstatement. An audit includes examining, on a test basis, evidence supporting the amounts and disclosures in the financial statements. An audit also includes assessing the accounting principles used and significant estimates made by management, as well as evaluating the overall financial statement presentation. We believe that our audits provide a reasonable basis for our opinion.
 In our opinion, the financial statements referred to above present fairly, in all material respects, the consolidated financial position of Apple Inc. at September 25, 2010 and September 26, 2009, and the consolidated results of its operations and its cash flows for the years then ended, in conformity with U.S. generally accepted accounting principles.
-We also have audited, in accordance with the standards of the Public Company Accounting Oversight Board (United States), Apple Inc.'s internal control over financial reporting as of September 25, 2010, based on criteria established in Internal Control   Integrated Framework issued by the Committee of Sponsoring Organizations of the Treadway Commission and our report dated October 27, 2010 expressed an unqualified opinion thereon.
+We also have audited, in accordance with the standards of the Public Company Accounting Oversight Board (United States), Apple Inc.'s internal control over financial reporting as of September 25, 2010, based on criteria established in Internal Control Integrated Framework issued by the Committee of Sponsoring Organizations of the Treadway Commission and our report dated October 27, 2010 expressed an unqualified opinion thereon.
 /s/ Ernst &amp; Young LLP
 San Jose, California
 October 27, 2010
@@ -3906,7 +3906,7 @@ October 27, 2010
 Table of Contents
 Report of Ernst &amp; Young LLP, Independent Registered Public Accounting Firm
 The Board of Directors and Shareholders of Apple Inc.
-We have audited Apple Inc.'s internal control over financial reporting as of September 25, 2010, based on criteria established in Internal Control   Integrated Framework issued by the Committee of Sponsoring Organizations of the Treadway Commission ( the COSO criteria ). Apple Inc.'s management is responsible for maintaining effective internal control over financial reporting, and for its assessment of the effectiveness of internal control over financial reporting included in the accompanying Management's Annual Report on Internal Control over Financial Reporting. Our responsibility is to express an opinion on the Company's internal control over financial reporting based on our audit.
+We have audited Apple Inc.'s internal control over financial reporting as of September 25, 2010, based on criteria established in Internal Control Integrated Framework issued by the Committee of Sponsoring Organizations of the Treadway Commission ( the COSO criteria ). Apple Inc.'s management is responsible for maintaining effective internal control over financial reporting, and for its assessment of the effectiveness of internal control over financial reporting included in the accompanying Management's Annual Report on Internal Control over Financial Reporting. Our responsibility is to express an opinion on the Company's internal control over financial reporting based on our audit.
 We conducted our audit in accordance with the standards of the Public Company Accounting Oversight Board (United States). Those standards require that we plan and perform the audit to obtain reasonable assurance about whether effective internal control over financial reporting was maintained in all material respects. Our audit included obtaining an understanding of internal control over financial reporting, assessing the risk that a material weakness exists, testing and evaluating the design and operating effectiveness of internal control based on the assessed risk, and performing such other procedures as we considered necessary in the circumstances. We believe that our audit provides a reasonable basis for our opinion.
 A company's internal control over financial reporting is a process designed to provide reasonable assurance regarding the reliability of financial reporting and the preparation of financial statements for external purposes in accordance with generally accepted accounting principles. A company's internal control over financial reporting includes those policies and procedures that (1) pertain to the maintenance of records that, in reasonable detail, accurately and fairly reflect the transactions and dispositions of the assets of the company; (2) provide reasonable assurance that transactions are recorded as necessary to permit preparation of financial statements in accordance with generally accepted accounting principles, and that receipts and expenditures of the company are being made only in accordance with authorizations of management and directors of the company; and (3) provide reasonable assurance regarding prevention or timely detection of unauthorized acquisition, use, or disposition of the company's assets that could have a material effect on the financial statements.
 Because of its inherent limitations, internal control over financial reporting may not prevent or detect misstatements. Also, projections of any evaluation of effectiveness to future periods are subject to the risk that controls may become inadequate because of changes in conditions, or that the degree of compliance with the policies or procedures may deteriorate.
@@ -3946,7 +3946,7 @@ provide reasonable assurance that transactions are recorded as necessary to perm
 provide reasonable assurance regarding prevention or timely detection of unauthorized acquisition, use, or disposition of the Company's assets that could have a material effect on the financial statements.
 Management, including the Company's Chief Executive Officer and Chief Financial Officer, does not expect that the Company's internal controls will prevent or detect all errors and all fraud. A control system, no matter how well designed and operated, can provide only reasonable, not absolute, assurance that the objectives of the control system are met. Further, the design of a control system must reflect the fact that there are resource constraints, and the benefits of controls must be considered relative to their costs. Because of the inherent limitations in all control systems, no evaluation of internal controls can provide absolute assurance that all control issues and instances of fraud, if any, have been detected. Also, any evaluation of the effectiveness of controls in future periods are subject to the risk that those internal controls may become inadequate because of changes in business conditions, or that the degree of compliance with the policies or procedures may deteriorate.
 Management's Annual Report on Internal Control Over Financial Reporting
-The Company's management is responsible for establishing and maintaining adequate internal control over financial reporting (as defined in Rule 13a-15(f) under the Exchange Act. Management conducted an evaluation of the effectiveness of the Company's internal control over financial reporting based on the criteria set forth in Internal Control   Integrated Framework issued by the Committee of Sponsoring Organizations of the Treadway Commission ( COSO ). Based on the Company's assessment, management has concluded that its internal control over financial reporting was effective as of September 25, 2010 to provide reasonable assurance regarding the reliability of financial reporting and the preparation of financial statements in accordance with U.S. generally accepted accounting principles. The Company's independent registered public accounting firm, Ernst &amp; Young LLP, has issued an audit report on the Company's internal control over financial reporting. The report on the audit of internal control over financial reporting appears on page 84 of this Form 10-K.
+The Company's management is responsible for establishing and maintaining adequate internal control over financial reporting (as defined in Rule 13a-15(f) under the Exchange Act. Management conducted an evaluation of the effectiveness of the Company's internal control over financial reporting based on the criteria set forth in Internal Control Integrated Framework issued by the Committee of Sponsoring Organizations of the Treadway Commission ( COSO ). Based on the Company's assessment, management has concluded that its internal control over financial reporting was effective as of September 25, 2010 to provide reasonable assurance regarding the reliability of financial reporting and the preparation of financial statements in accordance with U.S. generally accepted accounting principles. The Company's independent registered public accounting firm, Ernst &amp; Young LLP, has issued an audit report on the Company's internal control over financial reporting. The report on the audit of internal control over financial reporting appears on page 84 of this Form 10-K.
 86
 Table of Contents
 Changes in Internal Control Over Financial Reporting
@@ -3959,19 +3959,19 @@ Table of Contents
 PART III
 Item 10.
 Directors, Executive Officers and Corporate Governance
-The information required by this Item is set forth under the heading  Directors, Executive Officers and Corporate Governance  in the Company's 2011 Proxy Statement to be filed with the U.S. Securities and Exchange Commission ( SEC ) in connection with the solicitation of proxies for the Company's 2011 Annual Meeting of Shareholders ( 2011 Proxy Statement ) and is incorporated herein by reference. Such Proxy Statement will be filed with the SEC within 120 days after the end of the fiscal year to which this report relates.
+The information required by this Item is set forth under the heading Directors, Executive Officers and Corporate Governance in the Company's 2011 Proxy Statement to be filed with the U.S. Securities and Exchange Commission ( SEC ) in connection with the solicitation of proxies for the Company's 2011 Annual Meeting of Shareholders ( 2011 Proxy Statement ) and is incorporated herein by reference. Such Proxy Statement will be filed with the SEC within 120 days after the end of the fiscal year to which this report relates.
 Item 11.
 Executive Compensation
-The information required by this Item is set forth under the headings  Executive Compensation  and  Compensation Discussion and Analysis  in the Company's 2011 Proxy Statement and is incorporated herein by reference.
+The information required by this Item is set forth under the headings Executive Compensation and Compensation Discussion and Analysis in the Company's 2011 Proxy Statement and is incorporated herein by reference.
 Item 12.
 Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters
-The information required by this Item is set forth under the headings  Security Ownership of Certain Beneficial Owners and Management  and  Equity Compensation Plan Information  in the Company's 2011 Proxy Statement and is incorporated herein by reference.
+The information required by this Item is set forth under the headings Security Ownership of Certain Beneficial Owners and Management and Equity Compensation Plan Information in the Company's 2011 Proxy Statement and is incorporated herein by reference.
 Item 13.
 Certain Relationships and Related Transactions, and Director Independence
-The information required by this Item is set forth under the heading  Review, Approval or Ratification of Transactions with Related Persons  in the Company's 2011 Proxy Statement and is incorporated herein by reference.
+The information required by this Item is set forth under the heading Review, Approval or Ratification of Transactions with Related Persons in the Company's 2011 Proxy Statement and is incorporated herein by reference.
 Item 14.
 Principal Accounting Fees and Services
-The information required by this Item is set forth under the heading  Fees Paid to Auditors  in the Company's 2011 Proxy Statement and is incorporated herein by reference.
+The information required by this Item is set forth under the heading Fees Paid to Auditors in the Company's 2011 Proxy Statement and is incorporated herein by reference.
 88
 Table of Contents
 PART IV
@@ -4011,7 +4011,7 @@ SIGNATURES
 Pursuant to the requirements of Section 13 or 15(d) of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned, thereunto duly authorized, this 27th day of October 2010.
 APPLE INC.
 By:
-/s/  Peter Oppenheimer
+/s/ Peter Oppenheimer
 Peter Oppenheimer
 Senior Vice President,
 Chief Financial Officer
@@ -4021,40 +4021,40 @@ Pursuant to the requirements of the Securities Exchange Act of 1934, this report
 Name
 Title
 Date
-/s/  Steven P. Jobs
+/s/ Steven P. Jobs
 STEVEN P. JOBS
 Chief Executive Officer and Director
 (Principal Executive Officer)
 October 27, 2010
-/s/  Peter Oppenheimer
+/s/ Peter Oppenheimer
 PETER OPPENHEIMER
 Senior Vice President,
 Chief Financial Officer
 (Principal Financial Officer)
 October 27, 2010
-/s/  Betsy Rafael
+/s/ Betsy Rafael
 BETSY RAFAEL
 Vice President
 Corporate Controller
 (Principal Accounting Officer)
 October 27, 2010
-/s/  William V. Campbell
+/s/ William V. Campbell
 WILLIAM V. CAMPBELL
 Director
 October 27, 2010
-/s/  Millard S. Drexler
+/s/ Millard S. Drexler
 MILLARD S. DREXLER
 Director
 October 27, 2010
-/s/  Albert Gore, Jr.
+/s/ Albert Gore, Jr.
 ALBERT GORE, JR.
 Director
 October 27, 2010
-/s/  Andrea Jung
+/s/ Andrea Jung
 ANDREA JUNG
 Director
 October 27, 2010
-/s/  Arthur D. Levinson
+/s/ Arthur D. Levinson
 ARTHUR D. LEVINSON
 Director
 October 27, 2010

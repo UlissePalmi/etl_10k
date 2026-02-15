@@ -1,18 +1,26 @@
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from etl_10k.config import FORM, START_DATE, MAX_WORKERS, RAW_DIR
-import time
+from etl_10k.config import FORM, START_DATE, RAW_DIR
+from etl_10k.config import MAX_WORKERS_DOWNLOADS as MAX_WORKERS
 from sec_edgar_downloader import Downloader
+import time
+
+# Create a single shared downloader instance to reuse HTTP connections
+# IMPORTANT: Replace with your actual company name and email address
+# The SEC requires proper identification and may ban IPs with generic user-agents
+_downloader = Downloader("YourActualCompanyName", "your.email@yourdomain.com", str(RAW_DIR))
 
 def download_for_cik(cik: str):
     """
     Download SEC filings for a given CIK using `sec-edgar-downloader`.
+
+    Includes a small delay between requests to ensure compliance with SEC's
+    10 requests per second rate limit and avoid IP bans.
     """
-    time.sleep(0.1)
-    dl = Downloader("MyCompanyName", "my.email@domain.com", str(RAW_DIR))
     print(f"Starting {FORM} for CIK {cik}")
     try:
-        dl.get(FORM, cik, after=START_DATE)
-        time.sleep(10)
+        # Small delay to help respect SEC rate limits (10 req/sec = 0.1s between requests)
+        time.sleep(0.12)  # Slightly conservative to account for variance
+        _downloader.get(FORM, cik, after=START_DATE)
         return cik, "ok", None
     except ValueError as e:
         return cik, "not_found", str(e)

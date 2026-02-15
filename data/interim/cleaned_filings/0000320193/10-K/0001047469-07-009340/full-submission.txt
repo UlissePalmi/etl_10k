@@ -1,6 +1,6 @@
 0001047469-07-009340.txt : 20071115
 0001047469-07-009340.hdr.sgml : 20071115
-20071115164937 ACCESSION NUMBER:		0001047469-07-009340 CONFORMED SUBMISSION TYPE:	10-K PUBLIC DOCUMENT COUNT:		9 CONFORMED PERIOD OF REPORT:	20070929 FILED AS OF DATE:		20071115 DATE AS OF CHANGE:		20071115  FILER:  COMPANY DATA: COMPANY CONFORMED NAME:			APPLE INC CENTRAL INDEX KEY:			0000320193 STANDARD INDUSTRIAL CLASSIFICATION:	ELECTRONIC COMPUTERS [3571] IRS NUMBER:				942404110 STATE OF INCORPORATION:			CA FISCAL YEAR END:			0930  FILING VALUES: FORM TYPE:		10-K SEC ACT:		1934 Act SEC FILE NUMBER:	000-10030 FILM NUMBER:		071250316  BUSINESS ADDRESS: STREET 1:		1 INFINITE LOOP CITY:			CUPERTINO STATE:			CA ZIP:			95014 BUSINESS PHONE:		4089961010  MAIL ADDRESS: STREET 1:		ONE INFINITE LOOP CITY:			CUPERTINO STATE:			CA ZIP:			95014  FORMER COMPANY: FORMER CONFORMED NAME:	APPLE COMPUTER INC DATE OF NAME CHANGE:	19970808
+20071115164937 ACCESSION NUMBER:		0001047469-07-009340 CONFORMED SUBMISSION TYPE:	10-K PUBLIC DOCUMENT COUNT:		9 CONFORMED PERIOD OF REPORT:	20070929 FILED AS OF DATE:		20071115 DATE AS OF CHANGE:		20071115 FILER: COMPANY DATA: COMPANY CONFORMED NAME:			APPLE INC CENTRAL INDEX KEY:			0000320193 STANDARD INDUSTRIAL CLASSIFICATION:	ELECTRONIC COMPUTERS [3571] IRS NUMBER:				942404110 STATE OF INCORPORATION:			CA FISCAL YEAR END:			0930 FILING VALUES: FORM TYPE:		10-K SEC ACT:		1934 Act SEC FILE NUMBER:	000-10030 FILM NUMBER:		071250316 BUSINESS ADDRESS: STREET 1:		1 INFINITE LOOP CITY:			CUPERTINO STATE:			CA ZIP:			95014 BUSINESS PHONE:		4089961010 MAIL ADDRESS: STREET 1:		ONE INFINITE LOOP CITY:			CUPERTINO STATE:			CA ZIP:			95014 FORMER COMPANY: FORMER CONFORMED NAME:	APPLE COMPUTER INC DATE OF NAME CHANGE:	19970808
 10-K
 1
 a2181030z10-k.htm
@@ -86,11 +86,11 @@ In addition to consumer, education and creative professional markets, the Compan
 Business Organization
 The Company manages its business primarily on a geographic basis. The Company's reportable operating segments consist of the Americas, Europe, Japan, and Retail. The Americas, Europe, and Japan reportable segments do not include activities related to the Retail segment. The Americas segment includes both North and South America. The Europe segment includes European countries as well as the Middle East and Africa. The Retail segment operates Apple-owned retail stores in the U.S., Canada, Japan, the U.K. and Italy. Each reportable geographic operating segment and the Retail operating segment provide similar hardware and software products and similar services. Further information regarding the Company's operating segments may be found in Part II, Item 7 of this Form 10-K under the heading "Segment Operating Performance," and in Part II, Item 8 of this Form 10-K in Notes to Consolidated Financial Statements at Note 9, "Segment Information and Geographic Data."
 Products
-The Company offers a range of personal computing products including desktop and portable personal computers, related devices and peripherals, and various third-party hardware and software products. In addition, the Company offers software products including Mac OS&reg; X, the Company's proprietary operating system software for the Mac&reg;; server software and related solutions; professional application software; and consumer, education and business oriented application software. The Company also designs, develops and markets to Mac and Windows users its family of iPod&reg; digital music players and its iPhone  mobile communication device, along with related accessories and services including the online distribution of third-party content through the Company's iTunes Store . The Company's primary products are discussed below.
+The Company offers a range of personal computing products including desktop and portable personal computers, related devices and peripherals, and various third-party hardware and software products. In addition, the Company offers software products including Mac OS&reg; X, the Company's proprietary operating system software for the Mac&reg;; server software and related solutions; professional application software; and consumer, education and business oriented application software. The Company also designs, develops and markets to Mac and Windows users its family of iPod&reg; digital music players and its iPhone mobile communication device, along with related accessories and services including the online distribution of third-party content through the Company's iTunes Store . The Company's primary products are discussed below.
 Hardware Products
-The Company offers a range of personal computing products including desktop and notebook computers, server and storage products, related devices and peripherals, and various third-party hardware products. The Company's Mac desktop and portable systems feature Intel microprocessors, the Company's Mac OS X Version 10.5 Leopard  ("Mac OS X Leopard") operating system that became available in October 2007 and iLife&reg; suite of software for creation and management of digital photography, music, movies, DVDs, and website. The Company's transition from PowerPC to Intel microprocessors for Mac systems was completed in August 2006, and its transition for Xserve&reg; was completed in November 2006. There are potential risks and uncertainties associated with the transition to Intel microprocessors, which are further discussed in Item 1A of this Form 10-K under the heading "Risk Factors."
+The Company offers a range of personal computing products including desktop and notebook computers, server and storage products, related devices and peripherals, and various third-party hardware products. The Company's Mac desktop and portable systems feature Intel microprocessors, the Company's Mac OS X Version 10.5 Leopard ("Mac OS X Leopard") operating system that became available in October 2007 and iLife&reg; suite of software for creation and management of digital photography, music, movies, DVDs, and website. The Company's transition from PowerPC to Intel microprocessors for Mac systems was completed in August 2006, and its transition for Xserve&reg; was completed in November 2006. There are potential risks and uncertainties associated with the transition to Intel microprocessors, which are further discussed in Item 1A of this Form 10-K under the heading "Risk Factors."
 MacBook&reg; Pro
-The MacBook Pro family of notebook computers is designed for professionals and advanced consumer users. First introduced in January 2006, the MacBook Pro includes a 15-inch or 17-inch widescreen display, a built-in iSight&reg; video camera, Front Row  with the Apple Remote, and the MagSafe&reg; magnetic power adapter. In June 2007, the Company updated its MacBook Pro models to include the latest Intel Core 2 Duo processors and the Nvidia GeForce 8600M GT graphics controller. MacBook Pro includes up to 4GB of 667MHz DDR2 main memory with an 800 MHz frontside bus, a Serial ATA hard drive, and a slot-loading double-layer SuperDrive&reg;. In addition, every MacBook Pro features a 1-inch thin aluminum enclosure and includes AirPort Extreme&reg; 802.11n wireless networking, Bluetooth 2.0+EDR, Gigabit
+The MacBook Pro family of notebook computers is designed for professionals and advanced consumer users. First introduced in January 2006, the MacBook Pro includes a 15-inch or 17-inch widescreen display, a built-in iSight&reg; video camera, Front Row with the Apple Remote, and the MagSafe&reg; magnetic power adapter. In June 2007, the Company updated its MacBook Pro models to include the latest Intel Core 2 Duo processors and the Nvidia GeForce 8600M GT graphics controller. MacBook Pro includes up to 4GB of 667MHz DDR2 main memory with an 800 MHz frontside bus, a Serial ATA hard drive, and a slot-loading double-layer SuperDrive&reg;. In addition, every MacBook Pro features a 1-inch thin aluminum enclosure and includes AirPort Extreme&reg; 802.11n wireless networking, Bluetooth 2.0+EDR, Gigabit
 3
 Ethernet, USB 2.0 and FireWire&reg; ports, audio input and output ports, a DVI video-out port, an ExpressCard/34 slot, scrolling trackpad, and backlit keyboard.
 MacBook&reg;
@@ -114,14 +114,14 @@ In September 2007, the Company introduced a new version of its flash-memory-base
 iPod&reg; classic
 In September 2007, the Company introduced the new iPod classic. The iPod classic is an upgraded version of the original iPod, the Company's hard-drive based portable digital music player. The iPod classic is available in an 80GB model capable of holding up to 20,000 songs or 100 hours of video and a 160GB model capable of holding up to 40,000 songs or 200 hours of video. The iPod classic features up to 40 hours of battery life and includes a new all-metal enclosure and a 2.5-inch color screen that can display album artwork, photos, and video content including music videos, video and audio podcasts, short films, television shows, movies, and games.
 iPod&reg; touch
-In September 2007, the Company introduced the iPod touch, a new flash-memory-based iPod that is 8 mm thin and features the Company's Multi-Touch  user interface on a 3.5-inch widescreen display. The iPod touch includes Wi-Fi wireless networking and additional applications such as Safari , Google Search or Yahoo! oneSearch, and the new iTunes Wi-Fi Music Store. The iPod touch is available in 8GB and 16 GB configurations and features up to 22 hours of audio playback and up to five hours of video playback. The iPod touch's user interface is based on the Multi-Touch  display allowing users to control the device with a touchscreen.
+In September 2007, the Company introduced the iPod touch, a new flash-memory-based iPod that is 8 mm thin and features the Company's Multi-Touch user interface on a 3.5-inch widescreen display. The iPod touch includes Wi-Fi wireless networking and additional applications such as Safari , Google Search or Yahoo! oneSearch, and the new iTunes Wi-Fi Music Store. The iPod touch is available in 8GB and 16 GB configurations and features up to 22 hours of audio playback and up to five hours of video playback. The iPod touch's user interface is based on the Multi-Touch display allowing users to control the device with a touchscreen.
 iTunes&reg; 7
 iTunes is a digital media player application for playing, downloading, and organizing digital music and video files. iTunes is available for both Mac and Windows-based computers. Within iTunes, the user can connect to the iTunes Store , a service that allows customers to find, purchase, and download third-party digital music, audio books, music videos, short films, television shows and movies, and iPod games. In
 5
 September 2007, the Company introduced the iTunes Wi-Fi Music Store offering users the ability to browse, search, preview, purchase, and download songs and albums from their iPod touch or iPhone over a Wi-Fi network. Customers can search the contents of the store catalog to locate works by title, artist, or album, or browse the entire contents of the store by genre. Originally introduced in the U.S. in April 2003, the iTunes Store now serves customers in 22 countries.
 iPhone
 In January 2007, the Company announced iPhone
-, a handheld device that combines in a single product a mobile phone, a widescreen iPod with touch controls, and an Internet communications device. iPhone's user interface is based on the Multi-Touch  display allowing users to control the device with a touchscreen. iPhone lets users make calls by tapping on a name or number in their address book, a favorites list, or a call log as well as select and listen to voicemail messages in any order. iPhone also allows users to purchase and download songs and albums from the iTunes Wi-Fi Music Store directly onto their iPhone and play their iTunes&reg; content, including movies, television shows, music, photos and podcasts, with the touch of a finger. iPhone features desktop-class email, web browsing, searching, and maps. iPhone is compatible with a Mac or PC and automatically syncs content from a user's iTunes library, as well as contacts, bookmarks, and email accounts. iPhone is a quad-band GSM phone featuring EDGE and Wi-Fi wireless technologies for data networking, Bluetooth 2.0, a built-in 2 megapixel camera, a 3.5-inch touch screen with 480-by-320 resolution at 160 pixels per inch, and providing up to 8 hours of talk time, 6 hours of Internet use, 7 hours of video playback or 24 hours of audio playback. AT&amp;T Mobility LLC ("AT&amp;T") is the exclusive U.S. cellular network carrier for iPhone. The Company began shipping iPhone in the U.S. on June 29, 2007. On November 9, 2007, the Company began shipping iPhone in the U.K. and Germany, and expects to ship the iPhone in France on November 29, 2007. O2 Limited ("O2"), T-Mobile International AG &amp; Co. KG ("T-Mobile"), and France Telecom ("Orange") are the exclusive cellular network carriers for iPhone in the U.K., Germany, and France, respectively. The Company has entered into agreements with each exclusive cellular network carrier related to cellular network services and the purchase and sale of iPhone and iPhone related products. These agreements entitle the Company to receive certain payments from these carriers.
+, a handheld device that combines in a single product a mobile phone, a widescreen iPod with touch controls, and an Internet communications device. iPhone's user interface is based on the Multi-Touch display allowing users to control the device with a touchscreen. iPhone lets users make calls by tapping on a name or number in their address book, a favorites list, or a call log as well as select and listen to voicemail messages in any order. iPhone also allows users to purchase and download songs and albums from the iTunes Wi-Fi Music Store directly onto their iPhone and play their iTunes&reg; content, including movies, television shows, music, photos and podcasts, with the touch of a finger. iPhone features desktop-class email, web browsing, searching, and maps. iPhone is compatible with a Mac or PC and automatically syncs content from a user's iTunes library, as well as contacts, bookmarks, and email accounts. iPhone is a quad-band GSM phone featuring EDGE and Wi-Fi wireless technologies for data networking, Bluetooth 2.0, a built-in 2 megapixel camera, a 3.5-inch touch screen with 480-by-320 resolution at 160 pixels per inch, and providing up to 8 hours of talk time, 6 hours of Internet use, 7 hours of video playback or 24 hours of audio playback. AT&amp;T Mobility LLC ("AT&amp;T") is the exclusive U.S. cellular network carrier for iPhone. The Company began shipping iPhone in the U.S. on June 29, 2007. On November 9, 2007, the Company began shipping iPhone in the U.K. and Germany, and expects to ship the iPhone in France on November 29, 2007. O2 Limited ("O2"), T-Mobile International AG &amp; Co. KG ("T-Mobile"), and France Telecom ("Orange") are the exclusive cellular network carriers for iPhone in the U.K., Germany, and France, respectively. The Company has entered into agreements with each exclusive cellular network carrier related to cellular network services and the purchase and sale of iPhone and iPhone related products. These agreements entitle the Company to receive certain payments from these carriers.
 In addition to the Company's own iPhone accessories, third-party iPhone compatible products are available, either through the Company's online and retail stores or from third parties, including headsets, cables and docks, power supplies, and carrying cases.
 Peripheral Products
 The Company sells a variety of Apple-branded and third-party Mac-compatible peripheral products directly to end-users through its retail and online stores, including printers, storage devices, computer memory, digital video and still cameras, and various other computing products and supplies.
@@ -134,7 +134,7 @@ In January 2007, the Company announced Apple TV, a device that permits users to 
 Software Products and Computer Technologies
 The Company offers a range of software products for education, creative professional, consumer, business and government customers, including Mac OS X, the Company's proprietary operating system software for the Mac; server software and related solutions; professional application software; and consumer, education, and business oriented application software.
 Operating System Software
-Mac OS&reg; X is built on an open-source UNIX-based foundation. Mac OS X Leopard is the sixth major release of Mac OS X and became available in October 2007. Leopard includes 300 new features and introduces a new desktop with Stacks, a new way to easily access files from the Dock; a redesigned Finder  that lets users quickly browse and share files between multiple Macs; Quick Look, a new way to instantly see files without opening an application; Spaces , an intuitive new feature used to create groups of applications and instantly switch between them; and Time Machine , an effortless way to automatically back up everything on a Mac.
+Mac OS&reg; X is built on an open-source UNIX-based foundation. Mac OS X Leopard is the sixth major release of Mac OS X and became available in October 2007. Leopard includes 300 new features and introduces a new desktop with Stacks, a new way to easily access files from the Dock; a redesigned Finder that lets users quickly browse and share files between multiple Macs; Quick Look, a new way to instantly see files without opening an application; Spaces , an intuitive new feature used to create groups of applications and instantly switch between them; and Time Machine , an effortless way to automatically back up everything on a Mac.
 Application Software
 iLife&reg; '08
 In August 2007, the Company introduced iLife '08, the latest release of its consumer-oriented digital lifestyle application suite, which features iPhoto&reg;, iDVD&reg;, GarageBand&reg;, iWeb , iTunes&reg; and iMovie&reg; '08. All of these applications are Universal, meaning that they run natively on both Intel and PowerPC-based Mac computers ("Universal").
@@ -143,9 +143,9 @@ iMovie&reg; '08 is a new version of the Company's consumer-oriented digital vide
 iDVD&reg; is the Company's consumer-oriented software application that enables users to turn iMovie files, QuickTime&reg; files, and digital pictures into interactive DVDs that can be played on most consumer DVD players. iDVD '08 features 10 new Apple-designed menu themes in both widescreen (16:9) and standard (4:3) formats.
 GarageBand&reg; is the Company's consumer-oriented music creation software application that allows users to play, record and create music using a simple interface. With GarageBand, software instruments, digital audio recordings and looping tracks can be arranged and edited to create songs. GarageBand '08 allows users to export finished songs to their iTunes library, or publish a podcast through iWeb and .Mac that includes artwork, sound effects, and music jingles.
 7
-iWeb  allows users to create online photo albums, blogs and podcasts, and to customize websites using editing tools. iWeb'08 offers new features to make websites more interactive by adding live web widgets, which are snippets of live content from other websites, such as Google Maps, targeted ads using Google AdSense and photos or movies from .Mac Web Galleries.
+iWeb allows users to create online photo albums, blogs and podcasts, and to customize websites using editing tools. iWeb'08 offers new features to make websites more interactive by adding live web widgets, which are snippets of live content from other websites, such as Google Maps, targeted ads using Google AdSense and photos or movies from .Mac Web Galleries.
 iLife '08 also includes iTunes&reg;, the Company's digital music jukebox software application that allows users to purchase a variety of digital content available through the Company's iTunes Store. iTunes organizes content using searching, browsing, and playlists, and provides integration with the complete family of iPods and iPhone.
-iWork  '08
+iWork '08
 In August 2007, the Company introduced iWork '08, a new version of the Company's integrated productivity suite designed to help users create, present, and publish documents, presentations and spreadsheets. iWork '08 includes updates to Pages&reg; '08 for word processing and page layout, Keynote&reg; '08 for presentations, and introduces Numbers '08 for spreadsheets. All of these programs are Universal and feature advanced image tools, including enhanced photo masking, resizable picture frames and edges, and Instant Alpha, which easily removes the background of a photo.
 Final Cut Studio&reg; 2
 In April 2007, the Company introduced Final Cut Studio&reg; 2, an upgraded version of the Company's video production suite designed for professionals. Final Cut Studio 2 features Final Cut Pro&reg; 6 for video editing, DVD Studio Pro&reg; 4 for DVD authoring, Motion 3 for real-time motion graphics, Soundtrack&reg; Pro 2 for audio editing and sound design, Color for color grading and finishing, and Compressor 3 for encoding media in multiple formats. All of these applications are Universal. The Company also offers Final Cut Express HD 3.5, a consumer version of the Company's movie making software.
@@ -156,7 +156,7 @@ The FileMaker Pro database software is Universal and offers relational databases
 Internet Software and Services
 The Company is focused on delivering seamless integration with and access to the Internet throughout the Company's products and services. The Company's Internet solutions adhere to many industry standards to provide an optimized user experience.
 Safari
-In October 2007, the Company made available Safari 3, a web browser compatible with Windows XP, Windows Vista and Mac OS X. Safari 3 includes built-in Google search; SnapBack  to instantly return to
+In October 2007, the Company made available Safari 3, a web browser compatible with Windows XP, Windows Vista and Mac OS X. Safari 3 includes built-in Google search; SnapBack to instantly return to
 8
 search results; a way to name, organize and present bookmarks; tabbed browsing; and automatic "pop-up" ad blocking.
 QuickTime&reg;
@@ -168,7 +168,7 @@ Wireless Connectivity and Networking
 AirPort Extreme&reg;
 AirPort Extreme is the Company's wireless networking technology. AirPort Extreme Base Station includes 802.11n Wi-Fi wireless networking and supports up to 50 users. Air Port Extreme operates at either 2.4 GHz or 5 GHz frequencies, providing compatibility with most Wi-Fi devices. The current AirPort Extreme Base Station works with both Mac and Windows computers, includes multiple Gigabit Ethernet ports and supports USB printer sharing to allow multiple users to wirelessly share USB printers connected directly to the base station. All Macs have either built-in or optional wireless networking client hardware and software that communicates with Airport Extreme or Airport Express Base Stations.
 AirPort&reg; Express&reg;
-AirPort Express is the first 802.11g standard mobile base station that can be plugged directly into the wall for wireless Internet connections and USB printing. Airport Express also features analog and digital audio outputs that can be connected to a stereo and AirTunes  music networking software that works with iTunes, giving users a way to wirelessly stream iTunes music from their Mac or Windows-based computer to any room in the house. AirPort Express features a single piece design weighing 6.7 ounces.
+AirPort Express is the first 802.11g standard mobile base station that can be plugged directly into the wall for wireless Internet connections and USB printing. Airport Express also features analog and digital audio outputs that can be connected to a stereo and AirTunes music networking software that works with iTunes, giving users a way to wirelessly stream iTunes music from their Mac or Windows-based computer to any room in the house. AirPort Express features a single piece design weighing 6.7 ounces.
 Product Support and Services
 AppleCare&reg; offers a range of support options for the Company's customers. These options include assistance that is built into software products, printed and electronic product manuals, online support including comprehensive product information as well as technical assistance, and the AppleCare
 9
@@ -357,7 +357,7 @@ Boston Retirement Board v. Apple Computer Inc.
 ). The petition sought to compel the Company to allow inspection of certain corporate records relating to the Company's option practices and the Special Committee's investigation. On January 16, 2007, the Company filed a demurrer to the petition. The Court entered an order overruling the demurrer on March 13, 2007. The Company filed its answer to the petition on April 5, 2007. The trial took place on September 24, 2007. The Court granted the petition for inspection but narrowed the scope of the records to be produced.
 In re Apple iPod Nano Products Liability Litigation (formerly Wimmer v. Apple Computer, Inc.; Moschella, et al., v. Apple Computer, Inc.
 ;
-Calado, et al. v. Apple Computer,  Inc.
+Calado, et al. v. Apple Computer, Inc.
 ;
 Kahan, et al., v. Apple Computer, Inc
 .;
@@ -466,7 +466,7 @@ $
 93.16 - $72.60
 Fiscal 2006 price range per common share
 $
-77.78 - $  50.16
+77.78 - $ 50.16
 $
 73.80 - $55.41
 $
@@ -1252,7 +1252,7 @@ Reports of Independent Registered Public Accounting Firm, KPMG LLP
 91
 All financial statement schedules have been omitted, since the required information is not applicable or is not present in amounts sufficient to require submission of the schedule, or because the information required is included in the Consolidated Financial Statements and Notes thereto.
 54
-CONSOLIDATED BALANCE SHEETS            (In millions, except share amounts)
+CONSOLIDATED BALANCE SHEETS (In millions, except share amounts)
 September 29, 2007
 September 30, 2006
 ASSETS:
@@ -1337,7 +1337,7 @@ $
 17,205
 See accompanying Notes to Consolidated Financial Statements.
 55
-CONSOLIDATED STATEMENTS OF OPERATIONS            (In millions, except share and per share amounts)
+CONSOLIDATED STATEMENTS OF OPERATIONS (In millions, except share and per share amounts)
 Three fiscal years ended September 29, 2007
 2007
 2006
@@ -1442,7 +1442,7 @@ $
 39
 See accompanying Notes to Consolidated Financial Statements.
 56
-CONSOLIDATED STATEMENTS OF SHAREHOLDERS' EQUITY            (In millions, except share amounts which are in thousands)
+CONSOLIDATED STATEMENTS OF SHAREHOLDERS' EQUITY (In millions, except share amounts which are in thousands)
 Common Stock
 Accumulated
 Other
@@ -1594,7 +1594,7 @@ $
 14,532
 See accompanying Notes to Consolidated Financial Statements.
 57
-CONSOLIDATED STATEMENTS OF CASH FLOWS            (In millions)
+CONSOLIDATED STATEMENTS OF CASH FLOWS (In millions)
 Three fiscal years ended September 29, 2007
 2007
 2006
@@ -3598,7 +3598,7 @@ Based solely upon a review of the copies of such forms furnished to the Company 
 and 2,600 shares of the Company's common stock in April 2006, June 2006 and July 2007, respectively, and (ii) one Form 4 was filed for Tony Fadell on November 15, 2007 with respect to the acquisition by Mr. Fadell's spouse of 40,000 restricted stock units in December 2006 and 25,000 restricted stock units in October 2007.
 Item 11. Executive Compensation
 COMPENSATION DISCUSSION AND ANALYSIS
-A.    EXECUTIVE SUMMARY
+A. EXECUTIVE SUMMARY
 This section explains Apple's executive compensation program as it relates to the following "named executive officers:"
 Steve Jobs
 Chief Executive Officer
@@ -3616,9 +3616,9 @@ The performance-based cash incentives compensate the named executive officers fo
 Based on the factors discussed in Section D3 below and the Committee's belief that the outstanding, unvested equity awards still had significant retention value, the Committee made no new equity awards to the named executive officers in fiscal 2007. The officers earned cash incentives in fiscal 2007 at the maximum amount allowed by the plan 100% of base salary because Apple's financial performance significantly exceeded the annual performance goals set by the Committee. The Committee assessed both the amount and allocation of the compensation components for each officer based on Apple's overall annual financial performance and each officer's individual performance. The Committee did not increase base salaries for the named executive officers because it concluded that the total compensation for each officer was appropriate.
 99
 Apple's shareholders have been generously rewarded for Apple's success, with a three-year annualized shareholder return of 101% through the end of fiscal 2007. The Committee believes the compensation of the named executive officers has been appropriate and fair in light of Apple's performance.
-B.    EXECUTIVE COMPENSATION OBJECTIVES
+B. EXECUTIVE COMPENSATION OBJECTIVES
 Apple's goal for executive compensation is simple: attract and retain an exceptionally talented, entrepreneurial and creative team of executives who will provide the leadership for Apple's success in dynamic, highly-competitive markets.
-C.    EXECUTIVE COMPENSATION OVERVIEW
+C. EXECUTIVE COMPENSATION OVERVIEW
 1.
 Three Components
 The compensation program for the named executive officers consists of the following three components, in order of their importance:
@@ -3645,7 +3645,7 @@ Apple's CEO, Steve Jobs, currently holds approximately 5.5 million shares of App
 Mr. Jobs has received a $1 annual salary since he rejoined Apple in 1997 and began serving as interim CEO. In 1999, Apple awarded Mr. Jobs an aircraft as an executive bonus in recognition of his outstanding performance during the previous two years. Mr. Jobs also received two stock option grants, one in 2000 and another in 2001. Mr. Jobs never exercised these grants, and they were both cancelled in March 2003, when Apple awarded Mr. Jobs a grant of 5 million shares of restricted stock.
 The 2003 restricted stock grant required Mr. Jobs to remain employed by Apple for three more years before it vested. This grant, which increased to 10 million shares when Apple's common stock split in 2005, vested in full in March 2006. After a portion of these shares was withheld for the payment of taxes, Mr. Jobs received the remaining 5,426,447 shares. Due in large part to Mr. Jobs's leadership, Apple's stock price (after accounting for a stock split) increased from $7.47 on the March 2003 grant date to $64.66 on the March 2006 vesting date more than an eight-fold increase in three years. Under Mr. Jobs's continued leadership, Apple's stock price increased from $64.66 per share in March 2006 to $189.95 per share as of October 31, 2007 a three-fold increase in approximately 18 months.
 When he was elected to Apple's Board of Directors in 1997, Mr. Jobs received the standard director's stock option grant for 30,000 shares. Because Mr. Jobs became employed later that year as Apple's interim CEO, he was no longer eligible for such director grants. When the 1997 director grant (which increased to 120,000 shares after two stock splits) was due to expire in August 2007, Mr. Jobs exercised the option and he currently holds these 120,000 shares.
-D.    EXECUTIVE COMPENSATION PROGRAM DESIGN AND IMPLEMENTATION
+D. EXECUTIVE COMPENSATION PROGRAM DESIGN AND IMPLEMENTATION
 1.
 Team-Based Compensation
 The compensation program for the named executive officers rests on two assumptions. First, each officer must demonstrate exceptional personal performance in order to remain part of the executive team. Second, each officer must contribute as a member of the team to Apple's overall success rather than merely achieve specific objectives within that officer's area of responsibility.
@@ -3791,7 +3791,7 @@ Tiffany &amp; Co.
 Tween Brands
 Wal-Mart
 105
-The Committee reviews compensation practices at peer companies (gathered from SEC filings and the Radford High Technology compensation survey) at a high level to ensure that Apple's total compensation is within a reasonably competitive range. The Committee, however, does not attempt to set compensation components to meet specific benchmarks, such as salaries "above the median" or equity compensation "at the 75th percentile." Furthermore, the Committee believes that excessive reliance on benchmarking is detrimental to shareholder interests because it can result in compensation that is unrelated to the value delivered by the named executive officers.
+The Committee reviews compensation practices at peer companies (gathered from SEC filings and the Radford High Technology compensation survey) at a high level to ensure that Apple's total compensation is within a reasonably competitive range. The Committee, however, does not attempt to set compensation components to meet specific benchmarks, such as salaries "above the median" or equity compensation "at the 75 th percentile." Furthermore, the Committee believes that excessive reliance on benchmarking is detrimental to shareholder interests because it can result in compensation that is unrelated to the value delivered by the named executive officers.
 7.
 Tax and Accounting Considerations
 Tax Deductibility of Compensation Expense.
@@ -3802,7 +3802,7 @@ Section 409A of the Internal Revenue Code imposes additional income taxes on exe
 Accounting Considerations.
 The Committee also considers the accounting and cash flow implications of various forms of executive compensation. In its financial statements, Apple records salaries and performance-based compensation incentives as expenses in the amount paid, or to be paid, to the named executive officers. Accounting rules also require Apple to record an expense in its financial statements for equity awards, even though equity awards are not paid as cash to employees. The accounting expense of equity awards to employees is calculated in accordance with SFAS 123R. The Committee believes, however, that the many advantages of equity compensation, as discussed above, more than compensate for the non-cash accounting expense associated with them.
 106
-E.    Fiscal 2007 Compensation Decisions
+E. Fiscal 2007 Compensation Decisions
 1.
 No Equity Grants or Salary Changes
 In fiscal 2007, the Committee did not grant new equity awards or increase base salaries for the named executive officers. Based on its assessment of the factors discussed above and the Committee's belief that the outstanding, unvested equity grants at the beginning of fiscal 2007 had significant retention value, the Committee concluded that the compensation packages for the named executive officers were reasonable without additional equity awards. The outstanding equity grants at the end of fiscal 2007 are shown on the Outstanding Equity Awards table on pages 110 and 111. Based on a review of competitive practices and the Committee's approach to place less emphasis on cash compensation, the Committee concluded that the total compensation for the officers were appropriate for fiscal 2007 without a salary increase.
@@ -4045,7 +4045,7 @@ Tony Fadell
 12,875
 56,250
 25,000
-(1)(2)(3)
+(1) (2) (3)
 10.90
 14.03
 46.57
@@ -4086,7 +4086,7 @@ Timothy D. Cook
 12/14/2005
 300,000
 300,000
-(2)(3)
+(2) (3)
 46,041,000
 46,041,000
 Totals
@@ -4097,7 +4097,7 @@ Peter Oppenheimer
 12/14/2005
 250,000
 200,000
-(2)(3)
+(2) (3)
 38,367,500
 30,694,000
 Totals
@@ -4108,7 +4108,7 @@ Ronald B. Johnson
 12/14/2005
 250,000
 200,000
-(2)(3)
+(2) (3)
 38,367,500
 30,694,000
 Totals
@@ -4119,7 +4119,7 @@ Tony Fadell
 2/2/2006
 10,000
 200,000
-(4)(5)
+(4) (5)
 1,534,700
 30,694,000
 Totals

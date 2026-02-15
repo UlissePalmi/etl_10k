@@ -35,9 +35,13 @@ FORM       = "10-K"                                                 # or "10-K",
 START_DATE = "2006-01-01"                                           # filings per CIK, only released after 2006
 
 # Auto-detect optimal number of workers based on CPU cores
-# Uses 85% of available cores (leaves room for OS and other processes)
+# Uses 90% of available cores (leaves room for OS and other processes)
 CPU_CORES = os.cpu_count() or 1
-MAX_WORKERS = max(1, int(CPU_CORES * 0.9))                         # Auto-scales: 24 workers on 28-core, 7 workers on 8-core, etc.
+MAX_WORKERS = max(1, int(CPU_CORES * 0.9))                         # Auto-scales: 25 workers on 28-core, 7 workers on 8-core, etc.
+
+# SEC download workers (must respect 10 req/sec rate limit to avoid IP ban)
+# Conservative limit: 5-8 workers ensures we stay well under 10 req/sec
+MAX_WORKERS_DOWNLOADS = 8                                           # Limited to respect SEC rate limits
 # -------------------------------
 
 def ensure_project_dirs() -> None:
