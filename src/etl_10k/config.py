@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # ------------------ Directories ------------------ 
 
@@ -32,7 +33,11 @@ FINAL_DATASET = PROCESSED_PANEL_DIR / "final_dataset.csv"
 # ---------- SETTINGS ----------
 FORM       = "10-K"                                                 # or "10-K", "10-KT", etc.
 START_DATE = "2006-01-01"                                           # filings per CIK, only released after 2006
-MAX_WORKERS = 16                                                     # number of threads
+
+# Auto-detect optimal number of workers based on CPU cores
+# Uses 85% of available cores (leaves room for OS and other processes)
+CPU_CORES = os.cpu_count() or 1
+MAX_WORKERS = max(1, int(CPU_CORES * 0.9))                         # Auto-scales: 24 workers on 28-core, 7 workers on 8-core, etc.
 # -------------------------------
 
 def ensure_project_dirs() -> None:

@@ -1,5 +1,5 @@
 from etl_10k.config import RAW_EDGAR_DIR, INTERIM_CLEANED_DIR, MAX_WORKERS
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ProcessPoolExecutor, as_completed
 import re
 
 # --------------------------------------------------------------------------------------------------------------------
@@ -74,6 +74,40 @@ _SPACE_BEFORE_NEWLINE_PATTERN = re.compile(r'[ \t]+\n')
 _ENSURE_SPACE_AFTER_ITEM_PATTERN = re.compile(r'\b(Items?)\b(?=\S)')
 _ITEM_NUMBER_ONLY_PATTERN = re.compile(r'Item\s+\d+')
 _ITEM_SUFFIX_PATTERN = re.compile(r'[A-Za-z]\.')
+
+# Tag unwrapping replacements (consolidated for efficient sequential processing)
+_TAG_REPLACEMENTS = [
+    # ix tags
+    (_IX_OPENING_TAG_PATTERN, '\n'),
+    (_IX_CLOSING_TAG_PATTERN, ''),
+    # html tags
+    (_HTML_OPENING_TAG_PATTERN, '\n'),
+    (_HTML_CLOSING_TAG_PATTERN, ''),
+    # font tags
+    (_FONT_OPENING_TAG_PATTERN, '\n'),
+    (_FONT_CLOSING_TAG_PATTERN, ''),
+    # line break and horizontal rule
+    (_BR_TAG_PATTERN, ''),
+    (_HR_TAG_PATTERN, ''),
+    # bold tags
+    (_B_OPENING_TAG_PATTERN, '\n'),
+    (_B_CLOSING_TAG_PATTERN, ''),
+    # center tags
+    (_CENTER_OPENING_TAG_PATTERN, '\n'),
+    (_CENTER_CLOSING_TAG_PATTERN, ''),
+    # anchor tags
+    (_A_OPENING_TAG_PATTERN, '\n'),
+    (_A_CLOSING_TAG_PATTERN, ''),
+    # table tags
+    (_TABLE_OPENING_TAG_PATTERN, '\n'),
+    (_TABLE_CLOSING_TAG_PATTERN, ''),
+    # table row tags
+    (_TR_OPENING_TAG_PATTERN, '\n'),
+    (_TR_CLOSING_TAG_PATTERN, ''),
+    # table cell tags
+    (_TD_OPENING_TAG_PATTERN, '\n'),
+    (_TD_CLOSING_TAG_PATTERN, ''),
+]
 
 # --------------------------------------------------------------------------------------------------------------------
 #                                              REGEX FOR HTML CLEANING
@@ -225,37 +259,11 @@ def unwrap_tags(html_content):
     This function removes/replaces a set of tags commonly found in SEC filings,
     inserting newlines for structural tags and deleting closing tags. It also
     removes table-related tags (<table>, <tr>, <td>) by converting some to newlines.
+
+    Uses consolidated pattern replacements for improved performance.
     """
-    html_content = _IX_OPENING_TAG_PATTERN.sub('\n', html_content)
-    html_content = _IX_CLOSING_TAG_PATTERN.sub('', html_content)
-
-    html_content = _HTML_OPENING_TAG_PATTERN.sub('\n', html_content)
-    html_content = _HTML_CLOSING_TAG_PATTERN.sub('', html_content)
-
-    html_content = _FONT_OPENING_TAG_PATTERN.sub('\n', html_content)
-    html_content = _FONT_CLOSING_TAG_PATTERN.sub('', html_content)
-
-    html_content = _BR_TAG_PATTERN.sub('', html_content)
-    html_content = _HR_TAG_PATTERN.sub('', html_content)
-
-    html_content = _B_OPENING_TAG_PATTERN.sub('\n', html_content)
-    html_content = _B_CLOSING_TAG_PATTERN.sub('', html_content)
-
-    html_content = _CENTER_OPENING_TAG_PATTERN.sub('\n', html_content)
-    html_content = _CENTER_CLOSING_TAG_PATTERN.sub('', html_content)
-
-    html_content = _A_OPENING_TAG_PATTERN.sub('\n', html_content)
-    html_content = _A_CLOSING_TAG_PATTERN.sub('', html_content)
-
-    html_content = _TABLE_OPENING_TAG_PATTERN.sub('\n', html_content)
-    html_content = _TABLE_CLOSING_TAG_PATTERN.sub('', html_content)
-
-    html_content = _TR_OPENING_TAG_PATTERN.sub('\n', html_content)
-    html_content = _TR_CLOSING_TAG_PATTERN.sub('', html_content)
-
-    html_content = _TD_OPENING_TAG_PATTERN.sub('\n', html_content)
-    html_content = _TD_CLOSING_TAG_PATTERN.sub('', html_content)
-
+    for pattern, replacement in _TAG_REPLACEMENTS:
+        html_content = pattern.sub(replacement, html_content)
     return html_content
 
 def clean_lines(text_content):
@@ -498,9 +506,10 @@ def clean_worker(ciks):
     """
     Run the filing cleaning step in parallel across a list of CIKs.
 
-    Uses a thread pool to call `cleaner()` on each CIK.
+    Uses a process pool to call `cleaner()` on each CIK for true parallel execution.
+    ProcessPoolExecutor bypasses Python's GIL, enabling full CPU utilization.
     """
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+    with ProcessPoolExecutor(max_workers=MAX_WORKERS) as executor:
         futures = {executor.submit(cleaner, cik): cik for cik in ciks}
 
         for fut in as_completed(futures):
