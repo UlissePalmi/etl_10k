@@ -3,7 +3,6 @@ from etl_10k.edgar import cik_index as cl, downloader as sd
 from etl_10k.text import clean as hc, segment as si, tokenizer as sm
 from etl_10k.wrds import crsp_returns as cr
 from etl_10k.datasets import build_panel as bp
-from etl_10k.models import rf_setup as rs, rf_classification as rc, rf_regression as rr
 from typing import Iterable, List, Optional
 from pathlib import Path
 import pandas as pd
@@ -68,6 +67,11 @@ def _parse_args():
     p.add_argument("--from-step", type=int, default=0, choices=range(0, 8))
     p.add_argument("--to-step", type=int, default=7, choices=range(0, 8))
     p.add_argument("--delete", type=bool, default=False)
+    p.add_argument(
+        "--keep-raw",
+        action="store_true",
+        help="Keep raw HTML files after cleaning in step 2 (default: delete to save space)"
+    )
 
     return p.parse_args()
 
@@ -94,15 +98,26 @@ def step_01_pull_returns() -> None:
     cr.df_with_returns()
     cr.update_cik_list()
 
-def step_02_download_filings(ciks: Optional[Iterable[str]] = None):
+def step_02_download_filings(ciks: Optional[Iterable[str]] = None, keep_raw: bool = False):
     """
-    Download raw SEC filings for the requested CIKs.
+    Download and clean SEC filings for the requested CIKs.
 
-    If `ciks` is None, uses the full universe from `cik_list.csv`.
+    This integrated pipeline downloads, cleans, and optionally deletes raw HTML
+    in a single pass to minimize storage requirements (~400 GB → ~1 GB peak).
+
+    Args:
+        ciks: CIKs to download (None = all from cik_list.csv)
+        keep_raw: If True, preserve raw HTML after cleaning (default: False)
+
+    If keep_raw=False (default), raw HTML files are automatically deleted after
+    successful cleaning and verification, saving ~400 GB of storage.
     """
     if ciks is None:
         ciks = cl.load_unique_ciks()
-    sd.download(ciks)
+
+    # Use integrated download+clean+delete pipeline
+    from etl_10k.edgar.clean_downloader import download_clean_delete
+    download_clean_delete(ciks, keep_raw=keep_raw)
 
 def step_03_clean_filings(ciks: Optional[Iterable[str]] = None, delete: bool = False) -> None:
     """
@@ -170,20 +185,3 @@ def step_06_build_panel() -> None:
     sim_df = bp.merge_return(sim_df, return_df, months=6, period="future")
     print(sim_df)
     sim_df.to_csv(FINAL_DATASET, index=False)
-
-def step_07_run_models() -> None:
-    """
-    Run the classification and regression models on the final dataset.
-
-    Trains the Random Forest models and prints evaluation output.
-    """
-    df = pd.read_csv(FINAL_DATASET)
-
-    df_cat, labels = rc.create_labels(df, prediction_col="future_18m_ret")
-    print(df_cat)
-    X, y = rs.X_y_builder(df_cat)
-    rc.rf_cat(X, y, labels)
-    print("="*10)
-    df["prediction"] = df["future_18m_ret"]
-    X, y = rs.X_y_builder(df)
-    rr.rf_reg(X, y, df)

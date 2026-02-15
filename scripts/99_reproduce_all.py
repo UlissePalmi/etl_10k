@@ -19,12 +19,11 @@ def main():
     steps = {
         0: ("build_universe", lambda: s.step_00_build_universe(args.start_year, args.end_year)),
         1: ("pull_returns", s.step_01_pull_returns),
-        2: ("download_filings", lambda: s.step_02_download_filings(ciks)),
+        2: ("download_filings", lambda: s.step_02_download_filings(ciks, keep_raw=args.keep_raw)),
         3: ("clean_filings", lambda: s.step_03_clean_filings(ciks, args.delete)),
         4: ("extract_item1a", lambda: s.step_04_extract_item1a(ciks)),
         5: ("compute_features", lambda: s.step_05_compute_features(ciks, args.delete)),
-        6: ("build_panel", s.step_06_build_panel),
-        7: ("run_models", s.step_07_run_models),
+        6: ("build_panel", s.step_06_build_panel)
     }
 
     print(f"Running pipeline for: {('ALL CIKs' if ciks is None else f'{len(ciks)} CIK(s)')}")
