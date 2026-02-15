@@ -3,6 +3,79 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import re
 
 # --------------------------------------------------------------------------------------------------------------------
+#                                              PRE-COMPILED REGEX PATTERNS
+# --------------------------------------------------------------------------------------------------------------------
+
+# XBRL and XML removal patterns
+_XBRL_XML_BLOCKS_PATTERN = re.compile(r'(<XBRL.*?>.*?</XBRL>)|(<XML.*?>.*?</XML>)', re.DOTALL)
+_IX_TAGS_PATTERN = re.compile(r'</?ix:.*?>')
+
+# Head and attribute removal patterns
+_HEAD_PATTERN = re.compile(r'<head>.*?</head>', re.DOTALL | re.IGNORECASE)
+_STYLE_ATTR_PATTERN = re.compile(r'\sstyle=(["\']).*?\1', re.IGNORECASE)
+_ID_ATTR_PATTERN = re.compile(r'\s+id=(["\']).*?\1', re.IGNORECASE)
+_ALIGN_ATTR_PATTERN = re.compile(r'\s+align=(["\']).*?\1', re.IGNORECASE)
+
+# Comment, image, and entity patterns
+_HTML_COMMENT_PATTERN = re.compile(r'<!--.*?-->', re.DOTALL)
+_IMG_TAG_PATTERN = re.compile(r'<img.*?>', re.IGNORECASE)
+_NUMERIC_ENTITY_3DIGIT_PATTERN = re.compile(r'&#\d{3};')
+
+# Empty tag patterns (for loop cleaning)
+_EMPTY_P_PATTERN = re.compile(r'<p>\s*</p>', re.DOTALL | re.IGNORECASE)
+_EMPTY_DIV_PATTERN = re.compile(r'<div>\s*</div>', re.IGNORECASE)
+
+# Numeric entity pattern (general)
+_NUMERIC_ENTITY_PATTERN = re.compile(r'&#(?:\d{1,8}|[xX][0-9A-Fa-f]{1,8});')
+
+# Tag unwrapping patterns
+_IX_OPENING_TAG_PATTERN = re.compile(r'<ix:[a-zA-Z0-9_:]+.*?>', re.IGNORECASE)
+_IX_CLOSING_TAG_PATTERN = re.compile(r'</ix:[a-zA-Z0-9_:]+>', re.IGNORECASE)
+_HTML_OPENING_TAG_PATTERN = re.compile(r'<html.*?>', re.IGNORECASE | re.DOTALL)
+_HTML_CLOSING_TAG_PATTERN = re.compile(r'</html>', re.IGNORECASE)
+_FONT_OPENING_TAG_PATTERN = re.compile(r'<font.*?>', re.IGNORECASE | re.DOTALL)
+_FONT_CLOSING_TAG_PATTERN = re.compile(r'</font>', re.IGNORECASE)
+_BR_TAG_PATTERN = re.compile(r'<br.*?>', re.IGNORECASE | re.DOTALL)
+_HR_TAG_PATTERN = re.compile(r'<hr.*?>', re.IGNORECASE | re.DOTALL)
+_B_OPENING_TAG_PATTERN = re.compile(r'<B>', re.IGNORECASE | re.DOTALL)
+_B_CLOSING_TAG_PATTERN = re.compile(r'</B>', re.IGNORECASE)
+_CENTER_OPENING_TAG_PATTERN = re.compile(r'<center>', re.IGNORECASE | re.DOTALL)
+_CENTER_CLOSING_TAG_PATTERN = re.compile(r'</center>', re.IGNORECASE)
+_A_OPENING_TAG_PATTERN = re.compile(r'<a.*?>', re.IGNORECASE | re.DOTALL)
+_A_CLOSING_TAG_PATTERN = re.compile(r'</a>', re.IGNORECASE)
+_TABLE_OPENING_TAG_PATTERN = re.compile(r'<table.*?>', re.DOTALL | re.IGNORECASE)
+_TABLE_CLOSING_TAG_PATTERN = re.compile(r'</table>', re.DOTALL | re.IGNORECASE)
+_TR_OPENING_TAG_PATTERN = re.compile(r'<tr.*?>', re.DOTALL | re.IGNORECASE)
+_TR_CLOSING_TAG_PATTERN = re.compile(r'</tr>', re.DOTALL | re.IGNORECASE)
+_TD_OPENING_TAG_PATTERN = re.compile(r'<td.*?>', re.DOTALL | re.IGNORECASE)
+_TD_CLOSING_TAG_PATTERN = re.compile(r'</td>', re.DOTALL | re.IGNORECASE)
+
+# Other tag patterns
+_P_TAG_PATTERN = re.compile(r'<p.*?>', re.IGNORECASE)
+_ALL_HTML_TAGS_PATTERN = re.compile(r'<.*?>')
+
+# XBRLI patterns
+_XBRLI_MEASURE_PATTERN = re.compile(r'<xbrli:([a-zA-Z0-9_:]+).*?>.*?</xbrli:\1>', re.DOTALL | re.IGNORECASE)
+
+# SEC document patterns
+_SEC_DOCUMENT_PATTERN = re.compile(r'<SEC-DOCUMENT>.*\Z', re.DOTALL)
+_CONTENT_BEFORE_SEQUENCE2_PATTERN = re.compile(r'^.*?(?=<SEQUENCE>2)', re.DOTALL)
+
+# Item heading patterns
+_ITEM_HEAD_DETECT_PATTERN = re.compile(
+    r'\s*items?\b\s*'
+    r'\d+[A-Za-z]?'
+    r'(?:\s*(?:and|to|through|-)\s*\d+[A-Za-z]?)*'
+    r'\s*\.', re.IGNORECASE)
+_ITEM_IGNORE_PRE_PATTERN = re.compile(r'\b(?:in|of|see|at|with|under|this|to)[ \t"""]*$', re.IGNORECASE)
+_SPACE_BEFORE_NEWLINE_PATTERN = re.compile(r'[ \t]+\n')
+
+# Item cleaning patterns
+_ENSURE_SPACE_AFTER_ITEM_PATTERN = re.compile(r'\b(Items?)\b(?=\S)')
+_ITEM_NUMBER_ONLY_PATTERN = re.compile(r'Item\s+\d+')
+_ITEM_SUFFIX_PATTERN = re.compile(r'[A-Za-z]\.')
+
+# --------------------------------------------------------------------------------------------------------------------
 #                                              REGEX FOR HTML CLEANING
 # --------------------------------------------------------------------------------------------------------------------
 
@@ -12,10 +85,8 @@ def remove_xbrl_xml_blocks(html_content):
       - entire <XBRL>...</XBRL> or <XML>...</XML> blocks,
       - individual inline XBRL tags like <ix:...> or </ix:...>.
     """
-    pattern_blocks = re.compile(r'(<XBRL.*?>.*?</XBRL>)|(<XML.*?>.*?</XML>)', re.DOTALL)
-    pattern_tags = re.compile(r'</?ix:.*?>')
-    clean_content = re.sub(pattern_blocks, '', html_content)
-    clean_content = re.sub(pattern_tags, '', clean_content)
+    clean_content = _XBRL_XML_BLOCKS_PATTERN.sub('', html_content)
+    clean_content = _IX_TAGS_PATTERN.sub('', clean_content)
     return clean_content
 
 def _ends_with_tag(piece: str) -> bool:
@@ -89,33 +160,25 @@ def remove_head_with_regex(html_content):
     """
     Remove the <head>...</head> section from HTML content.
     """
-    pattern = re.compile(r'<head>.*?</head>', re.DOTALL | re.IGNORECASE)
-    clean_content = re.sub(pattern, '', html_content)
-    return clean_content
+    return _HEAD_PATTERN.sub('', html_content)
 
 def remove_style_with_regex(html_content):
     """
     Strip inline 'style' attributes from all HTML tags.
     """
-    pattern = re.compile(r'\sstyle=(["\']).*?\1', re.IGNORECASE)
-    clean_content = re.sub(pattern, '', html_content)
-    return clean_content
+    return _STYLE_ATTR_PATTERN.sub('', html_content)
 
 def remove_id_with_regex(html_content):
     """
     Strip 'id' attributes from all HTML tags.
     """
-    pattern = re.compile(r'\s+id=(["\']).*?\1', re.IGNORECASE)
-    clean_content = re.sub(pattern, '', html_content)
-    return clean_content
+    return _ID_ATTR_PATTERN.sub('', html_content)
 
 def remove_align_with_regex(html_content):
     """
     Strip 'align' attributes from all HTML tags.
     """
-    pattern = re.compile(r'\s+align=(["\']).*?\1', re.IGNORECASE)
-    clean_content = re.sub(pattern, '', html_content)
-    return clean_content
+    return _ALIGN_ATTR_PATTERN.sub('', html_content)
 
 def remove_part_1(html_content): # Cleans comments, tables, img, span
     """
@@ -125,17 +188,13 @@ def remove_part_1(html_content): # Cleans comments, tables, img, span
       - replace certain HTML entities with ASCII equivalents,
       - remove numeric character references of the form '&#ddd;'.
     """
-    pattern = re.compile(r'<!--.*?-->', re.DOTALL)
-    html_content = re.sub(pattern, '', html_content)
-    
-    pattern = re.compile(r'<img.*?>', re.IGNORECASE)
-    html_content = re.sub(pattern, '', html_content)
+    html_content = _HTML_COMMENT_PATTERN.sub('', html_content)
+    html_content = _IMG_TAG_PATTERN.sub('', html_content)
 
     html_content = html_content.replace('<span>', '').replace('</span>', '').replace('&#8217;', "'").replace('&#8220;', '"').replace('&#8221;', '"')
     html_content = html_content.replace('&nbsp;', ' ').replace('&#146;', "'")
 
-    pattern = re.compile(r'&#\d{3};')
-    html_content = re.sub(pattern, ' ', html_content)
+    html_content = _NUMERIC_ENTITY_3DIGIT_PATTERN.sub(' ', html_content)
 
     return html_content
 
@@ -143,13 +202,12 @@ def loop_clean(html_content):
     """
     Iteratively remove empty <p>...</p> and <div>...</div> tags until stable.
     """
-    p_pattern = re.compile(r'<p>\s*</p>', re.DOTALL | re.IGNORECASE)
-    div_pattern = re.compile(r'<div>\s*</div>', re.IGNORECASE)
-    while True:
+    max_iterations = 10  # Safety limit to prevent infinite loops
+    for _ in range(max_iterations):
         pre_cleaning_content = html_content
-        
-        html_content = re.sub(p_pattern, '', html_content)
-        html_content = re.sub(div_pattern, '', html_content)
+
+        html_content = _EMPTY_P_PATTERN.sub('', html_content)
+        html_content = _EMPTY_DIV_PATTERN.sub('', html_content)
 
         if html_content == pre_cleaning_content:
             break
@@ -160,7 +218,7 @@ def remove_numeric_entities(s):
     """
     Remove numeric HTML entities such as '&#123;' or '&#x1F4A9;'.
     """
-    return re.sub(r'&#(?:\d{1,8}|[xX][0-9A-Fa-f]{1,8});', '', s)
+    return _NUMERIC_ENTITY_PATTERN.sub('', s)
 
 def unwrap_tags(html_content):
     """
@@ -168,65 +226,35 @@ def unwrap_tags(html_content):
     inserting newlines for structural tags and deleting closing tags. It also
     removes table-related tags (<table>, <tr>, <td>) by converting some to newlines.
     """
-    pattern = re.compile(r'<ix:[a-zA-Z0-9_:]+.*?>', re.IGNORECASE)
-    html_content = re.sub(pattern, '\n', html_content)
+    html_content = _IX_OPENING_TAG_PATTERN.sub('\n', html_content)
+    html_content = _IX_CLOSING_TAG_PATTERN.sub('', html_content)
 
-    pattern = re.compile(r'</ix:[a-zA-Z0-9_:]+>', re.IGNORECASE)
-    html_content = re.sub(pattern, '', html_content)
+    html_content = _HTML_OPENING_TAG_PATTERN.sub('\n', html_content)
+    html_content = _HTML_CLOSING_TAG_PATTERN.sub('', html_content)
 
-    pattern = re.compile(r'<html.*?>', re.IGNORECASE | re.DOTALL)
-    html_content = re.sub(pattern, '\n', html_content)
+    html_content = _FONT_OPENING_TAG_PATTERN.sub('\n', html_content)
+    html_content = _FONT_CLOSING_TAG_PATTERN.sub('', html_content)
 
-    pattern = re.compile(r'</html>', re.IGNORECASE)
-    html_content = re.sub(pattern, '', html_content)
+    html_content = _BR_TAG_PATTERN.sub('', html_content)
+    html_content = _HR_TAG_PATTERN.sub('', html_content)
 
-    pattern = re.compile(r'<font.*?>', re.IGNORECASE | re.DOTALL)
-    html_content = re.sub(pattern, '\n', html_content)
+    html_content = _B_OPENING_TAG_PATTERN.sub('\n', html_content)
+    html_content = _B_CLOSING_TAG_PATTERN.sub('', html_content)
 
-    pattern = re.compile(r'</font>', re.IGNORECASE)
-    html_content = re.sub(pattern, '', html_content)
+    html_content = _CENTER_OPENING_TAG_PATTERN.sub('\n', html_content)
+    html_content = _CENTER_CLOSING_TAG_PATTERN.sub('', html_content)
 
-    pattern = re.compile(r'<br.*?>', re.IGNORECASE | re.DOTALL)
-    html_content = re.sub(pattern, '', html_content)
+    html_content = _A_OPENING_TAG_PATTERN.sub('\n', html_content)
+    html_content = _A_CLOSING_TAG_PATTERN.sub('', html_content)
 
-    pattern = re.compile(r'<hr.*?>', re.IGNORECASE | re.DOTALL)
-    html_content = re.sub(pattern, '', html_content)
-    
-    pattern = re.compile(r'<B>', re.IGNORECASE | re.DOTALL)
-    html_content = re.sub(pattern, '\n', html_content)
+    html_content = _TABLE_OPENING_TAG_PATTERN.sub('\n', html_content)
+    html_content = _TABLE_CLOSING_TAG_PATTERN.sub('', html_content)
 
-    pattern = re.compile(r'</B>', re.IGNORECASE)
-    html_content = re.sub(pattern, '', html_content)
+    html_content = _TR_OPENING_TAG_PATTERN.sub('\n', html_content)
+    html_content = _TR_CLOSING_TAG_PATTERN.sub('', html_content)
 
-    pattern = re.compile(r'<center>', re.IGNORECASE | re.DOTALL)
-    html_content = re.sub(pattern, '\n', html_content)
-
-    pattern = re.compile(r'</center>', re.IGNORECASE)
-    html_content = re.sub(pattern, '', html_content)
-
-    pattern = re.compile(r'<a.*?>', re.IGNORECASE | re.DOTALL)
-    html_content = re.sub(pattern, '\n', html_content)
-
-    pattern = re.compile(r'</a>', re.IGNORECASE)
-    html_content = re.sub(pattern, '', html_content)
-
-    pattern = re.compile(r'<table.*?>', re.DOTALL | re.IGNORECASE)
-    html_content = re.sub(pattern, '\n', html_content)
-
-    pattern = re.compile(r'</table>', re.DOTALL | re.IGNORECASE)
-    html_content = re.sub(pattern, '', html_content)
-
-    pattern = re.compile(r'<tr.*?>', re.DOTALL | re.IGNORECASE)
-    html_content = re.sub(pattern, '\n', html_content)
-
-    pattern = re.compile(r'</tr>', re.DOTALL | re.IGNORECASE)
-    html_content = re.sub(pattern, '', html_content)
-
-    pattern = re.compile(r'<td.*?>', re.DOTALL | re.IGNORECASE)
-    html_content = re.sub(pattern, '\n', html_content)
-
-    pattern = re.compile(r'</td>', re.DOTALL | re.IGNORECASE)
-    html_content = re.sub(pattern, '', html_content)
+    html_content = _TD_OPENING_TAG_PATTERN.sub('\n', html_content)
+    html_content = _TD_CLOSING_TAG_PATTERN.sub('', html_content)
 
     return html_content
 
@@ -241,40 +269,32 @@ def prepend_newline_to_p(html_content):
     """
     Insert a newline before every <p ...> tag to improve downstream line-based parsing.
     """
-    pattern = re.compile(r'<p.*?>', re.IGNORECASE)
-    processed_text = re.sub(pattern, r'\n\g<0>', html_content)    
-    return processed_text
+    return _P_TAG_PATTERN.sub(r'\n\g<0>', html_content)
 
 def strip_all_html_tags(html_content):
     """
     Remove all HTML tags by deleting substrings matching '<...>'.
     """
-    pattern = re.compile(r'<.*?>')
-    clean_text = re.sub(pattern, '', html_content)
-    return clean_text
+    return _ALL_HTML_TAGS_PATTERN.sub('', html_content)
 
 def remove_xbrli_measure(html_content):
     """
     Remove <xbrli:*>...</xbrli:*> blocks (e.g., <xbrli:measure>...</xbrli:measure>).
     """
-    pattern = re.compile(r'<xbrli:([a-zA-Z0-9_:]+).*?>.*?</xbrli:\1>', re.DOTALL | re.IGNORECASE)
-    html_content = re.sub(pattern, '', html_content)
-    return html_content
+    return _XBRLI_MEASURE_PATTERN.sub('', html_content)
 
 def get_from_sec_document(html_content):
     """
     Trim content to start at the <SEC-DOCUMENT> marker if present.
     """
-    pattern = re.compile(r'<SEC-DOCUMENT>.*\Z', re.DOTALL)
-    match = re.search(pattern, html_content)
+    match = _SEC_DOCUMENT_PATTERN.search(html_content)
     return match.group(0) if match else html_content
 
 def get_content_before_sequence(html_content):
     """
     Keep content before the '<SEQUENCE>2' marker, if present.
     """
-    pattern = re.compile(r'^.*?(?=<SEQUENCE>2)', re.DOTALL)
-    match = re.search(pattern, html_content)
+    match = _CONTENT_BEFORE_SEQUENCE2_PATTERN.search(html_content)
     return match.group() if match else html_content
 
 def break_on_item_heads(text):
@@ -282,17 +302,9 @@ def break_on_item_heads(text):
     Insert a newline before detected 'Item <number>[suffix].' headings
     or 'Item <number> [text] <number>.
     """
-    _HEAD_DETECT = re.compile(
-        r'\s*items?\b\s*'
-        r'\d+[A-Za-z]?'
-        r'(?:\s*(?:and|to|through|-)\s*\d+[A-Za-z]?)*'
-        r'\s*\.',re.IGNORECASE)
-    
-    _IGNORE_PRE = re.compile(r'\b(?:in|of|see|at|with|under|this|to)[ \t"“”]*$', re.IGNORECASE)
-    
     out = []
     last = 0
-    for m in _HEAD_DETECT.finditer(text):
+    for m in _ITEM_HEAD_DETECT_PATTERN.finditer(text):
         start = m.start()
 
         g = m.group(0)
@@ -302,15 +314,15 @@ def break_on_item_heads(text):
         if start > 0 and text[start-1] != '\n':
             ctx = text[max(0, item_start - 40):item_start]
 
-            if _IGNORE_PRE.search(ctx):
+            if _ITEM_IGNORE_PRE_PATTERN.search(ctx):
                 continue  # ignore it
-            
+
             out.append(text[last:start])
             out.append('\n')
             last = start
     out.append(text[last:])
     s = ''.join(out)
-    return re.sub(r'[ \t]+\n', '\n', s)  # tidy spaces before newlines
+    return _SPACE_BEFORE_NEWLINE_PATTERN.sub('\n', s)  # tidy spaces before newlines
 
 def clean_html(file_content):
     """
@@ -401,7 +413,7 @@ def ensure_space_after_item(text):
     Example:
       'Item1A' -> 'Item 1A'
     """
-    return re.sub(r'\b(Items?)\b(?=\S)', r'\1 ', text)
+    return _ENSURE_SPACE_AFTER_ITEM_PATTERN.sub(r'\1 ', text)
 
 def merge_item_with_number_line(text):
     """
@@ -454,12 +466,12 @@ def merge_item_number_with_suffix(text):
         current_stripped = lines[i].strip()
 
         # Match 'Item {number}' (e.g., 'Item 1', 'Item 12')
-        if re.fullmatch(r'Item\s+\d+', current_stripped) and i + 1 < len(lines):
+        if _ITEM_NUMBER_ONLY_PATTERN.fullmatch(current_stripped) and i + 1 < len(lines):
             next_raw = lines[i + 1]
             next_stripped = next_raw.lstrip()
 
             # Next line starts with 'A.' or 'b.' etc, OR with just '.'
-            if re.match(r'[A-Za-z]\.', next_stripped) or next_stripped.startswith('.'):
+            if _ITEM_SUFFIX_PATTERN.match(next_stripped) or next_stripped.startswith('.'):
                 merged = current_stripped + next_stripped  # e.g. 'Item 1' + 'A. Risk Factors'
                 new_lines.append(merged)
                 i += 2
