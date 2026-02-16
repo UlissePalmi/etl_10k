@@ -1,7 +1,8 @@
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from etl_10k.config import FORM, START_DATE, RAW_DIR
+from etl_10k.config import FORM, START_DATE, RAW_DIR, SEC_REQUESTS_PER_SECOND
 from etl_10k.config import MAX_WORKERS_DOWNLOADS as MAX_WORKERS
 from sec_edgar_downloader import Downloader
+from etl_10k.edgar.rate_limiter import TokenBucketRateLimiter
 import time
 
 # Create a single shared downloader instance to reuse HTTP connections
@@ -9,23 +10,36 @@ import time
 # The SEC requires proper identification and may ban IPs with generic user-agents
 _downloader = Downloader("YourActualCompanyName", "your.email@yourdomain.com", str(RAW_DIR))
 
+# Shared rate limiter coordinating across ALL download workers
+# Uses configured rate from config.py (default: 9.5 req/sec for safety margin)
+# Capacity = 1.0 prevents burst accumulation (maintains steady 9.5 req/sec)
+_rate_limiter = TokenBucketRateLimiter(rate=SEC_REQUESTS_PER_SECOND, capacity=1.0)
+
 def download_for_cik(cik: str):
     """
     Download SEC filings for a given CIK using `sec-edgar-downloader`.
 
-    Includes a small delay between requests to ensure compliance with SEC's
-    10 requests per second rate limit and avoid IP bans.
+    Uses a shared rate limiter to ensure compliance with SEC's 10 requests per
+    second rate limit across all download workers and avoid IP bans.
+
+    Returns:
+        tuple: (cik, status, duration_seconds)
     """
-    print(f"Starting {FORM} for CIK {cik}")
     try:
-        # Small delay to help respect SEC rate limits (10 req/sec = 0.1s between requests)
-        time.sleep(0.12)  # Slightly conservative to account for variance
+        # Step 1: Acquire token from shared rate limiter
+        _rate_limiter.acquire() # Acts like a traffic light that slows down all threads to prevent too many requests at once
+
+        # Step 2: Measure actual download time (HTTP request + file I/O)
+        download_start = time.time()
+        print(f"Starting {FORM} for CIK {cik}")
         _downloader.get(FORM, cik, after=START_DATE)
-        return cik, "ok", None
-    except ValueError as e:
-        return cik, "not_found", str(e)
-    except Exception as e:
-        return cik, "error", str(e)
+        download_duration = time.time() - download_start
+
+        return cik, "ok", download_duration
+    except ValueError:
+        return cik, "not_found", 0.0
+    except Exception:
+        return cik, "error", 0.0
 
 def download(ciks):
     """

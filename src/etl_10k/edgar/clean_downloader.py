@@ -187,12 +187,22 @@ def download_clean_delete(ciks, keep_raw: bool = False):
     total_wait_time = 0.0
     wait_count = 0
 
+    # Track download timing (Step 2: actual HTTP request + file I/O)
+    total_download_time = 0.0
+    download_count = 0
+
     # Producer: Download worker
     def download_worker(cik):
         """Download files and enumerate filings to add to queue"""
-        cik_result, status, _err = download_for_cik(cik)
+        cik_result, status, download_duration = download_for_cik(cik)
 
+        # Track download timing for successful downloads
         if status == "ok":
+            with stats_lock:
+                nonlocal total_download_time, download_count
+                total_download_time += download_duration
+                download_count += 1
+
             # Enumerate all downloaded filings and add each to queue
             padded_cik = str(cik_result).zfill(10)
             raw_cik_path = RAW_EDGAR_DIR / padded_cik / "10-K"
@@ -206,13 +216,13 @@ def download_clean_delete(ciks, keep_raw: bool = False):
                             download_queue.put((cik_result, accession_dir))
                             filings_added += 1
 
-                return cik_result, "download_ok", filings_added
+                return cik_result, "download_ok", filings_added, download_duration
             else:
-                return cik_result, "error", 0
+                return cik_result, "error", 0, 0.0
         elif status == "not_found":
-            return cik_result, "not_found", 0
+            return cik_result, "not_found", 0, 0.0
         else:
-            return cik_result, "error", 0
+            return cik_result, "error", 0, 0.0
 
     # Consumer: Cleaning worker
     def clean_worker():
@@ -285,14 +295,14 @@ def download_clean_delete(ciks, keep_raw: bool = False):
         # Track download completion
         ciks_processed = 0
         for future in as_completed(download_futures):
-            cik, status, filings_count = future.result()
+            cik, status, filings_count, duration = future.result()
             ciks_processed += 1
 
             if status == "download_ok":
                 with stats_lock:
                     stats_summary["download_ok"] += 1
                     total_downloaded += filings_count
-                    print(f"[{ciks_processed}/{total}] CIK {cik}: downloaded {filings_count} filings → queued for cleaning")
+                    print(f"[{ciks_processed}/{total}] CIK {cik}: downloaded {filings_count} filings in {duration:.2f}s → queued for cleaning")
             elif status == "not_found":
                 with stats_lock:
                     stats_summary["not_found"] += 1
@@ -325,6 +335,17 @@ def download_clean_delete(ciks, keep_raw: bool = False):
     print(f"Filings cleaned: {total_cleaned}")
     if total_errors > 0:
         print(f"Filing cleaning errors: {total_errors}")
+
+    # Print download timing statistics
+    print(f"\n{'='*60}")
+    print("DOWNLOAD TIMING ANALYSIS (Step 2: HTTP + File I/O)")
+    print(f"{'='*60}")
+    print(f"Total download time: {total_download_time:.2f}s")
+    print(f"Number of successful downloads: {download_count}")
+    if download_count > 0:
+        avg_download_time = total_download_time / download_count
+        print(f"Average download time per CIK: {avg_download_time:.2f}s")
+    print(f"Number of download workers: {MAX_WORKERS_DOWNLOADS}")
 
     # Print queue waiting statistics
     print(f"\n{'='*60}")

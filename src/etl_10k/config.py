@@ -39,9 +39,14 @@ START_DATE = "2006-01-01"                                           # filings pe
 CPU_CORES = os.cpu_count() or 1
 MAX_WORKERS = max(1, int(CPU_CORES * 0.9))                         # Auto-scales: 25 workers on 28-core, 7 workers on 8-core, etc.
 
-# SEC download workers (must respect 10 req/sec rate limit to avoid IP ban)
-# Conservative limit: 5-8 workers ensures we stay well under 10 req/sec
-MAX_WORKERS_DOWNLOADS = 8                                           # Limited to respect SEC rate limits
+# SEC download workers (rate limited by TokenBucketRateLimiter at 9.5 req/sec)
+# With rate limiter in place, we can use more workers for better I/O parallelism
+# Workers handle: token acquisition (rate limited) + HTTP request + file I/O + enumeration
+MAX_WORKERS_DOWNLOADS = 15                                          # Rate limiter ensures SEC compliance
+
+# SEC rate limit: 10 req/sec, using 9.5 for safety margin
+# Shared across all download workers via rate limiter to avoid IP bans
+SEC_REQUESTS_PER_SECOND = 9.5                                       # Conservative: 5% margin under SEC's limit
 # -------------------------------
 
 def ensure_project_dirs() -> None:
