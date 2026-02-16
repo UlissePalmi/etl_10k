@@ -1,10 +1,7 @@
 """
 Integrated download and clean pipeline for SEC filings.
 
-This module combines downloading, cleaning, and optional deletion of raw HTML files
-to minimize storage requirements. Instead of downloading all raw HTML first (~400 GB),
-then cleaning separately, this pipeline processes each CIK in a download → clean → delete
-cycle, keeping peak storage to ~1 GB (8 workers in flight).
+This module combines downloading, cleaning, and optional deletion of raw HTML files.
 
 Usage:
     from etl_10k.edgar.clean_downloader import download_clean_delete
@@ -19,9 +16,12 @@ Usage:
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from etl_10k.edgar.downloader import download_for_cik
 from etl_10k.text.clean import clean_html, print_10X, cleaning_items
-from etl_10k.config import RAW_EDGAR_DIR, INTERIM_CLEANED_DIR, MAX_WORKERS_DOWNLOADS
+from etl_10k.config import RAW_EDGAR_DIR, INTERIM_CLEANED_DIR, MAX_WORKERS_DOWNLOADS, MAX_WORKERS
 from pathlib import Path
+from queue import Queue
 import shutil
+import threading
+import time
 
 
 def verify_cleaned_file(cleaned_path: Path, min_size_bytes: int = 1000) -> bool:
@@ -68,153 +68,275 @@ def verify_cleaned_file(cleaned_path: Path, min_size_bytes: int = 1000) -> bool:
         return False
 
 
-def download_clean_and_delete_for_cik(cik: str, keep_raw: bool = False):
+def clean_and_delete_single_filing(cik: str, accession_dir: Path, keep_raw: bool = False):
     """
-    Download, clean, and optionally delete raw HTML for a single CIK.
-
-    This function performs the full cycle for one CIK:
-    1. Download all 10-K filings for the CIK
-    2. Clean each filing (HTML → text)
-    3. Verify cleaned file quality
-    4. Delete raw HTML (if keep_raw=False and verification passes)
+    Clean and optionally delete raw HTML for a single 10-K filing.
 
     Args:
         cik: Company CIK number (string)
+        accession_dir: Path to the accession directory containing the filing
         keep_raw: If True, preserve raw HTML files (default: False)
 
     Returns:
-        tuple: (cik, status, stats_dict)
+        tuple: (cik, accession, status, stats_dict)
             cik: The CIK processed
-            status: "ok", "not_found", or "error"
-            stats: {"downloaded": int, "cleaned": int, "deleted": int, "errors": int}
+            accession: The accession number
+            status: "ok" or "error"
+            stats: {"cleaned": int, "deleted": int}
     """
-    stats = {"downloaded": 0, "cleaned": 0, "deleted": 0, "errors": 0}
+    stats = {"cleaned": 0, "deleted": 0}
+    accession = accession_dir.name
 
-    # Step 1: Download all filings for this CIK
-    cik, download_status, download_err = download_for_cik(cik)
-
-    if download_status != "ok":
-        return cik, download_status, stats
-
-    # Step 2: Clean and optionally delete each filing
     try:
-        raw_cik_path = RAW_EDGAR_DIR / cik / "10-K"
-        cleaned_cik_path = INTERIM_CLEANED_DIR / cik / "10-K"
+        # Zero-pad CIK to match sec-edgar-downloader's directory naming
+        padded_cik = str(cik).zfill(10)
+        cleaned_cik_path = INTERIM_CLEANED_DIR / padded_cik / "10-K"
 
-        if not raw_cik_path.exists():
-            return cik, "error", stats
+        raw_file = accession_dir / "full-submission.txt"
+        if not raw_file.exists():
+            return cik, accession, "error", stats
 
-        # Process each accession (filing)
-        for accession_dir in raw_cik_path.iterdir():
-            if not accession_dir.is_dir():
-                continue
+        # Read raw HTML
+        with open(raw_file, 'r', encoding='utf-8') as f:
+            file_content = f.read()
 
-            raw_file = accession_dir / "full-submission.txt"
-            if not raw_file.exists():
-                continue
+        # Apply cleaning pipeline
+        cleaned_content = cleaning_items(clean_html(file_content))
 
-            stats["downloaded"] += 1
+        # Write cleaned file
+        cleaned_dir = cleaned_cik_path / accession
+        cleaned_dir.mkdir(parents=True, exist_ok=True)
+        cleaned_file = cleaned_dir / "full-submission.txt"
+        print_10X(cleaned_file, cleaned_content)
 
-            # Step 3: Clean the filing
-            try:
-                # Read raw HTML
-                with open(raw_file, 'r', encoding='utf-8') as f:
-                    file_content = f.read()
+        stats["cleaned"] = 1
 
-                # Apply cleaning pipeline (same as step 03)
-                cleaned_content = cleaning_items(clean_html(file_content))
+        # Verify and delete (if keep_raw=False)
+        if not keep_raw:
+            if verify_cleaned_file(cleaned_file):
+                try:
+                    shutil.rmtree(accession_dir)
+                    stats["deleted"] = 1
 
-                # Write cleaned file
-                cleaned_dir = cleaned_cik_path / accession_dir.name
-                cleaned_dir.mkdir(parents=True, exist_ok=True)
-                cleaned_file = cleaned_dir / "full-submission.txt"
-                print_10X(cleaned_file, cleaned_content)
+                    # Clean up empty parent directories
+                    try:
+                        raw_cik_path = accession_dir.parent
+                        if raw_cik_path.exists() and not any(raw_cik_path.iterdir()):
+                            raw_cik_path.rmdir()
 
-                stats["cleaned"] += 1
+                        cik_folder = raw_cik_path.parent
+                        if cik_folder.exists() and not any(cik_folder.iterdir()):
+                            cik_folder.rmdir()
+                    except OSError:
+                        pass
 
-                # Step 4: Verify and delete (if keep_raw=False)
-                if not keep_raw:
-                    if verify_cleaned_file(cleaned_file):
-                        try:
-                            shutil.rmtree(accession_dir)
-                            stats["deleted"] += 1
-                        except OSError as e:
-                            print(f"  ⚠️  Deletion failed: {accession_dir.name}: {e}")
-                            stats["errors"] += 1
-                    else:
-                        print(f"  ⚠️  Verification failed, keeping: {accession_dir.name}")
-                        stats["errors"] += 1
+                except OSError as e:
+                    print(f"  ⚠️  Deletion failed: {accession}: {e}")
+                    return cik, accession, "error", stats
+            else:
+                print(f"  ⚠️  Verification failed, keeping: {accession}")
+                return cik, accession, "error", stats
 
-            except Exception as e:
-                print(f"  ❌ Cleaning error ({accession_dir.name}): {type(e).__name__}")
-                stats["errors"] += 1
-                # Keep raw file on error
-                continue
-
-        return cik, "ok", stats
+        return cik, accession, "ok", stats
 
     except Exception as e:
-        print(f"  ❌ Fatal error (CIK {cik}): {type(e).__name__}: {e}")
-        return cik, "error", stats
+        print(f"  ❌ Cleaning error ({accession}): {type(e).__name__}")
+        return cik, accession, "error", stats
 
 
 def download_clean_delete(ciks, keep_raw: bool = False):
     """
-    Download, clean, and optionally delete raw HTML for multiple CIKs.
+    Download, clean, and optionally delete raw HTML for multiple CIKs using producer-consumer pattern.
 
-    This is the main entry point for the integrated pipeline. It manages parallel
-    workers that each perform the download → clean → delete cycle for their assigned CIKs.
+    Uses two separate thread pools for optimal resource utilization:
+    - Download pool (8 workers): Network I/O bound, respects SEC rate limits
+    - Cleaning pool (MAX_WORKERS): CPU bound, processes files as they're downloaded
+
+    This allows downloads and cleaning to happen in parallel, significantly improving throughput.
 
     Args:
         ciks: Iterable of CIK strings to process
         keep_raw: If True, preserve raw HTML files (default: False for storage savings)
-
-    Storage impact:
-        - With keep_raw=False: Peak ~1 GB (8 workers in flight), final ~40 GB (cleaned only)
-        - With keep_raw=True: Peak ~440 GB (all raw + cleaned)
     """
     ciks_list = list(ciks)
     total = len(ciks_list)
 
     print(f"Found {total} unique CIKs")
     print(f"Keep raw HTML: {keep_raw}")
-    print(f"Workers: {MAX_WORKERS_DOWNLOADS}")
+    print(f"Download workers: {MAX_WORKERS_DOWNLOADS} | Cleaning workers: {MAX_WORKERS}")
     print("="*60)
 
-    # Track statistics
-    stats_summary = {"ok": 0, "not_found": 0, "error": 0}
+    # Shared queue for downloaded CIKs ready for cleaning
+    # -- Like a conveyer belt: producer adds downloaded cik and consumer removes cleaned ciks (ordered list)  
+    download_queue = Queue()
+    '''
+    queue.put(cik)           # Producer adds
+    queue.get()              # Consumer takes
+    queue.task_done()        # Signal "I'm done with this item"
+    '''
+
+    # Thread-safe statistics tracking
+    stats_lock = threading.Lock()
+    stats_summary = {"ok": 0, "not_found": 0, "error": 0, "download_ok": 0}
     total_downloaded = 0
     total_cleaned = 0
     total_errors = 0
+    completed_count = 0
 
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS_DOWNLOADS) as executor:
-        futures = {
-            executor.submit(download_clean_and_delete_for_cik, cik, keep_raw): cik
+    # Track queue waiting time
+    total_wait_time = 0.0
+    wait_count = 0
+
+    # Producer: Download worker
+    def download_worker(cik):
+        """Download files and enumerate filings to add to queue"""
+        cik_result, status, _err = download_for_cik(cik)
+
+        if status == "ok":
+            # Enumerate all downloaded filings and add each to queue
+            padded_cik = str(cik_result).zfill(10)
+            raw_cik_path = RAW_EDGAR_DIR / padded_cik / "10-K"
+
+            if raw_cik_path.exists():
+                filings_added = 0
+                for accession_dir in raw_cik_path.iterdir():
+                    if accession_dir.is_dir():
+                        raw_file = accession_dir / "full-submission.txt"
+                        if raw_file.exists():
+                            download_queue.put((cik_result, accession_dir))
+                            filings_added += 1
+
+                return cik_result, "download_ok", filings_added
+            else:
+                return cik_result, "error", 0
+        elif status == "not_found":
+            return cik_result, "not_found", 0
+        else:
+            return cik_result, "error", 0
+
+    # Consumer: Cleaning worker
+    def clean_worker():
+        """Process individual filings from the download queue"""
+        while True:    # When a worker finishes running a thread it keeps going in the while loop and picks up another filing
+            # Measure queue waiting time
+            wait_start = time.time()
+            item = download_queue.get() # Thread sleeps until something is added to the queue
+            wait_end = time.time()
+            wait_duration = wait_end - wait_start
+
+            # Track waiting time (before poison pill check to capture all waits)
+            with stats_lock:
+                nonlocal total_wait_time, wait_count
+                total_wait_time += wait_duration
+                wait_count += 1
+
+            if item is None:  # Poison pill to signal shutdown
+                download_queue.task_done()
+                break
+
+            cik, accession_dir = item
+
+            try:
+                cik_result, accession, status, stats = clean_and_delete_single_filing(cik, accession_dir, keep_raw)
+
+                with stats_lock:
+                    nonlocal completed_count, total_cleaned, total_errors
+                    completed_count += 1
+
+                    if status == "ok":
+                        stats_summary["ok"] += 1
+                    else:
+                        stats_summary["error"] += 1
+
+                    total_cleaned += stats.get("cleaned", 0)
+                    total_errors += (1 if status == "error" else 0)
+
+                    # Print progress
+                    kept_msg = "(kept)" if keep_raw else f"→ deleted {stats.get('deleted', 0)}"
+                    status_icon = "✓" if status == "ok" else "❌"
+                    print(f"[{completed_count}] {status_icon} CIK {cik_result} | {accession}: {status} | "
+                          f"cleaned={stats.get('cleaned', 0)} {kept_msg}")
+
+            except Exception as e:
+                with stats_lock:
+                    completed_count += 1
+                    stats_summary["error"] += 1
+                    total_errors += 1
+                    print(f"[{completed_count}] ❌ CIK {cik}: error | {type(e).__name__}: {e}")
+
+            finally:
+                download_queue.task_done()
+
+    # Start cleaning workers (consumers)
+    cleaning_threads = []
+    # Creates a thread for each worker
+    for _ in range(MAX_WORKERS): 
+        t = threading.Thread(target=clean_worker, daemon=True) 
+        t.start()
+        cleaning_threads.append(t)
+
+    # Start download workers (producers)
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS_DOWNLOADS) as download_executor:
+        download_futures = {
+            download_executor.submit(download_worker, cik): cik
             for cik in ciks_list
         }
 
-        for idx, future in enumerate(as_completed(futures), start=1):
-            cik, status, stats = future.result()
+        # Track download completion
+        ciks_processed = 0
+        for future in as_completed(download_futures):
+            cik, status, filings_count = future.result()
+            ciks_processed += 1
 
-            # Print progress
-            kept_msg = "(kept)" if keep_raw else f"→ deleted {stats['deleted']}"
-            print(f"[{idx}/{total}] CIK {cik}: {status} | "
-                  f"Files: {stats['downloaded']} → {stats['cleaned']} {kept_msg}")
+            if status == "download_ok":
+                with stats_lock:
+                    stats_summary["download_ok"] += 1
+                    total_downloaded += filings_count
+                    print(f"[{ciks_processed}/{total}] CIK {cik}: downloaded {filings_count} filings → queued for cleaning")
+            elif status == "not_found":
+                with stats_lock:
+                    stats_summary["not_found"] += 1
+                    print(f"[{ciks_processed}/{total}] CIK {cik}: not_found | No filings available")
+            elif status == "error":
+                with stats_lock:
+                    stats_summary["error"] += 1
+                    print(f"[{ciks_processed}/{total}] CIK {cik}: error | Download failed")
 
-            stats_summary[status] += 1
-            total_downloaded += stats.get("downloaded", 0)
-            total_cleaned += stats.get("cleaned", 0)
-            total_errors += stats.get("errors", 0)
+    # Wait for all cleaning to finish
+    download_queue.join()
+
+    # Signal cleaning workers to shut down
+    for _ in range(MAX_WORKERS):
+        download_queue.put(None)  # Poison pill
+
+    for t in cleaning_threads:
+        t.join()
 
     # Print summary
     print("\n" + "="*60)
     print("SUMMARY")
     print("="*60)
     print(f"CIKs processed: {total}")
-    print(f"  ✓ Success: {stats_summary['ok']}")
+    print(f"  ✓ Downloaded successfully: {stats_summary['download_ok']}")
     print(f"  ⚠ Not found: {stats_summary['not_found']}")
-    print(f"  ❌ Errors: {stats_summary['error']}")
+    print(f"  ❌ Download errors: {stats_summary.get('error', 0)}")
     print(f"\nFilings downloaded: {total_downloaded}")
+    print(f"Filings cleaned successfully: {stats_summary['ok']}")
     print(f"Filings cleaned: {total_cleaned}")
     if total_errors > 0:
-        print(f"Filing errors: {total_errors}")
+        print(f"Filing cleaning errors: {total_errors}")
+
+    # Print queue waiting statistics
+    print(f"\n{'='*60}")
+    print("QUEUE WAITING TIME ANALYSIS")
+    print(f"{'='*60}")
+    print(f"Total queue wait time: {total_wait_time:.2f}s")
+    print(f"Number of queue.get() calls: {wait_count}")
+    if wait_count > 0:
+        avg_wait = total_wait_time / wait_count
+        print(f"Average wait per get(): {avg_wait:.4f}s ({avg_wait*1000:.2f}ms)")
+    print(f"Number of cleaning workers: {MAX_WORKERS}")
+    if wait_count > 0:
+        total_possible_work_time = total_wait_time
+        print(f"Total idle time across all workers: {total_possible_work_time:.2f}s")
+        print(f"Average idle time per worker: {total_possible_work_time/MAX_WORKERS:.2f}s")

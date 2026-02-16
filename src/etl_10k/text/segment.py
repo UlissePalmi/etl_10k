@@ -213,46 +213,6 @@ def print_items(cik):
         print("failed")
     return
 
-
-def print_items(cik):
-    """
-    Extract and save Item 1A text for all cleaned 10-K filings for a single CIK.
-
-    Locates the Item 1A section using detected item headings and writes `item1A.txt`
-    to the corresponding folder under `INTERIM_ITEM1A_DIR`.
-    """
-    try:
-        path = INTERIM_CLEANED_DIR / cik / '10-K'
-        for filing in path.iterdir():
-            p = path / filing
-            filepath = p / "full-submission.txt"
-            item_segmentation = item_segmentation_list(filepath)
-
-            # Find the position of item 1A in the list[dict]
-            idx_1a = next((i for i, d in enumerate(item_segmentation) if d.get("item_num") == "1A"), None)
-            
-            if idx_1a is None:
-                continue
-
-            item1a_seg = item_segmentation[idx_1a : idx_1a + 2]
-            page_list = [i['item_line'] for i in item1a_seg]
-
-            with filepath.open("r", encoding="utf-8", errors="replace") as f:
-                lines = list(islice(f, page_list[0] - 1, page_list[1]-1))
-            chunk = "".join(lines)
-
-            dst_path = INTERIM_ITEM1A_DIR / cik / '10-K' / filing.name
-            dst_path.mkdir(parents=True, exist_ok=True)
-
-            dst_file = dst_path / "item1A.txt"
-
-            with open(dst_file, "w", encoding='utf-8') as f:
-                f.write(chunk)
-            print("okkkkk")
-    except:
-        print("failed")
-    return
-
 def try_exercize(ciks: list):
     """
     Runs print_items in parallel
