@@ -83,11 +83,7 @@ def step_00_build_universe(start_year: int = 2006 , end_year: int = 2026) -> Non
     """
     ensure_project_dirs()
     print("Starting cik_list.csv file generation... ")
-    if not CIK_LIST.exists():
-        cl.cik_list_builder(start_year, end_year)
-    else:
-        print("CIK_LIST already exists")
-    input("Download lm dictionary")
+    cl.cik_list_builder(start_year, end_year) if not CIK_LIST.exists() else None
 
 def step_01_pull_returns() -> None:
     """
