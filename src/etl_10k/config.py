@@ -16,7 +16,7 @@ RAW_EDGAR_DIR = RAW_DIR / "sec-edgar-filings"
 RAW_CIKS_DIR = RAW_DIR / "ciks_index"
 RAW_LM_DICT_DIR = RAW_DIR / "lm_dict"
 INTERIM_CLEANED_DIR = INTERIM_DIR / "cleaned_filings"
-INTERIM_ITEM1A_DIR = INTERIM_DIR / "item1a"
+INTERIM_ITEMS_DIR = INTERIM_DIR / "items"
 INTERIM_FEATURES_DIR = INTERIM_DIR / "text_features"
 INTERIM_RETURNS_DIR = INTERIM_DIR / "returns"
 
@@ -55,7 +55,7 @@ def ensure_project_dirs() -> None:
         RAW_CIKS_DIR,
 
         INTERIM_CLEANED_DIR,
-        INTERIM_ITEM1A_DIR,
+        INTERIM_ITEMS_DIR,
         INTERIM_FEATURES_DIR,
         INTERIM_RETURNS_DIR,
 

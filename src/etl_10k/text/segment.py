@@ -1,5 +1,5 @@
 from concurrent.futures import ProcessPoolExecutor
-from etl_10k.config import INTERIM_CLEANED_DIR, MAX_WORKERS, INTERIM_ITEM1A_DIR
+from etl_10k.config import INTERIM_CLEANED_DIR, INTERIM_ITEMS_DIR, MAX_WORKERS
 from itertools import islice
 import re
 
@@ -18,6 +18,17 @@ def before_dot(s: str) -> str:
     """
     i = s.find('.')
     return s[:i] if i != -1 else s
+
+def clean_item_number(s: str) -> str:
+    """
+    Clean item number by removing parenthetical suffixes only if followed by a period.
+    Examples:
+        "9A(T)." -> "9A."
+        "9A(T)" -> "9A(T)"
+        "1B(A)." -> "1B."
+    """
+    # Remove parenthetical suffix only if it's followed by a period
+    return re.sub(r'\([^)]*\)\.', '.', s)
 
 def item_dict_builder(path):
     """
@@ -43,8 +54,11 @@ def item_dict_builder(path):
             continue
         label = m.group('rest')
 
+        # Clean parenthetical suffixes like (T) from "9A(T)." -> "9A."
+        cleaned_label = clean_item_number(label)
+
         out.append({
-            'item_num': before_dot(_normalize_ws(label).split()[0]).upper(),
+            'item_num': before_dot(_normalize_ws(cleaned_label).split()[0]).upper(),
             'item_line': i,
         })
 
@@ -56,6 +70,7 @@ def item_dict_builder(path):
         if key != last:
             deduped.append(row)
         last = key
+
     return deduped
 
 def number_of_rounds(item_dict, bool):
@@ -103,18 +118,23 @@ def table_content_builder(filepath):
     for n in range(int(tableContent[-1])+1,max(listAllItems)+1):
         n = str(n)
         for l in letters_tuple:
-            tableContent.append(n + l)    
+            tableContent.append(n + l)
+
     return tableContent
 
-def item_segmentation_list(filepath):
+def item_segmentation_list(filepath, verbose=False):
     """
     Makes a list of dict that contains the actual items and where they should be segmented.
-    
+
     Retreves the table of content of the 10-K with the table_content_builder function.
     Retreves the list of all the possible items and their location with the item_dict_builder function.
-    
+
     First, builds multiple candidate sequences of item headings by scanning in item_dict.
     Secondly, Selects the candidate that is most probably the item list
+
+    Args:
+        filepath: Path to the filing to segment
+        verbose: If True, print debug information (default: False)
 
     Returns list[dict]: The selected sequence (list of dicts with 'Item number' and 'Item line').
     """
@@ -134,6 +154,11 @@ def item_segmentation_list(filepath):
         list_lines.append(lines)
 
     # ----- Choose candidate with greatest character span -----
+
+    if verbose:
+        print(f"Table of Contents: {tableContent}")
+        print(f"Item Dictionary: {item_dict}")
+        print(f"Candidate lists: {list_lines}")
 
     if len(list_lines) == 1:
         return list_lines[0]
@@ -169,7 +194,7 @@ def item_segmentation_list(filepath):
         if span_chars > best_span:
             best_span = span_chars
             best_i = i
-    
+
     return list_lines[best_i]
 
 def print_items(cik):
@@ -190,13 +215,18 @@ def print_items(cik):
         Output directory where item files will be written (typically the filing folder).
     """
     try:
-        path = INTERIM_CLEANED_DIR / cik / '10-K'
-        for filing in path.iterdir():
-            p = path / filing
-            filepath = p / "full-submission.txt"
+        # Read from cleaned_filings directory
+        source_path = INTERIM_CLEANED_DIR / cik / '10-K'
+
+        for filing in source_path.iterdir():
+            filepath = source_path / filing / "full-submission.txt"
             item_segmentation = item_segmentation_list(filepath)
             page_list = [i['item_line'] for i in item_segmentation]
             page_list.append(11849)
+
+            # Write to items directory
+            output_dir = INTERIM_ITEMS_DIR / cik / '10-K' / filing.name
+            output_dir.mkdir(parents=True, exist_ok=True)
 
             for n, i in enumerate(item_segmentation):
                 start, end = page_list[n], page_list[n+1]
@@ -205,12 +235,12 @@ def print_items(cik):
                 chunk = "".join(lines)
                 filename = f"item{i['item_num']}.txt"
 
-                full_path = p / filename
+                full_path = output_dir / filename
                 with open(full_path, "w", encoding='utf-8') as f:
                     f.write(chunk)
-            print("okkkkk")
-    except:
-        print("failed")
+            print(f"✓ CIK {cik} | {filing.name}: segmentation complete")
+    except Exception as e:
+        print(f"❌ CIK {cik} | {filing.name if 'filing' in locals() else 'unknown'}: failed - {type(e).__name__}")
     return
 
 def try_exercize(ciks: list):

@@ -1,4 +1,4 @@
-from etl_10k.config import ensure_project_dirs, RAW_EDGAR_DIR, INTERIM_CLEANED_DIR, FEATURES_FIELDS, FEATURES_FILE, INTERIM_ITEM1A_DIR, FINAL_DATASET, RETURNS_FILE, CIK_LIST
+from etl_10k.config import ensure_project_dirs, RAW_EDGAR_DIR, INTERIM_CLEANED_DIR, FEATURES_FIELDS, FEATURES_FILE, INTERIM_ITEMS_DIR, FINAL_DATASET, RETURNS_FILE, CIK_LIST
 from etl_10k.edgar import cik_index as cl, downloader as sd
 from etl_10k.text import clean as hc, segment as si, tokenizer as sm
 from etl_10k.wrds import crsp_returns as cr
@@ -133,9 +133,9 @@ def step_03_clean_filings(ciks: Optional[Iterable[str]] = None, delete: bool = F
                 deleted += 1
         print(f"Deleted folders: {deleted}")
     
-def step_04_extract_item1a(ciks: Optional[Iterable[str]] = None) -> None:
+def step_04_segment_items(ciks: Optional[Iterable[str]] = None) -> None:
     """
-    Extract Item 1A risk factor text from cleaned filings.
+    Segment all items from cleaned filings.
 
     If `ciks` is None, processes all CIK folders found in the cleaned directory.
     """
@@ -148,7 +148,7 @@ def step_05_compute_features(ciks: Optional[Iterable[str]] = None, delete: bool 
 
     Writes row-level results into `FEATURES_FILE`.
     """
-    ciks_dirs = _resolve_cik_dirs(INTERIM_ITEM1A_DIR, ciks)
+    ciks_dirs = _resolve_cik_dirs(INTERIM_ITEMS_DIR, ciks)
     #print(ciks_dirs)
     with open(FEATURES_FILE, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=FEATURES_FIELDS)
@@ -161,7 +161,7 @@ def step_05_compute_features(ciks: Optional[Iterable[str]] = None, delete: bool 
             if p.is_dir():
                 shutil.rmtree(p)
                 deleted += 1
-        for p in INTERIM_ITEM1A_DIR.iterdir():
+        for p in INTERIM_ITEMS_DIR.iterdir():
             if p.is_dir():
                 shutil.rmtree(p)
                 deleted += 1

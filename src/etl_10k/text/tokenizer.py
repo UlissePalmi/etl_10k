@@ -1,6 +1,6 @@
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from nltk.sentiment import SentimentIntensityAnalyzer
-from etl_10k.config import INTERIM_ITEM1A_DIR, MAX_WORKERS, INTERIM_CLEANED_DIR
+from etl_10k.config import INTERIM_ITEMS_DIR, MAX_WORKERS, INTERIM_CLEANED_DIR
 from etl_10k.text import lm_dict, complexity as cx
 import nltk
 import sys
@@ -62,7 +62,7 @@ def make_comps(cik):
     """
     print(cik)
     date_data = []
-    folders_path = INTERIM_ITEM1A_DIR / cik / "10-K"
+    folders_path = INTERIM_ITEMS_DIR / cik / "10-K"
     checkdate_path = INTERIM_CLEANED_DIR / cik / "10-K"
     
     for i in folders_path.iterdir():
@@ -106,7 +106,7 @@ def worker(cik):
     Compute feature rows for all consecutive filing comparisons for a single CIK.
     Returns a list of row dictionaries for writing to the output file.
     """
-    path = INTERIM_ITEM1A_DIR / cik
+    path = INTERIM_ITEMS_DIR / cik
     if not path.exists():
         return []
     comps = make_comps(cik)
@@ -120,8 +120,8 @@ def process_comps(comp, cik):
     Returns the output dictionary produced by `min_edit_levenshtein()`.
     """
     filingNew, filingOld = comp["filing1"], comp["filing2"]
-    fileNew = INTERIM_ITEM1A_DIR / cik / "10-K" / filingNew / "item1A.txt"
-    fileOld = INTERIM_ITEM1A_DIR / cik / "10-K" / filingOld / "item1A.txt"
+    fileNew = INTERIM_ITEMS_DIR / cik / "10-K" / filingNew / "item1A.txt"
+    fileOld = INTERIM_ITEMS_DIR / cik / "10-K" / filingOld / "item1A.txt"
     textNew = fileNew.read_text(encoding="utf-8", errors="ignore")
     textOld = fileOld.read_text(encoding="utf-8", errors="ignore")
     return min_edit_levenshtein(textNew, textOld, comp, cik)

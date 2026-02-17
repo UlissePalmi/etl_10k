@@ -1,4 +1,4 @@
-from etl_10k.config import INTERIM_ITEM1A_DIR, CIK_LIST, RETURNS_FILE
+from etl_10k.config import INTERIM_ITEMS_DIR, CIK_LIST, RETURNS_FILE
 import pandas as pd
 from sqlalchemy import text
 import wrds
@@ -35,34 +35,68 @@ def querymaker(cik):
     """
     return query
 
-def df_with_returns():
+def df_with_returns(batch_size=100):
     """
-    Download and combine monthly return data for all CIK folders in `INTERIM_ITEM1A_DIR`.
+    Download and combine monthly return data for all CIKs in batches.
 
-    For each CIK, runs the WRDS query, keeps (cik, date, ret), and concatenates results
-    into a single dataframe.
+    For each batch of CIKs, runs a single WRDS query with IN clause,
+    keeps (cik, date, ret), and concatenates results into a single dataframe.
+
+    Args:
+        batch_size: Number of CIKs to query per batch (default: 100)
     """
     list_cik_df = pd.read_csv(CIK_LIST)
-    
+
     db = wrds.Connection(wrds_username='username')
-    
+
     ciks = list_cik_df['CIK'].unique().tolist()
     ciks = [str(cik).zfill(10) for cik in ciks]
-    
-    print(ciks)
-    
+
+    print(f"Processing {len(ciks)} CIKs in batches of {batch_size}")
+
     dfs = []
 
-    for cik in ciks:
-        query = querymaker(cik)
+    # Process CIKs in batches
+    for i in range(0, len(ciks), batch_size):
+        batch = ciks[i:i + batch_size]
+        batch_num = i // batch_size + 1
+
+        # Build IN clause with quoted CIKs
+        cik_list_str = "', '".join(batch)
+
+        query = f"""
+        SELECT
+            c.cik,
+            c.conm as company_name,
+            m.date,
+            m.ret
+        FROM
+            crsp.msf as m
+        JOIN
+            crsp.ccmxpf_linktable as link
+            ON m.permno = link.lpermno
+        JOIN
+            comp.company as c
+            ON link.gvkey = c.gvkey
+        WHERE
+            c.cik IN ('{cik_list_str}')
+            AND m.date >= '2006-01-01'
+            AND m.date <= '2025-10-31'
+            AND link.linktype IN ('LU', 'LC')
+            AND link.linkprim IN ('P', 'C')
+            AND m.date >= link.linkdt
+            AND (m.date <= link.linkenddt OR link.linkenddt IS NULL)
+        """
+
         try:
             with db.engine.connect() as conn:
                 df = pd.read_sql_query(text(query), conn)
 
             dfs.append(df)
-            print(f"{cik}: ok ({len(df)} rows)")
+            print(f"Batch {batch_num} ({len(batch)} CIKs): ok ({len(df)} rows)")
         except Exception as e:
-            print(f"{cik}: error: {e}")
+            print(f"Batch {batch_num} ({len(batch)} CIKs): error: {e}")
+
     cols = ["cik", "date", "ret"]
     dfs = [df.reindex(columns=cols) for df in dfs if df is not None and not df.empty]
     df = pd.concat(dfs, ignore_index=True) if dfs else pd.DataFrame()
