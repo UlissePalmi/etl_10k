@@ -71,8 +71,8 @@ _ITEM_IGNORE_PRE_PATTERN = re.compile(r'\b(?:in|of|see|at|with|under|this|to)[ \
 _SPACE_BEFORE_NEWLINE_PATTERN = re.compile(r'[ \t]+\n')
 
 # Item cleaning patterns
-_ENSURE_SPACE_AFTER_ITEM_PATTERN = re.compile(r'\b(Items?)\b(?=\S)')
-_ITEM_NUMBER_ONLY_PATTERN = re.compile(r'Item\s+\d+')
+_ENSURE_SPACE_AFTER_ITEM_PATTERN = re.compile(r'\b(Items?)\b(?=\S)', re.IGNORECASE)
+_ITEM_NUMBER_ONLY_PATTERN = re.compile(r'Item\s+\d+', re.IGNORECASE)
 _ITEM_SUFFIX_PATTERN = re.compile(r'[A-Za-z]\.')
 
 # Whitespace cleanup patterns
@@ -416,11 +416,11 @@ def merge_I_tem(content):
     while i < len(lines):
         # Make sure there is a next line to look at
         if (
-            lines[i].strip() == "I" and
+            lines[i].strip().lower() == "i" and
             i + 1 < len(lines) and
-            lines[i + 1].lstrip().startswith("tem")
+            lines[i + 1].lstrip().lower().startswith("tem")
         ):
-            merged_line = "I" + lines[i + 1].lstrip()
+            merged_line = lines[i].strip() + lines[i + 1].lstrip()
             new_lines.append(merged_line)
             i += 2  # skip the next line because we've merged it
         else:
@@ -454,7 +454,7 @@ def merge_item_with_number_line(text):
         current = lines[i].strip()
 
         # Check if this line is exactly 'Item' or 'Items'
-        if current in ("Item", "Items") and i + 1 < len(lines):
+        if current.lower() in ("item", "items") and i + 1 < len(lines):
             next_raw = lines[i + 1]
             # Remove leading spaces to inspect the first real character
             next_stripped_leading = next_raw.lstrip()

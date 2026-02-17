@@ -1,4 +1,4 @@
-from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from etl_10k.config import INTERIM_CLEANED_DIR, INTERIM_ITEMS_DIR, MAX_WORKERS
 from itertools import islice
 import re
@@ -214,41 +214,57 @@ def print_items(cik):
     p : pathlib.Path
         Output directory where item files will be written (typically the filing folder).
     """
-    try:
-        # Read from cleaned_filings directory
-        source_path = INTERIM_CLEANED_DIR / cik / '10-K'
+    # Read from cleaned_filings directory
+    source_path = INTERIM_CLEANED_DIR / cik / '10-K'
 
-        for filing in source_path.iterdir():
-            filepath = source_path / filing / "full-submission.txt"
-            item_segmentation = item_segmentation_list(filepath)
-            page_list = [i['item_line'] for i in item_segmentation]
-            page_list.append(11849)
+    for filing in source_path.iterdir():
+        filepath = source_path / filing / "full-submission.txt"
+        item_segmentation = item_segmentation_list(filepath)
+        page_list = [i['item_line'] for i in item_segmentation]
+        page_list.append(11849)
 
-            # Write to items directory
-            output_dir = INTERIM_ITEMS_DIR / cik / '10-K' / filing.name
-            output_dir.mkdir(parents=True, exist_ok=True)
+        # Write to items directory
+        output_dir = INTERIM_ITEMS_DIR / cik / '10-K' / filing.name
+        output_dir.mkdir(parents=True, exist_ok=True)
 
-            for n, i in enumerate(item_segmentation):
-                start, end = page_list[n], page_list[n+1]
-                with filepath.open("r", encoding="utf-8", errors="replace") as f:
-                    lines = list(islice(f, start - 1, end-1))
-                chunk = "".join(lines)
-                filename = f"item{i['item_num']}.txt"
+        for n, i in enumerate(item_segmentation):
+            start, end = page_list[n], page_list[n+1]
+            with filepath.open("r", encoding="utf-8", errors="replace") as f:
+                lines = list(islice(f, start - 1, end-1))
+            chunk = "".join(lines)
+            filename = f"item{i['item_num']}.txt"
 
-                full_path = output_dir / filename
-                with open(full_path, "w", encoding='utf-8') as f:
-                    f.write(chunk)
-            print(f"✓ CIK {cik} | {filing.name}: segmentation complete")
-    except Exception as e:
-        print(f"❌ CIK {cik} | {filing.name if 'filing' in locals() else 'unknown'}: failed - {type(e).__name__}")
-    return
+            full_path = output_dir / filename
+            with open(full_path, "w", encoding='utf-8') as f:
+                f.write(chunk)
+        print(f"✓ CIK {cik} | {filing.name}: segmentation complete")
 
 def try_exercize(ciks: list):
     """
-    Runs print_items in parallel
+    Runs print_items in parallel and tracks completion statistics
     """
+    total = len(ciks)
+    completed = 0
+    failed = 0
+
     with ProcessPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        list(executor.map(print_items, ciks))
+        futures = {executor.submit(print_items, cik): cik for cik in ciks}
+
+        for fut in as_completed(futures):
+            cik = futures[fut]
+            try:
+                fut.result()
+                completed += 1
+            except Exception as e:
+                failed += 1
+                print(f"[FAILED] {cik}: {type(e).__name__} - {e}")
+
+    print(f"\n{'='*60}")
+    print(f"Segmentation Summary:")
+    print(f"  Total CIKs: {total}")
+    print(f"  Completed: {completed} ({(completed/total*100):.1f}%)" if total > 0 else f"  Completed: {completed}")
+    print(f"  Failed: {failed} ({(failed/total*100):.1f}%)" if total > 0 else f"  Failed: {failed}")
+    print(f"{'='*60}")
     return
 
 
