@@ -221,7 +221,8 @@ def print_items(cik):
         filepath = source_path / filing / "full-submission.txt"
         item_segmentation = item_segmentation_list(filepath)
         page_list = [i['item_line'] for i in item_segmentation]
-        page_list.append(11849)
+        num_lines = sum(1 for _ in filepath.open("r", encoding="utf-8", errors="replace"))
+        page_list.append(num_lines + 1)
 
         # Write to items directory
         output_dir = INTERIM_ITEMS_DIR / cik / '10-K' / filing.name
