@@ -1,6 +1,7 @@
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from etl_10k.config import INTERIM_CLEANED_DIR, INTERIM_ITEMS_DIR, MAX_WORKERS
 from itertools import islice
+from collections import Counter
 import re
 
 def _normalize_ws(s: str) -> str:
@@ -24,11 +25,9 @@ def clean_item_number(s: str) -> str:
     Clean item number by removing parenthetical suffixes only if followed by a period,
     and stripping trailing non-alphanumeric characters (e.g. dashes used instead of dots).
     Examples:
-        "9A(T)." -> "9A."
         "9A(T)" -> "9A(T)"
         "1B(A)." -> "1B."
         "7A-"   -> "7A"
-        "9B-"   -> "9B"
     """
     s = re.sub(r'\([^)]*\)\.', '.', s)   # remove parenthetical suffix before dot
     s = re.sub(r'[^A-Za-z0-9]+$', '', s) # strip trailing non-alphanumeric (e.g. "-")
@@ -99,18 +98,16 @@ def number_of_rounds(item_dict, bool):
     max_num = max(listAllItems)
 
     # Double check the number of rounds is correct
-    rounds = [i for i in listAllItems if i==max_num]
-    rounds2 = [i for i in listAllItems if i==max_num-1]
-    
-    # print(f"rounds: {rounds}; rounds2: {rounds2}")
+    item_counts = Counter(listAllItems)
+    top_counts = [item_counts[max_num - i] for i in range(4)]
+    rounds = Counter(top_counts).most_common(1)[0][0]
 
-    last_ele = max_num if len(rounds) >= len(rounds2) else max_num - 1
-    rounds = rounds2 if len(rounds) > len(rounds2) else rounds
-    
+    last_ele = max_num if item_counts[max_num] >= item_counts[max_num - 1] else max_num - 1
+
     # print(f"last ele: {last_ele}")
 
     if bool == True:
-        return len(rounds)
+        return rounds
     else:
         return last_ele
 
@@ -148,28 +145,24 @@ def _append_orphans(selected, item_dict):
             seen.add(r['item_num'])
     return selected
 
-def item_segmentation_list(filepath, verbose=False):
+def _build_candidates(filepath, verbose=False):
     """
-    Makes a list of dict that contains the actual items and where they should be segmented.
-
-    Retreves the table of content of the 10-K with the table_content_builder function.
-    Retreves the list of all the possible items and their location with the item_dict_builder function.
-
-    First, builds multiple candidate sequences of item headings by scanning in item_dict.
-    Secondly, Selects the candidate that is most probably the item list
+    Builds all candidate sequences of item headings by scanning item_dict round by round.
 
     Args:
         filepath: Path to the filing to segment
         verbose: If True, print debug information (default: False)
 
-    Returns list[dict]: The selected sequence (list of dicts with 'Item number' and 'Item line').
+    Returns:
+        tuple: (list_lines, item_dict)
     """
     tableContent = table_content_builder(filepath)
     item_dict = item_dict_builder(filepath)
 
     list_lines = []
     last_ele = 0
-    for _ in range(number_of_rounds(item_dict, bool=True)):
+    rounds = number_of_rounds(item_dict, bool=True)
+    for _ in range(rounds):
         lines = []
         for itemTC in tableContent:
             for r in item_dict:
@@ -179,13 +172,29 @@ def item_segmentation_list(filepath, verbose=False):
                     break
         list_lines.append(lines)
 
-    # ----- Choose candidate with greatest character span -----
-
     if verbose:
         print(f"Table of Contents: {tableContent}")
         print(f"Item Dictionary: {item_dict}")
         print(f"Candidate lists: {list_lines}")
 
+    if any(not cand for cand in list_lines):
+        from etl_10k.text.segment_fallback import fallback_build_candidates
+        list_lines = fallback_build_candidates(filepath, verbose)
+
+    return list_lines, item_dict
+
+
+def _select_best_candidate(list_lines, item_dict, filepath):
+    """
+    Selects the candidate with the greatest character span.
+
+    Args:
+        list_lines: list of candidate sequences (output of _build_candidates)
+        item_dict: full item dictionary
+        filepath: Path to the filing (used to read character offsets)
+
+    Returns list[dict]: The selected sequence.
+    """
     if len(list_lines) == 1:
         return _append_orphans(list_lines[0], item_dict)
 
@@ -212,6 +221,12 @@ def item_segmentation_list(filepath, verbose=False):
     best_span = float("-inf")
 
     for i, cand in enumerate(list_lines):
+        """
+        if not cand:
+            cik = filepath.parent.parent.parent.name
+            filing = filepath.parent.name
+            print(f"Empty candidate (round {i}) | CIK: {cik}, Filing: {filing}")
+        """ 
         start_line = _normalize_line_index(cand[0]["item_line"], num_lines)
         end_line = _normalize_line_index(cand[-1]["item_line"], num_lines)
 
@@ -222,6 +237,24 @@ def item_segmentation_list(filepath, verbose=False):
             best_i = i
 
     return _append_orphans(list_lines[best_i], item_dict)
+
+
+def item_segmentation_list(filepath, verbose=False):
+    """
+    Makes a list of dict that contains the actual items and where they should be segmented.
+
+    First, builds multiple candidate sequences of item headings (_build_candidates).
+    Secondly, selects the candidate that is most probably the item list (_select_best_candidate).
+
+    Args:
+        filepath: Path to the filing to segment
+        verbose: If True, print debug information (default: False)
+
+    Returns list[dict]: The selected sequence (list of dicts with 'item_num' and 'item_line').
+    """
+    list_lines, item_dict = _build_candidates(filepath, verbose)
+    return _select_best_candidate(list_lines, item_dict, filepath)
+
 
 def print_items(cik):
     """
@@ -251,6 +284,8 @@ def print_items(cik):
         try:
             item_segmentation = item_segmentation_list(filepath)
             page_list = [i['item_line'] for i in item_segmentation]
+            
+            # Adds where line in which the 10k ends
             num_lines = sum(1 for _ in filepath.open("r", encoding="utf-8", errors="replace"))
             page_list.append(num_lines + 1)
 
@@ -306,13 +341,13 @@ def try_exercize(ciks: list):
                 ciks_failed += 1
                 print(f"[FAILED] {cik}: {type(e).__name__} - {e}")
 
-    total_filings_pct = lambda n: f"({n/total_filings*100:.1f}%)" if total_filings > 0 else ""
-    total_ciks_pct    = lambda n: f"({n/total_ciks*100:.1f}%)"    if total_ciks > 0    else ""
+    pct_f = lambda n: f"({n/total_filings*100:.1f}%)" if total_filings > 0 else ""
+    pct_c = lambda n: f"({n/total_ciks*100:.1f}%)"   if total_ciks > 0    else ""
 
     print(f"\n{'='*60}")
     print(f"Segmentation Summary:")
-    print(f"  CIKs     — total: {total_ciks} | completed: {ciks_completed} {total_ciks_pct(ciks_completed)}| failed: {ciks_failed} {total_ciks_pct(ciks_failed)}")
-    print(f"  Filings  — total: {total_filings} | completed: {filings_completed} {total_filings_pct(filings_completed)}| failed: {filings_failed} {total_filings_pct(filings_failed)}")
+    print(f"  CIKs    — total: {total_ciks} | completed: {ciks_completed} {pct_c(ciks_completed)}| failed: {ciks_failed} {pct_c(ciks_failed)}")
+    print(f"  Filings — total: {total_filings} | completed: {filings_completed} {pct_f(filings_completed)}| failed: {filings_failed} {pct_f(filings_failed)}")
     print(f"{'='*60}")
     return
 
