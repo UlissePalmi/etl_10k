@@ -21,14 +21,18 @@ def before_dot(s: str) -> str:
 
 def clean_item_number(s: str) -> str:
     """
-    Clean item number by removing parenthetical suffixes only if followed by a period.
+    Clean item number by removing parenthetical suffixes only if followed by a period,
+    and stripping trailing non-alphanumeric characters (e.g. dashes used instead of dots).
     Examples:
         "9A(T)." -> "9A."
         "9A(T)" -> "9A(T)"
         "1B(A)." -> "1B."
+        "7A-"   -> "7A"
+        "9B-"   -> "9B"
     """
-    # Remove parenthetical suffix only if it's followed by a period
-    return re.sub(r'\([^)]*\)\.', '.', s)
+    s = re.sub(r'\([^)]*\)\.', '.', s)   # remove parenthetical suffix before dot
+    s = re.sub(r'[^A-Za-z0-9]+$', '', s) # strip trailing non-alphanumeric (e.g. "-")
+    return s
 
 def item_dict_builder(path):
     """
@@ -86,7 +90,7 @@ def number_of_rounds(item_dict, bool):
     for items in item_dict:
         digits = "".join(ch for ch in items.get("item_num") if ch.isdigit() and ch)
         out.append(digits)
-    listAllItems = [int(i) for i in out]
+    listAllItems = [int(i) for i in out] # make a list of all the item numbers (w/out letters)
 
     # sometimes "Item 400" exists
     while max(listAllItems) > 20:
@@ -97,12 +101,18 @@ def number_of_rounds(item_dict, bool):
     # Double check the number of rounds is correct
     rounds = [i for i in listAllItems if i==max_num]
     rounds2 = [i for i in listAllItems if i==max_num-1]
-    rounds = rounds2 if rounds > rounds2 else rounds
     
+    # print(f"rounds: {rounds}; rounds2: {rounds2}")
+
+    last_ele = max_num if len(rounds) >= len(rounds2) else max_num - 1
+    rounds = rounds2 if len(rounds) > len(rounds2) else rounds
+    
+    # print(f"last ele: {last_ele}")
+
     if bool == True:
         return len(rounds)
     else:
-        return listAllItems
+        return last_ele
 
 def table_content_builder(filepath):
     """
@@ -112,15 +122,31 @@ def table_content_builder(filepath):
     eg ['1', '1A', '1B', '1C', '2', ...]
     """
     item_dict = item_dict_builder(filepath)
-    listAllItems = number_of_rounds(item_dict, bool=False)
+    last_ele = number_of_rounds(item_dict, bool=False)
     tableContent = ["1", "1A", "1B", "1C", "1D", "2", "3", "4", "5", "6", "7", "7A", "8"]
     letters_tuple = ("","A","B","C")
-    for n in range(int(tableContent[-1])+1,max(listAllItems)+1):
+    for n in range(int(tableContent[-1])+1,last_ele+1):
         n = str(n)
         for l in letters_tuple:
             tableContent.append(n + l)
 
     return tableContent
+
+def _append_orphans(selected, item_dict):
+    """
+    Append body-only items (those with no TOC entry) that appear after the last
+    selected item. This recovers items like Item 16 that exist only in the body.
+    """
+    if not selected:
+        return selected
+    last_line = selected[-1]['item_line']
+    selected_nums = {r['item_num'] for r in selected}
+    seen = set()
+    for r in item_dict:
+        if r['item_line'] > last_line and r['item_num'] not in selected_nums and r['item_num'] not in seen:
+            selected.append(r)
+            seen.add(r['item_num'])
+    return selected
 
 def item_segmentation_list(filepath, verbose=False):
     """
@@ -161,7 +187,7 @@ def item_segmentation_list(filepath, verbose=False):
         print(f"Candidate lists: {list_lines}")
 
     if len(list_lines) == 1:
-        return list_lines[0]
+        return _append_orphans(list_lines[0], item_dict)
 
     with open(filepath, "r", encoding="utf-8", errors="replace") as f:
         text = f.read()
@@ -186,7 +212,7 @@ def item_segmentation_list(filepath, verbose=False):
     best_span = float("-inf")
 
     for i, cand in enumerate(list_lines):
-        start_line = _normalize_line_index(cand[1]["item_line"], num_lines)
+        start_line = _normalize_line_index(cand[0]["item_line"], num_lines)
         end_line = _normalize_line_index(cand[-1]["item_line"], num_lines)
 
         span_chars = line_start_char[end_line] - line_start_char[start_line]
@@ -195,7 +221,7 @@ def item_segmentation_list(filepath, verbose=False):
             best_span = span_chars
             best_i = i
 
-    return list_lines[best_i]
+    return _append_orphans(list_lines[best_i], item_dict)
 
 def print_items(cik):
     """
@@ -217,36 +243,50 @@ def print_items(cik):
     # Read from cleaned_filings directory
     source_path = INTERIM_CLEANED_DIR / cik / '10-K'
 
+    filing_completed = 0
+    filing_failed = 0
+
     for filing in source_path.iterdir():
         filepath = source_path / filing / "full-submission.txt"
-        item_segmentation = item_segmentation_list(filepath)
-        page_list = [i['item_line'] for i in item_segmentation]
-        num_lines = sum(1 for _ in filepath.open("r", encoding="utf-8", errors="replace"))
-        page_list.append(num_lines + 1)
+        try:
+            item_segmentation = item_segmentation_list(filepath)
+            page_list = [i['item_line'] for i in item_segmentation]
+            num_lines = sum(1 for _ in filepath.open("r", encoding="utf-8", errors="replace"))
+            page_list.append(num_lines + 1)
 
-        # Write to items directory
-        output_dir = INTERIM_ITEMS_DIR / cik / '10-K' / filing.name
-        output_dir.mkdir(parents=True, exist_ok=True)
+            # Write to items directory
+            output_dir = INTERIM_ITEMS_DIR / cik / '10-K' / filing.name
+            output_dir.mkdir(parents=True, exist_ok=True)
 
-        for n, i in enumerate(item_segmentation):
-            start, end = page_list[n], page_list[n+1]
-            with filepath.open("r", encoding="utf-8", errors="replace") as f:
-                lines = list(islice(f, start - 1, end-1))
-            chunk = "".join(lines)
-            filename = f"item{i['item_num']}.txt"
+            for n, i in enumerate(item_segmentation):
+                start, end = page_list[n], page_list[n+1]
+                with filepath.open("r", encoding="utf-8", errors="replace") as f:
+                    lines = list(islice(f, start - 1, end-1))
+                chunk = "".join(lines)
+                filename = f"item{i['item_num']}.txt"
 
-            full_path = output_dir / filename
-            with open(full_path, "w", encoding='utf-8') as f:
-                f.write(chunk)
-        print(f"✓ CIK {cik} | {filing.name}: segmentation complete")
+                full_path = output_dir / filename
+                with open(full_path, "w", encoding='utf-8') as f:
+                    f.write(chunk)
+
+            filing_completed += 1
+            print(f"✓ CIK {cik} | {filing.name}: segmentation complete")
+        except Exception as e:
+            filing_failed += 1
+            print(f"[FAILED] {cik} / {filing.name}: {type(e).__name__} - {e}")
+
+    return filing_completed, filing_failed
 
 def try_exercize(ciks: list):
     """
     Runs print_items in parallel and tracks completion statistics
     """
-    total = len(ciks)
-    completed = 0
-    failed = 0
+    total_ciks = len(ciks)
+    ciks_completed = 0
+    ciks_failed = 0
+    total_filings = 0
+    filings_completed = 0
+    filings_failed = 0
 
     with ProcessPoolExecutor(max_workers=MAX_WORKERS) as executor:
         futures = {executor.submit(print_items, cik): cik for cik in ciks}
@@ -254,17 +294,25 @@ def try_exercize(ciks: list):
         for fut in as_completed(futures):
             cik = futures[fut]
             try:
-                fut.result()
-                completed += 1
+                f_completed, f_failed = fut.result()
+                filings_completed += f_completed
+                filings_failed += f_failed
+                total_filings += f_completed + f_failed
+                if f_failed == 0:
+                    ciks_completed += 1
+                else:
+                    ciks_failed += 1
             except Exception as e:
-                failed += 1
+                ciks_failed += 1
                 print(f"[FAILED] {cik}: {type(e).__name__} - {e}")
+
+    total_filings_pct = lambda n: f"({n/total_filings*100:.1f}%)" if total_filings > 0 else ""
+    total_ciks_pct    = lambda n: f"({n/total_ciks*100:.1f}%)"    if total_ciks > 0    else ""
 
     print(f"\n{'='*60}")
     print(f"Segmentation Summary:")
-    print(f"  Total CIKs: {total}")
-    print(f"  Completed: {completed} ({(completed/total*100):.1f}%)" if total > 0 else f"  Completed: {completed}")
-    print(f"  Failed: {failed} ({(failed/total*100):.1f}%)" if total > 0 else f"  Failed: {failed}")
+    print(f"  CIKs     — total: {total_ciks} | completed: {ciks_completed} {total_ciks_pct(ciks_completed)}| failed: {ciks_failed} {total_ciks_pct(ciks_failed)}")
+    print(f"  Filings  — total: {total_filings} | completed: {filings_completed} {total_filings_pct(filings_completed)}| failed: {filings_failed} {total_filings_pct(filings_failed)}")
     print(f"{'='*60}")
     return
 
