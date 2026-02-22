@@ -23,13 +23,16 @@ def before_dot(s: str) -> str:
 def clean_item_number(s: str) -> str:
     """
     Clean item number by removing parenthetical suffixes only if followed by a period,
-    and stripping trailing non-alphanumeric characters (e.g. dashes used instead of dots).
+    stripping colons used as separators instead of dots, and stripping trailing
+    non-alphanumeric characters (e.g. dashes used instead of dots).
     Examples:
         "9A(T)" -> "9A(T)"
         "1B(A)." -> "1B."
         "7A-"   -> "7A"
+        "1: Business" -> "1 Business"
     """
     s = re.sub(r'\([^)]*\)\.', '.', s)   # remove parenthetical suffix before dot
+    s = re.sub(r'^(\d+[A-Za-z]?):', r'\1', s) # remove colon used as separator after item number
     s = re.sub(r'[^A-Za-z0-9]+$', '', s) # strip trailing non-alphanumeric (e.g. "-")
     return s
 
@@ -100,7 +103,7 @@ def number_of_rounds(item_dict, bool):
     # Double check the number of rounds is correct
     item_counts = Counter(listAllItems)
     top_counts = [item_counts[max_num - i] for i in range(4)]
-    rounds = Counter(top_counts).most_common(1)[0][0]
+    rounds = next((count for count, _ in Counter(top_counts).most_common() if count > 0), 1)
 
     last_ele = max_num if item_counts[max_num] >= item_counts[max_num - 1] else max_num - 1
 
@@ -305,7 +308,6 @@ def print_items(cik):
                     f.write(chunk)
 
             filing_completed += 1
-            print(f"✓ CIK {cik} | {filing.name}: segmentation complete")
         except Exception as e:
             filing_failed += 1
             print(f"[FAILED] {cik} / {filing.name}: {type(e).__name__} - {e}")

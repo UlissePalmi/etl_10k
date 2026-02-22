@@ -36,6 +36,7 @@ def load_master_to_dataframe(year: int, qtr: int) -> pd.DataFrame:
     """
     Download master.idx for a given year/quarter and return it as a DataFrame
     with columns: CIK, Company Name, Form Type.
+    Includes 10-K, 10-K/A, 10-KSB, and 10-KT form types.
     """
     from io import StringIO
 
@@ -73,15 +74,17 @@ def load_master_to_dataframe(year: int, qtr: int) -> pd.DataFrame:
         engine='c'  # Use the faster C parser
     )
 
-    # Filter for 10-K forms
-    return df[df['Form Type'] == '10-K']
+    # Filter for 10-K forms and common variants
+    FORM_TYPES = {'10-K', '10-K/A', '10-KSB', '10-KT'}
+    return df[df['Form Type'].isin(FORM_TYPES)]
 
 def cik_list_builder(start_year, end_year, max_workers=MAX_WORKERS):
     """
     Build and save a master list of unique 10-K CIKs over a range of years.
 
     For each year in [start_year, end_year) and each quarter (1-4), the function
-    downloads the SEC `master.idx` index in parallel, filters for 10-K filings,
+    downloads the SEC `master.idx` index in parallel, filters for 10-K filings
+    (including 10-K/A, 10-KSB, and 10-KT variants),
     concatenates all results, removes duplicate CIKs, and writes the final list to
     `RAW_CIKS_DIR / "cik_list.csv"`.
 
