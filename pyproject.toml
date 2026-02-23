@@ -4,4 +4,15 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "nltk>=3.9.2",
+    "pandas==2.2.3",
+    "requests>=2.32.5",
+    "sec-edgar-downloader>=5.1.0",
+    "sqlalchemy==2.0.46",
+    "wrds>=3.5.0",
+]
+
+
+[tool.uv]
+package = true
