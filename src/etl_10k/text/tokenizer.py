@@ -209,8 +209,8 @@ def min_edit_levenshtein(text_a, text_b, dict, cik):
     #print(f"text_a: {type(text_a)}, A: {type(A)}")
     scores_a = lm_dict.lm_tone(A)
     scores_b = lm_dict.lm_tone(B)
-    comp_dict_a = cx.li_complexity_metrics(text_a, 'a')
-    comp_dict_b = cx.li_complexity_metrics(text_b, 'b')
+    comp_dict_a = cx.complexity(text_a, 'a')
+    comp_dict_b = cx.complexity(text_b, 'b')
     feature_dict = {
         "cik": cik, 
         "date_a": dict["date1"], 
