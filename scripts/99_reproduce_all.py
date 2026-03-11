@@ -19,7 +19,7 @@ def main():
     steps = {
         0: ("build_universe", lambda: s.step_00_build_universe(args.start_year, args.end_year)),
         1: ("pull_returns", s.step_01_pull_returns),
-        2: ("download_filings", lambda: s.step_02_download_filings(ciks, keep_raw=args.keep_raw)),
+        2: ("download_filings", lambda: s.step_02_download_filings(ciks, keep_raw=args.keep_raw, extract_financials=args.financials)),
         3: ("clean_filings", lambda: s.step_03_clean_filings(ciks, args.delete)),
         4: ("segment_items", lambda: s.step_04_segment_items(ciks)),
         5: ("compute_features", lambda: s.step_05_compute_features(ciks, args.delete)),

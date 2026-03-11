@@ -16,7 +16,8 @@ Usage:
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from etl_10k.edgar.downloader import download_for_cik
 from etl_10k.text.clean import clean_html, print_10X, cleaning_items
-from etl_10k.config import RAW_EDGAR_DIR, INTERIM_CLEANED_DIR, MAX_WORKERS_DOWNLOADS, MAX_WORKERS
+from etl_10k.edgar.extract_financial_statements import extract_and_save
+from etl_10k.config import RAW_EDGAR_DIR, INTERIM_CLEANED_DIR, INTERIM_DIR, MAX_WORKERS_DOWNLOADS, MAX_WORKERS
 from pathlib import Path
 from queue import Queue
 import shutil
@@ -68,7 +69,7 @@ def verify_cleaned_file(cleaned_path: Path, min_size_bytes: int = 1000) -> bool:
         return False
 
 
-def clean_and_delete_single_filing(cik: str, accession_dir: Path, keep_raw: bool = False):
+def clean_and_delete_single_filing(cik: str, accession_dir: Path, keep_raw: bool = False, extract_financials: bool = False):
     """
     Clean and optionally delete raw HTML for a single 10-K filing.
 
@@ -76,6 +77,7 @@ def clean_and_delete_single_filing(cik: str, accession_dir: Path, keep_raw: bool
         cik: Company CIK number (string)
         accession_dir: Path to the accession directory containing the filing
         keep_raw: If True, preserve raw HTML files (default: False)
+        extract_financials: If True, extract financial statements (default: False)
 
     Returns:
         tuple: (cik, accession, status, stats_dict)
@@ -99,6 +101,15 @@ def clean_and_delete_single_filing(cik: str, accession_dir: Path, keep_raw: bool
         # Read raw HTML
         with open(raw_file, 'r', encoding='utf-8') as f:
             file_content = f.read()
+
+        # Extract financial statements from raw SGML (before cleaning/deletion)
+        if extract_financials:
+            try:
+                fs_output = INTERIM_DIR / "financial_statements" / padded_cik / accession / "financial_statements.xlsx"
+                extract_and_save(file_content, fs_output)
+            except Exception as e:
+                # Log warning but don't abort the cleaning pipeline
+                print(f"Warning: Failed to extract financial statements for {padded_cik}/{accession}: {e}")
 
         # Apply cleaning pipeline
         cleaned_content = cleaning_items(clean_html(file_content))
@@ -144,7 +155,7 @@ def clean_and_delete_single_filing(cik: str, accession_dir: Path, keep_raw: bool
         return cik, accession, "error", stats
 
 
-def download_clean_delete(ciks, keep_raw: bool = False):
+def download_clean_delete(ciks, keep_raw: bool = False, extract_financials: bool = False):
     """
     Download, clean, and optionally delete raw HTML for multiple CIKs using producer-consumer pattern.
 
@@ -157,12 +168,14 @@ def download_clean_delete(ciks, keep_raw: bool = False):
     Args:
         ciks: Iterable of CIK strings to process
         keep_raw: If True, preserve raw HTML files (default: False for storage savings)
+        extract_financials: If True, extract financial statements to Excel (default: False)
     """
     ciks_list = list(ciks)
     total = len(ciks_list)
 
     print(f"Found {total} unique CIKs")
     print(f"Keep raw HTML: {keep_raw}")
+    print(f"Extract financials: {extract_financials}")
     print(f"Download workers: {MAX_WORKERS_DOWNLOADS} | Cleaning workers: {MAX_WORKERS}")
     print("="*60)
 
@@ -247,7 +260,7 @@ def download_clean_delete(ciks, keep_raw: bool = False):
             cik, accession_dir = item
 
             try:
-                cik_result, accession, status, stats = clean_and_delete_single_filing(cik, accession_dir, keep_raw)
+                cik_result, accession, status, stats = clean_and_delete_single_filing(cik, accession_dir, keep_raw, extract_financials)
 
                 with stats_lock:
                     nonlocal completed_count, total_cleaned, total_errors

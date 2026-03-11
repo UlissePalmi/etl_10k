@@ -72,6 +72,11 @@ def _parse_args():
         action="store_true",
         help="Keep raw HTML files after cleaning in step 2 (default: delete to save space)"
     )
+    p.add_argument(
+        "--financials",
+        action="store_true",
+        help="Extract financial statements during step 2 (default: off)"
+    )
 
     return p.parse_args()
 
@@ -94,7 +99,7 @@ def step_01_pull_returns() -> None:
     cr.df_with_returns()
     cr.update_cik_list()
 
-def step_02_download_filings(ciks: Optional[Iterable[str]] = None, keep_raw: bool = False):
+def step_02_download_filings(ciks: Optional[Iterable[str]] = None, keep_raw: bool = False, extract_financials: bool = False):
     """
     Download and clean SEC filings for the requested CIKs.
 
@@ -104,6 +109,7 @@ def step_02_download_filings(ciks: Optional[Iterable[str]] = None, keep_raw: boo
     Args:
         ciks: CIKs to download (None = all from cik_list.csv)
         keep_raw: If True, preserve raw HTML after cleaning (default: False)
+        extract_financials: If True, extract financial statements to Excel (default: False)
 
     If keep_raw=False (default), raw HTML files are automatically deleted after
     successful cleaning and verification, saving ~400 GB of storage.
@@ -113,7 +119,7 @@ def step_02_download_filings(ciks: Optional[Iterable[str]] = None, keep_raw: boo
 
     # Use integrated download+clean+delete pipeline
     from etl_10k.edgar.clean_downloader import download_clean_delete
-    download_clean_delete(ciks, keep_raw=keep_raw)
+    download_clean_delete(ciks, keep_raw=keep_raw, extract_financials=extract_financials)
 
 def step_03_clean_filings(ciks: Optional[Iterable[str]] = None, delete: bool = False) -> None:
     """
