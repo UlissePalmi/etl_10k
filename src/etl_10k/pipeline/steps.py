@@ -109,7 +109,7 @@ def step_02_download_filings(ciks: Optional[Iterable[str]] = None, keep_raw: boo
     Args:
         ciks: CIKs to download (None = all from cik_list.csv)
         keep_raw: If True, preserve raw HTML after cleaning (default: False)
-        extract_financials: If True, extract financial statements to Excel (default: False)
+        extract_financials: If True, extract financial statements to Excel and consolidate by type (default: False)
 
     If keep_raw=False (default), raw HTML files are automatically deleted after
     successful cleaning and verification, saving ~400 GB of storage.

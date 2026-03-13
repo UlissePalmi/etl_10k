@@ -31,6 +31,7 @@ python -m etl_10k.pipeline.steps --cik 320193 --from-step 2 --to-step 4
 --from-step <0-6>       # Step to start from
 --to-step <0-6>         # Step to end at
 --keep-raw              # Don't delete raw HTML after cleaning (default: delete)
+--financials            # Extract financial statement tables during step 2 (default: off)
 ```
 
 Individual step scripts in `scripts/` (e.g., `python scripts/04_extract_item1a.py`).
@@ -40,7 +41,8 @@ Individual step scripts in `scripts/` (e.g., `python scripts/04_extract_item1a.p
 ### Data Flow
 
 ```
-SEC EDGAR HTML → [Step 2] Download + Clean (integrated) → Cleaned text
+SEC EDGAR HTML → [Step 2] Download + Clean + Extract financials (integrated)
+→ Cleaned text + Financial statements (Excel, with --financials)
 → [Step 4] Item 1A segmentation → Per-filing item text
 → [Step 5] Feature computation → text_features/features.csv
 → [Step 6] Merge with CRSP returns → data/processed/panel/final_dataset.csv
@@ -53,6 +55,7 @@ Step 0 builds the CIK universe from SEC master indices. Step 1 fetches CRSP stoc
 - `data/raw/sec-edgar-filings/` — Downloaded 10-K HTML
 - `data/interim/cleaned_filings/` — Cleaned text files
 - `data/interim/items/<CIK>/10-K/<accession>/item1A.txt` — Extracted Item 1A sections
+- `data/interim/financial_statements/<CIK>/<accession>/financial_statements.xlsx` — Financial statement tables (with `--financials`)
 - `data/interim/text_features/features.csv` — Computed features (52 columns)
 - `data/interim/returns/returns.csv` — CRSP monthly returns
 - `data/processed/panel/final_dataset.csv` — Final merged panel
@@ -73,6 +76,7 @@ Step 0 builds the CIK universe from SEC master indices. Step 1 fetches CRSP stoc
 |--------|---------|
 | `config.py` | All paths, settings, `FEATURES_FIELDS` (52 output columns), `ensure_project_dirs()` |
 | `edgar/clean_downloader.py` | Integrated download + clean + verify + delete pipeline |
+| `edgar/extract_financial_statements.py` | Parses SGML `FilingSummary.xml`, extracts R-file HTML tables, converts to Excel |
 | `text/clean.py` | HTML → plain text pipeline (XBRL removal, tag stripping, Item heading normalization) |
 | `text/segment.py` | Item 1A extraction via regex heading detection + candidate ranking by character span |
 | `text/segment_fallback.py` | Fallback segmentation for malformed filings |
@@ -100,6 +104,40 @@ Features computed between consecutive Item 1A filings (year N vs N−1):
 - **Complexity**: Fog Index, Flesch-Kincaid, avg sentence/word length
 - **VADER**: mean compound score
 - **Length metrics**: word counts, length deltas
+
+## Financial Statements Extraction
+
+During Step 2, with the `--financials` flag, the pipeline extracts financial statement tables from raw SGML filings and consolidates them by statement type:
+
+**Per-filing extraction**:
+- Parses `FilingSummary.xml` (embedded in SGML) to get authoritative R-file → statement name mappings
+- Extracts main `<table class="report">` elements from each R-file HTML
+- Handles parenthetical negatives: `(123)` → `-123.0`
+- Saves to: `data/interim/financial_statements/<CIK>/<accession>/financial_statements.xlsx`
+- One Excel sheet per statement (Balance Sheet, Income Statement, Cash Flows, Notes, etc.)
+- Gracefully skips pre-XBRL filings (before 2009)
+
+**Consolidation** (automatic with `--financials`):
+- Groups sheets by name across all 10-K filings for the same CIK
+- Creates one Excel per statement type: `data/interim/financial_statements/<CIK>/Balance Sheet.xlsx`, `Income Statement.xlsx`, etc.
+- Sheet names in consolidated files = fiscal years (2024, 2025, etc., parsed from accession numbers)
+- Deletes per-filing folders after consolidation
+
+**Note**: Financial extraction works on **raw SGML files**, not cleaned text. Use `--keep-raw` to preserve raw HTML if debugging.
+
+**Standalone CLI**:
+```bash
+# Extract financials for specific CIK without running full pipeline
+uv run python utils/extract_financial_statements.py --cik 0001234567
+```
+
+## Step 2 Behavior
+
+Step 2 (`download_filings`) always downloads and cleans 10-K filings. With `--financials`:
+- Also extracts financial statement tables from raw SGML
+- Automatically consolidates statements by type into grouped Excel files
+- Output: cleaned text + consolidated financial statement Excels (one per statement type)
+- Without `--financials`: only cleaned text is produced
 
 ## Development Utilities
 

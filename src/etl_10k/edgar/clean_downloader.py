@@ -142,16 +142,16 @@ def clean_and_delete_single_filing(cik: str, accession_dir: Path, keep_raw: bool
                         pass
 
                 except OSError as e:
-                    print(f"  ⚠️  Deletion failed: {accession}: {e}")
+                    print(f"  [WARNING]️  Deletion failed: {accession}: {e}")
                     return cik, accession, "error", stats
             else:
-                print(f"  ⚠️  Verification failed, keeping: {accession}")
+                print(f"  [WARNING]️  Verification failed, keeping: {accession}")
                 return cik, accession, "error", stats
 
         return cik, accession, "ok", stats
 
     except Exception as e:
-        print(f"  ❌ Cleaning error ({accession}): {type(e).__name__}")
+        print(f"  [ERROR] Cleaning error ({accession}): {type(e).__name__}")
         return cik, accession, "error", stats
 
 
@@ -168,7 +168,7 @@ def download_clean_delete(ciks, keep_raw: bool = False, extract_financials: bool
     Args:
         ciks: Iterable of CIK strings to process
         keep_raw: If True, preserve raw HTML files (default: False for storage savings)
-        extract_financials: If True, extract financial statements to Excel (default: False)
+        extract_financials: If True, extract financial statements to Excel and consolidate by type (default: False)
     """
     ciks_list = list(ciks)
     total = len(ciks_list)
@@ -275,8 +275,8 @@ def download_clean_delete(ciks, keep_raw: bool = False, extract_financials: bool
                     total_errors += (1 if status == "error" else 0)
 
                     # Print progress
-                    kept_msg = "(kept)" if keep_raw else f"→ deleted {stats.get('deleted', 0)}"
-                    status_icon = "✓" if status == "ok" else "❌"
+                    kept_msg = "(kept)" if keep_raw else f"deleted {stats.get('deleted', 0)}"
+                    status_icon = "[OK]" if status == "ok" else "[ERROR]"
                     print(f"[{completed_count}] {status_icon} CIK {cik_result} | {accession}: {status} | "
                           f"cleaned={stats.get('cleaned', 0)} {kept_msg}")
 
@@ -285,7 +285,7 @@ def download_clean_delete(ciks, keep_raw: bool = False, extract_financials: bool
                     completed_count += 1
                     stats_summary["error"] += 1
                     total_errors += 1
-                    print(f"[{completed_count}] ❌ CIK {cik}: error | {type(e).__name__}: {e}")
+                    print(f"[{completed_count}] [ERROR] CIK {cik}: error | {type(e).__name__}: {e}")
 
             finally:
                 download_queue.task_done()
@@ -315,7 +315,7 @@ def download_clean_delete(ciks, keep_raw: bool = False, extract_financials: bool
                 with stats_lock:
                     stats_summary["download_ok"] += 1
                     total_downloaded += filings_count
-                    print(f"[{ciks_processed}/{total}] CIK {cik}: downloaded {filings_count} filings in {duration:.2f}s → queued for cleaning")
+                    print(f"[{ciks_processed}/{total}] CIK {cik}: downloaded {filings_count} filings in {duration:.2f}s -> queued for cleaning")
             elif status == "not_found":
                 with stats_lock:
                     stats_summary["not_found"] += 1
@@ -340,9 +340,9 @@ def download_clean_delete(ciks, keep_raw: bool = False, extract_financials: bool
     print("SUMMARY")
     print("="*60)
     print(f"CIKs processed: {total}")
-    print(f"  ✓ Downloaded successfully: {stats_summary['download_ok']}")
-    print(f"  ⚠ Not found: {stats_summary['not_found']}")
-    print(f"  ❌ Download errors: {stats_summary.get('error', 0)}")
+    print(f"  [OK] Downloaded successfully: {stats_summary['download_ok']}")
+    print(f"  [WARNING] Not found: {stats_summary['not_found']}")
+    print(f"  [ERROR] Download errors: {stats_summary.get('error', 0)}")
     print(f"\nFilings downloaded: {total_downloaded}")
     print(f"Filings cleaned successfully: {stats_summary['ok']}")
     print(f"Filings cleaned: {total_cleaned}")
@@ -374,3 +374,11 @@ def download_clean_delete(ciks, keep_raw: bool = False, extract_financials: bool
         total_possible_work_time = total_wait_time
         print(f"Total idle time across all workers: {total_possible_work_time:.2f}s")
         print(f"Average idle time per worker: {total_possible_work_time/MAX_WORKERS:.2f}s")
+
+    # Consolidate financial statements by type if extracted
+    if extract_financials:
+        print(f"\n{'='*60}")
+        print("CONSOLIDATING FINANCIAL STATEMENTS")
+        print(f"{'='*60}")
+        from etl_10k.edgar.extract_financial_statements import consolidate_statements_by_type
+        consolidate_statements_by_type(ciks_list)

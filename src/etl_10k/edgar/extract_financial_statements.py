@@ -393,5 +393,139 @@ def main():
         print(f"  {status}: {count}")
 
 
+def extract_year_from_accession(accession: str) -> int:
+    """
+    Extract year from accession number format: CIK-YY-SEQUENCE.
+    E.g., '0001562088-25-000042' -> 2025
+    """
+    parts = accession.split("-")
+    if len(parts) >= 2:
+        yy = parts[1]
+        # Convert YY to YYYY: 00-99
+        # 00-30 -> 2000-2030, 31-99 -> 1931-1999
+        yy_int = int(yy)
+        year = 2000 + yy_int if yy_int <= 30 else 1900 + yy_int
+        return year
+    return None
+
+
+def consolidate_statements_by_type(ciks):
+    """
+    Consolidate per-filing financial statements by statement type.
+
+    For each CIK, groups all sheets with the same name across multiple 10-K filings
+    into separate Excel workbooks (one per statement type). Sheet names in consolidated
+    files are the fiscal years extracted from accession numbers.
+
+    Structure:
+        BEFORE: financial_statements/<CIK>/<accession>/financial_statements.xlsx
+                  (one file per filing, multiple sheets per file)
+        AFTER:  financial_statements/<CIK>/<statement_name>.xlsx
+                  (one file per statement type, multiple years per file)
+
+    Args:
+        ciks: List of CIK strings to consolidate
+    """
+    from openpyxl import load_workbook
+    import shutil
+
+    cik_list = list(ciks)
+    financial_statements_root = INTERIM_DIR / "financial_statements"
+
+    if not financial_statements_root.exists():
+        print("No financial statements extracted yet.")
+        return
+
+    total_consolidated = 0
+
+    for cik in cik_list:
+        padded_cik = str(cik).zfill(10)
+        cik_dir = financial_statements_root / padded_cik
+        if not cik_dir.exists():
+            print(f"  No statements for {cik}")
+            continue
+
+        # Collect all sheets from all accessions for this CIK
+        # Group by base name (strip trailing _2, _3 dedup suffixes added by openpyxl)
+        # Format: {base_name: {(year, suffix): [[cell_values]]}}
+        sheets_by_base = {}
+        accession_dirs = []
+
+        for accession_dir in sorted(cik_dir.iterdir()):
+            if not accession_dir.is_dir():
+                continue
+
+            filing_xlsx = accession_dir / "financial_statements.xlsx"
+            if not filing_xlsx.exists():
+                print(f"    No Excel in {accession_dir.name}")
+                continue
+
+            accession_dirs.append(accession_dir)
+
+            # Extract year from accession
+            year = extract_year_from_accession(accession_dir.name)
+            if year is None:
+                continue
+
+            # Read all sheets from this filing's Excel
+            try:
+                wb = load_workbook(filing_xlsx, data_only=True)
+                for sheet_name in wb.sheetnames:
+                    # Strip openpyxl dedup suffix (_2, _3, ...) to get base name
+                    m = re.match(r'^(.*?)(_\d+)$', sheet_name)
+                    base_name = m.group(1) if m else sheet_name
+                    suffix = m.group(2) if m else ""  # e.g. "_2", "_3", or ""
+
+                    if base_name not in sheets_by_base:
+                        sheets_by_base[base_name] = {}
+
+                    # Extract actual cell data (not references)
+                    ws = wb[sheet_name]
+                    sheet_data = []
+                    for row in ws.iter_rows(values_only=True):
+                        sheet_data.append(list(row))
+
+                    sheets_by_base[base_name][(year, suffix)] = sheet_data
+
+                wb.close()
+            except Exception as e:
+                print(f"  Error reading {filing_xlsx}: {e}")
+                continue
+
+        # Create consolidated Excel files, one per base statement name
+        for base_name, year_suffix_data in sorted(sheets_by_base.items()):
+            output_xlsx = cik_dir / f"{base_name}.xlsx"
+
+            # Create new workbook for this statement type
+            consolidated_wb = Workbook()
+            consolidated_wb.remove(consolidated_wb.active)  # Remove default sheet
+
+            # Add a sheet for each (year, suffix) in sorted order
+            for (year, suffix) in sorted(year_suffix_data.keys()):
+                sheet_data = year_suffix_data[(year, suffix)]
+                sheet_title = f"{year}{suffix}"  # e.g. "2024", "2024_2", "2024_3"
+                dest_ws = consolidated_wb.create_sheet(title=sheet_title)
+
+                # Write data to destination sheet
+                for row_idx, row_data in enumerate(sheet_data, start=1):
+                    for col_idx, cell_value in enumerate(row_data, start=1):
+                        dest_ws.cell(row=row_idx, column=col_idx, value=cell_value)
+
+            # Save consolidated file
+            consolidated_wb.save(output_xlsx)
+            total_consolidated += 1
+            years = sorted(set(y for y, _ in year_suffix_data.keys()))
+            print(f"  {padded_cik}/{base_name}.xlsx ({len(years)} years)")
+
+        # Delete per-filing directories (cleanup)
+        for accession_dir in accession_dirs:
+            try:
+                shutil.rmtree(accession_dir)
+            except Exception as e:
+                print(f"  Warning: Could not delete {accession_dir}: {e}")
+
+    print(f"\nConsolidated {total_consolidated} statement types")
+
+
 if __name__ == "__main__":
     main()
