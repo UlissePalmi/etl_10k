@@ -1,7 +1,9 @@
 from __future__ import annotations
+import sys
 from etl_10k.config import ensure_project_dirs, CIK_LIST
 from etl_10k.edgar.cik_index import _load_ciks
 from etl_10k.pipeline import steps as s
+from etl_10k.utils.telegram_logger import TelegramStream
 
 """
 Entry point for reproducing the full pipeline end-to-end.
@@ -12,6 +14,9 @@ controlled by CLI arguments.
 """
 
 def main():
+    # Enable Telegram logging (if TELEGRAM_TOKEN and TELEGRAM_CHAT_ID are set)
+    sys.stdout = TelegramStream()
+
     args = s._parse_args()
     ensure_project_dirs()
     ciks = _load_ciks(args)

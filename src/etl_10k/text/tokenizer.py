@@ -60,11 +60,10 @@ def make_comps(cik):
     Uses available `item1A.txt` filings, orders them by date, and returns
     a list of {date1, filing1, date2, filing2} dicts.
     """
-    print(cik)
     date_data = []
     folders_path = INTERIM_ITEMS_DIR / cik / "10-K"
     checkdate_path = INTERIM_CLEANED_DIR / cik / "10-K"
-    
+
     for i in folders_path.iterdir():
         if not (i / "item1A.txt").is_file():
             continue
@@ -79,6 +78,8 @@ def make_comps(cik):
     # Skip CIKs with no valid filings (not yet processed through steps 2-4)
     if not date_data:
         return []
+
+    print(cik)
 
     ordered_filings = order_filings(date_data)
 
@@ -102,10 +103,12 @@ def concurrency_runner(writer, ciks):
         futures = {executor.submit(worker, cik): cik for cik in ciks}
 
         for fut in as_completed(futures):
-            rows = fut.result()
-            print(rows)
-            writer.writerows(rows)
-            print("Success")
+            cik = futures[fut]
+            try:
+                rows = fut.result()
+                writer.writerows(rows)
+            except Exception as e:
+                print(f"  Skipping {cik}: {type(e).__name__}: {e}")
     #except:
         #print("Skipped")
 
