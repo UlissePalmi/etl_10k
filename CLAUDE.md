@@ -18,13 +18,13 @@ The pipeline has 7 steps (0–6). Run via CLI with flexible step selection:
 
 ```bash
 # Full reproduction
-python scripts/99_reproduce_all.py
+uv run python scripts/99_reproduce_all.py
 
 # Specific steps for specific CIKs
-python -m etl_10k.pipeline.steps --cik 320193 --from-step 2 --to-step 4
+uv run python scripts/99_reproduce_all.py --cik 320193 --from-step 2 --to-step 4
 
 # Key CLI flags
---cik <CIK>             # Single CIK
+--cik <CIK>             # Single CIK (required for step 5 to prevent memory exhaustion)
 --ciks <CIK,CIK,...>    # Comma-separated CIKs
 --start-year <YEAR>     # Default: 2006
 --end-year <YEAR>       # Default: 2026
@@ -33,6 +33,16 @@ python -m etl_10k.pipeline.steps --cik 320193 --from-step 2 --to-step 4
 --keep-raw              # Don't delete raw HTML after cleaning (default: delete)
 --financials            # Extract financial statement tables during step 2 (default: off)
 ```
+
+### Step 5 Memory & CPU Safeguard
+
+Step 5 (compute_features) is CPU-bound and memory-intensive. The pipeline:
+- **Auto-monitors RAM** and adjusts worker count to prevent memory exhaustion
+- **Requires explicit CIK selection** (`--cik` or `--ciks`) to avoid silent "process all 27 CIKs" crashes
+- **CPU usage at 100%** is expected — it means workers are fully utilized
+- Processing all CIKs in parallel requires 31+ GB RAM; single CIK uses ~2-3 GB
+
+Best practice: process CIKs one at a time or in small batches (2-3 at a time).
 
 Individual step scripts in `scripts/` (e.g., `python scripts/04_extract_item1a.py`).
 
@@ -98,12 +108,17 @@ The Item 1A extractor achieves ~99.7% accuracy via:
 ## Text Features (`text/tokenizer.py`)
 
 Features computed between consecutive Item 1A filings (year N vs N−1):
-- **Edit distance**: token-level Levenshtein (memory-efficient row-by-row DP)
-- **Jaccard similarity**: overlap between token sets
-- **Sentiment**: Loughran-McDonald categories (negative, positive, uncertainty, litigious, modal, constraining)
-- **Complexity**: Fog Index, Flesch-Kincaid, avg sentence/word length
-- **VADER**: mean compound score
-- **Length metrics**: word counts, length deltas
+- **Jaccard similarity**: token-level overlap between two texts
+- **Sentiment**: Loughran-McDonald categories (negative, positive, uncertainty, litigious, strong_modal, weak_modal, constraining, complexity)
+- **Complexity**: Fog Index, Flesch Reading Ease, syllable counts, avg sentence/word length
+- **VADER**: NLTK sentiment intensity compound score
+- **Length metrics**: token counts, length deltas
+- **Delta sentiments**: year-over-year changes in all sentiment categories
+
+Computation is CPU-intensive due to:
+1. Tokenization + dictionary lookups across 86K+ words for each text
+2. Complexity metrics (Fog Index requires syllable counting)
+3. 25 parallel workers processing multiple CIKs simultaneously
 
 ## Financial Statements Extraction
 
@@ -134,16 +149,36 @@ uv run python utils/extract_financial_statements.py --cik 0001234567
 ## Step 2 Behavior
 
 Step 2 (`download_filings`) always downloads and cleans 10-K filings. With `--financials`:
-- Also extracts financial statement tables from raw SGML
-- Automatically consolidates statements by type into grouped Excel files
-- Output: cleaned text + consolidated financial statement Excels (one per statement type)
+- Also extracts financial statement tables from raw SGML (per-filing extraction)
+- **Automatically consolidates** statements by name across all years for each CIK
+  - Creates one Excel per statement name (e.g., `Balance Sheet.xlsx`, `Income Statement.xlsx`)
+  - Each consolidated Excel contains sheets named by fiscal year (2022, 2023, 2024, etc.)
+  - Deletes per-filing folders after consolidation
+  - Handles duplicate/sub-tables by grouping: `BALANCE SHEET` + `BALANCE SHEET_2` → both in same Excel as `2024` and `2024_2` sheets
+- Output: cleaned text + consolidated financial statement Excels in `data/interim/financial_statements/<CIK>/`
 - Without `--financials`: only cleaned text is produced
+
+## Loughran-McDonald Dictionary Setup
+
+Step 5 requires the **Loughran-McDonald Master Dictionary** (86K+ words with sentiment tags).
+
+**First time setup**:
+1. Download from: https://www3.nd.edu/~mcdonald/Word_Lists.html
+2. Convert to CSV if needed (format: Word, Sequence, Count, WordProp, AvgProp, StdDev, DocCount, Negative, Positive, Uncertainty, Litigious, StrongModal, WeakModal, Constraining, Complexity, Syllables, Source)
+3. Save to: `data/raw/lm_dict/Loughran-McDonald_MasterDictionary_1993-2024.csv`
+
+If missing, step 5 will fail. A minimal stub dictionary exists for testing, but production runs require the full official dictionary.
 
 ## Development Utilities
 
 ```bash
 # Test segmentation on a single filing
-python tools/segment_single_filing.py <path-to-filing>
+uv run python tools/segment_single_filing.py <path-to-filing>
 ```
 
 `item_splitter.py` in the root is a legacy predecessor to `text/segment.py` — do not modify it.
+
+## Known Issues & Dead Code
+
+- `text/tokenizer.py`: `levenshtein_tokens()` function (line 175) is defined but never called — legacy code from earlier feature iteration
+- Financial statement consolidation strips statement names to 31 chars for Excel compatibility, which may create duplicate sheet names (e.g., "SUMMARY OF SIGNIFICANT ACCO_2", "SUMMARY OF SIGNIFICANT ACCO_3")

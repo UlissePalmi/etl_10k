@@ -69,7 +69,17 @@ def make_comps(cik):
         if not (i / "item1A.txt").is_file():
             continue
 
-        date_data.append(check_date(checkdate_path / i.name) if (i / "item1A.txt").is_file() else None) 
+        # Check if cleaned filing exists before trying to read it
+        cleaned_file = checkdate_path / i.name / "full-submission.txt"
+        if not cleaned_file.is_file():
+            continue
+
+        date_data.append(check_date(checkdate_path / i.name))
+
+    # Skip CIKs with no valid filings (not yet processed through steps 2-4)
+    if not date_data:
+        return []
+
     ordered_filings = order_filings(date_data)
 
     comps_list = []
@@ -84,7 +94,7 @@ def make_comps(cik):
 
 def concurrency_runner(writer, ciks):
     """
-    Compute Levenshtein edit distance features for multiple CIKs using multiprocessing.
+    Orchestrate feature computation for multiple CIKs using multiprocessing.
     Runs `worker()` per CIK and writes the resulting rows to the output CSV.
     """
     #try:
@@ -117,14 +127,14 @@ def worker(cik):
 def process_comps(comp, cik):
     """
     Load two Item 1A texts for a comparison pair and compute feature metrics.
-    Returns the output dictionary produced by `min_edit_levenshtein()`.
+    Returns the output dictionary produced by `var_builder()`.
     """
     filingNew, filingOld = comp["filing1"], comp["filing2"]
     fileNew = INTERIM_ITEMS_DIR / cik / "10-K" / filingNew / "item1A.txt"
     fileOld = INTERIM_ITEMS_DIR / cik / "10-K" / filingOld / "item1A.txt"
     textNew = fileNew.read_text(encoding="utf-8", errors="ignore")
     textOld = fileOld.read_text(encoding="utf-8", errors="ignore")
-    return min_edit_levenshtein(textNew, textOld, comp, cik)
+    return var_builder(textNew, textOld, comp, cik)
 
 # --------------------------------------------------------------------------------------------------------------------
 #                                                VARIABLES FUNCTIONS
@@ -139,6 +149,10 @@ def tokenize(text: str) -> list[str]:
     return _WORD_RE.findall(text.lower())
 '''
 def tokenize(text: str):
+    """
+    Extract all words from text as uppercase tokens.
+    Returns list of consecutive letter sequences (A-Z).
+    """
     return re.findall(r"[A-Za-z]+", text.upper())
 
 def mean_vader_compound(words) -> float:
@@ -153,43 +167,6 @@ def mean_vader_compound(words) -> float:
         compounds.append(scores["compound"])
     return sum(compounds) / len(compounds) if len(compounds) != 0 else 0
 
-def levenshtein_tokens(a_tokens, b_tokens, cik):
-    """
-    Compute token-level Levenshtein distance and identify newly introduced tokens.
-    Returns (distance, new_words).
-    """
-    m, n = len(a_tokens), len(b_tokens)
-    if n > m:
-        # ensure n <= m for memory efficiency
-        a_tokens, b_tokens = b_tokens, a_tokens
-        m, n = n, m
-
-    prev = list(range(n + 1))  # row 0..n
-    for i in range(1, m + 1):
-        cur = [i] + [0]*n
-        ai = a_tokens[i-1]
-        for j in range(1, n + 1):
-            cost = 0 if ai == b_tokens[j-1] else 1
-            cur[j] = min(
-                prev[j] + 1,      # deletion
-                cur[j-1] + 1,     # insertion
-                prev[j-1] + cost  # substitution (0 if match)
-            )
-
-        if (j % 1000 == 0) or (j == n):  # adjust 1000 for your speed/verbosity
-            done_cells = (i - 1) * n + j
-            total_cells = m * n
-            pct = (done_cells / total_cells) * 100 if total_cells else 100.0
-            sys.stdout.write(f"\rCik: {cik} Progress: {pct:6.2f}%  (row {i}/{m}, col {j}/{n})")
-            sys.stdout.flush()
-
-        b_set = set(b_tokens)
-        new_words = [t for t in a_tokens if t not in b_set]
-    # after both loops finish:
-        print()
-        prev = cur
-    return prev[n], new_words
-
 def jaccard_similarity(A, B) -> float:
     """
     Compute Jaccard similarity between the token sets of two texts.
@@ -200,10 +177,10 @@ def jaccard_similarity(A, B) -> float:
         return 1.0
     return len(A & B) / len(A | B)
 
-def min_edit_levenshtein(text_a, text_b, dict, cik):
+def var_builder(text_a, text_b, dict, cik):
     """
     Compute disclosure-change features between two Item 1A texts.
-    Returns a dictionary with levenshtein, lengths, and sentiment of newly added words.
+    Returns a dictionary with Jaccard similarity, sentiment, complexity, and VADER scores.
     """
     A, B = tokenize(text_a), tokenize(text_b)
     #print(f"text_a: {type(text_a)}, A: {type(A)}")
