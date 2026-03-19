@@ -17,7 +17,7 @@ _sia = SentimentIntensityAnalyzer()
 def check_date(folder):
     """
     Read a filing folder and extract the submission date for that accession.
-    Returns a dict with "year", "month", "day", and "filing".
+    Returns a dict with "year", "month", "day", and "filing", or None if not found.
     """
     filing = folder.name
     file = folder / "full-submission.txt"
@@ -27,6 +27,9 @@ def check_date(folder):
             if filing in hay:
                 date = hay.partition(":")[2].lstrip()
                 break
+        else:
+            # Filing ID not found in file — return None to skip this filing
+            return None
     info_dict = {
         "year": date[:4],
         "month": date[4:6],
@@ -73,7 +76,9 @@ def make_comps(cik):
         if not cleaned_file.is_file():
             continue
 
-        date_data.append(check_date(checkdate_path / i.name))
+        date_info = check_date(checkdate_path / i.name)
+        if date_info is not None:
+            date_data.append(date_info)
 
     # Skip CIKs with no valid filings (not yet processed through steps 2-4)
     if not date_data:
