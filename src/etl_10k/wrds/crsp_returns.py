@@ -26,7 +26,7 @@ def querymaker(cik):
         ON link.gvkey = c.gvkey
     WHERE 
         c.cik = '{cik}'            
-        AND m.date >= '2006-01-01'      
+        AND m.date >= '2005-01-01'      
         AND m.date <= '2025-10-31'
         AND link.linktype IN ('LU', 'LC')
         AND link.linkprim IN ('P', 'C')
@@ -80,7 +80,7 @@ def df_with_returns(batch_size=100):
             ON link.gvkey = c.gvkey
         WHERE
             c.cik IN ('{cik_list_str}')
-            AND m.date >= '2006-01-01'
+            AND m.date >= '2005-01-01'
             AND m.date <= '2025-10-31'
             AND link.linktype IN ('LU', 'LC')
             AND link.linkprim IN ('P', 'C')

@@ -184,6 +184,6 @@ def step_06_build_panel() -> None:
     #sim_df = bp.feature_engineering(sim_df)
 
     sim_df = bp.merge_return(sim_df, return_df, months=12, period="past")
-    sim_df = bp.merge_return(sim_df, return_df, months=6, period="future")
+    # sim_df = bp.merge_return(sim_df, return_df, months=6, period="future")
     print(sim_df)
     sim_df.to_csv(FINAL_DATASET, index=False)
