@@ -65,28 +65,28 @@ def df_with_returns(batch_size=100):
         cik_list_str = "', '".join(batch)
 
         query = f"""
-        SELECT
-            c.cik,
-            c.conm as company_name,
-            m.date,
-            m.ret
-        FROM
-            crsp.msf as m
-        JOIN
-            crsp.ccmxpf_linktable as link
-            ON m.permno = link.lpermno
-        JOIN
-            comp.company as c
-            ON link.gvkey = c.gvkey
-        WHERE
-            c.cik IN ('{cik_list_str}')
-            AND m.date >= '2005-01-01'
-            AND m.date <= '2025-10-31'
-            AND link.linktype IN ('LU', 'LC')
-            AND link.linkprim IN ('P', 'C')
-            AND m.date >= link.linkdt
-            AND (m.date <= link.linkenddt OR link.linkenddt IS NULL)
-        """
+            SELECT
+                c.cik,
+                c.conm as company_name,
+                m.mthcaldt as date,
+                m.mthret as ret
+            FROM
+                crsp.msf_v2 as m
+            JOIN
+                crsp.ccmxpf_linktable as link
+                    ON m.permno = link.lpermno
+            JOIN
+                comp.company as c
+                    ON link.gvkey = c.gvkey
+            WHERE
+                c.cik IN ('{cik_list_str}')
+                AND m.mthcaldt >= '2005-01-01'
+                AND m.mthcaldt <= '2026-01-03'
+                AND link.linktype IN ('LU', 'LC')
+                AND link.linkprim IN ('P', 'C')
+                AND m.mthcaldt >= link.linkdt
+                AND (m.mthcaldt <= link.linkenddt OR link.linkenddt IS NULL)
+            """
 
         try:
             with db.engine.connect() as conn:
